@@ -62,6 +62,21 @@ function getBizByName(name) {
     }; return searchResults;
 };
 
+// Query data set for restaurants that match postcode query
+function getBizByPostCode(postcode) {
+    let searchResults = [];
+    let modPostCode = postcode.replace(/^\s+|\s+$/g, '').toUpperCase();
+    for (let region of allData) {
+        for (let biz of region) {
+            if (biz.hasOwnProperty("PostCode")) {
+                if (biz.PostCode.toUpperCase().includes(modPostCode)) {
+                    searchResults.push(biz);
+                };
+            };
+        };
+    }; return searchResults;
+};
+
 // // CALL FUNCTIONS
 // Call "loadData" function with array of promises as parameter
 loadData([
