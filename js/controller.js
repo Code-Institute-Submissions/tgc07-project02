@@ -4,10 +4,12 @@ function getSearchCategory() {
     return document.querySelector("#search-category").value;
 };
 
+// Get user search input
 function getSearchInput() {
     return document.querySelector("#search-box").value;
 };
 
+// Wait until window fully loaded, then enable user search
 window.addEventListener("load", (event) => {
     // console.log(event);
     // console.log(this);
@@ -15,17 +17,14 @@ window.addEventListener("load", (event) => {
         let searchCategory = getSearchCategory();
         let searchInput = getSearchInput();
         if (searchCategory==="business-name") {
-            console.log("business name selected");
-            console.log(searchInput);
-            // getBizByName(searchInput);
+            let searchResults = getBizByName(searchInput);
+            console.log(searchResults);
         } else if (searchCategory==="address") {
-            console.log("address selected");
-            console.log(searchInput);
-            // getBizByAddress(searchInput);
+            let searchResults = getBizByAddress(searchInput);
+            console.log(searchResults);
         } else if (searchCategory==="postcode") {
-            console.log("postcode selected");
-            console.log(searchInput);
-            // getBizByPostCode(searchInput);
+            let searchResults = getBizByPostCode(searchInput);
+            console.log(searchResults);
         };
     });
 });
