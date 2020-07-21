@@ -38,13 +38,28 @@ const fhrs533 = fetch("data/fhrs533-westminster.json").then(response => response
 let allData = [];
 
 // // DEFINE FUNCTIONS
-// Gets all JSON responses and stores in "allData" array
+// Get all JSON responses and stores in "allData" array
 function loadData(promiseArray) {
     Promise.all(promiseArray).then(data => {
         for (let i of data) {
             allData.push(i.FHRSEstablishment.EstablishmentCollection.EstablishmentDetail);
         };
     });
+};
+
+// Query data set for restaurants that match business name query
+function getBizByName(name) {
+    let searchResults = [];
+    let modName = name.replace(/^\s+|\s+$/g, '').toUpperCase();
+    for (let region of allData) {
+        for (let biz of region) {
+            if (biz.hasOwnProperty("BusinessName")) {
+                if (biz.BusinessName.toUpperCase().includes(modName)) {
+                    searchResults.push(biz);
+                };
+            };
+        };
+    }; return searchResults;
 };
 
 // // CALL FUNCTIONS
