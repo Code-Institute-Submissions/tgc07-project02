@@ -97,6 +97,30 @@ function getBizByAddress(address) {
     }; return searchResults;
 };
 
+// Filter postcode
+function filterPostCode(postcode) {
+    let postcodeFiltered = [];
+    let modPostCode = postcode.replace(/^\s+|\s+$/g, '').toUpperCase();
+    let url = `https://api.getthedata.com/postcode/${modPostCode}`;
+    fetch(url).then(response => response.json()).then(jsonData => {
+        if (jsonData.status==="match") {
+            console.log(jsonData.data)
+            if (jsonData.data.hasOwnProperty("postcode")) {
+                postcodeFiltered.push(jsonData.data.postcode);
+                let latitude = parseFloat(jsonData.data.latitude);
+                let longitude = parseFloat(jsonData.data.longitude);
+                postcodeFiltered.push([latitude,longitude]);
+            } else if (jsonData.data.hasOwnProperty("postcode_sector")) {
+                postcodeFiltered.push(jsonData.data.postcode_sector);
+            } else if (jsonData.data.hasOwnProperty("postcode_district")) {
+                postcodeFiltered.push(jsonData.data.postcode_district);
+            } else if (jsonData.data.hasOwnProperty("postcode_area")) {
+                postcodeFiltered.push(jsonData.data.postcode_area);
+            };
+        };
+    }); return postcodeFiltered;
+};
+
 // // CALL FUNCTIONS
 // Call "loadData" function with array of promises as parameter
 loadData([
