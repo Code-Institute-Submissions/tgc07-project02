@@ -69,7 +69,7 @@ function getBizByPostCode(postcode) {
     for (let region of allData) {
         for (let biz of region) {
             if (biz.hasOwnProperty("PostCode")) {
-                if (biz.PostCode.toUpperCase().includes(modPostCode)) {
+                if (biz.PostCode.toUpperCase().startsWith(modPostCode)) {
                     searchResults.push(biz);
                 };
             };
