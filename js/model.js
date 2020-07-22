@@ -69,15 +69,21 @@ function getBizByName(name, hygieneRating) {
 };
 
 // Query data set for restaurants that match postcode query
-function getBizByPostCode(postcode) {
+function getBizByPostCode(postcode, hygieneRating) {
     let searchResults = [];
     let modPostCode = postcode.replace(/^\s+|\s+$/g, '').toUpperCase();
     for (let region of allData) {
         for (let biz of region) {
             if (biz.hasOwnProperty("PostCode")) {
-                if (biz.PostCode.toUpperCase().startsWith(modPostCode)) {
-                    searchResults.push(biz);
-                };
+                if (hygieneRating==="any") {
+                    if (biz.PostCode.toUpperCase().startsWith(modPostCode)) {
+                        searchResults.push(biz);
+                    };
+                } else {
+                    if (biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRating) {
+                        searchResults.push(biz);
+                    };
+                }
             };
         };
     }; return searchResults;
