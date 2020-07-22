@@ -9,6 +9,11 @@ function getSearchInput() {
     return document.querySelector("#search-box").value;
 };
 
+// Get selected hygiene rating
+function getHygieneRatingUserSelect() {
+    return document.querySelector("#hygiene-rating-user-select").value;
+};
+
 // Wait until window fully loaded, then enable user search
 window.addEventListener("load", (event) => {
     // console.log(event);
