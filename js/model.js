@@ -83,7 +83,7 @@ function getBizByPostCode(postcode, hygieneRating) {
                     if (biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRating) {
                         searchResults.push(biz);
                     };
-                }
+                };
             };
         };
     }; return searchResults;

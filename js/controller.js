@@ -22,14 +22,15 @@ window.addEventListener("load", (event) => {
         let searchCategory = getSearchCategory();
         let searchInput = getSearchInput();
         let searchHygieneRating = getHygieneRatingUserSelect();
+        let searchResults = [];
         if (searchCategory==="business-name") {
-            let searchResults = getBizByName(searchInput, searchHygieneRating);
+            searchResults = getBizByName(searchInput, searchHygieneRating);
             console.log(searchResults);
         } else if (searchCategory==="address") {
-            let searchResults = getBizByAddress(searchInput, searchHygieneRating);
+            searchResults = getBizByAddress(searchInput, searchHygieneRating);
             console.log(searchResults);
         } else if (searchCategory==="postcode") {
-            let searchResults = getBizByPostCode(searchInput, searchHygieneRating);
+            searchResults = getBizByPostCode(searchInput, searchHygieneRating);
             console.log(searchResults);
         };
     });
