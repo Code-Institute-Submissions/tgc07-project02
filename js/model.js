@@ -48,14 +48,20 @@ function loadData(promiseArray) {
 };
 
 // Query data set for restaurants that match business name query
-function getBizByName(name) {
+function getBizByName(name, hygieneRating) {
     let searchResults = [];
     let modName = name.replace(/^\s+|\s+$/g, '').toUpperCase();
     for (let region of allData) {
         for (let biz of region) {
             if (biz.hasOwnProperty("BusinessName")) {
-                if (biz.BusinessName.toUpperCase().includes(modName)) {
-                    searchResults.push(biz);
+                if (hygieneRating==="any") {
+                    if (biz.BusinessName.toUpperCase().includes(modName)) {
+                        searchResults.push(biz);
+                    };
+                } else {
+                    if (biz.BusinessName.toUpperCase().includes(modName) && biz.RatingValue===hygieneRating) {
+                        searchResults.push(biz);
+                    };
                 };
             };
         };
