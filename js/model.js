@@ -117,6 +117,17 @@ function getBizByAddress(address, hygieneRating) {
                     };
                 };
             };
+            if (biz.hasOwnProperty("AddressLine3")) {
+                if (hygieneRating==="any") {
+                    if (biz.AddressLine3.toUpperCase().includes(modAddress)) {
+                        searchResults.push(biz);
+                    };
+                } else {
+                    if (biz.AddressLine3.toUpperCase().includes(modAddress) && biz.RatingValue===hygieneRating) {
+                        searchResults.push(biz);
+                    };
+                };
+            };
         };
     }; return searchResults;
 };
