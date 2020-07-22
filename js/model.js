@@ -90,19 +90,31 @@ function getBizByPostCode(postcode, hygieneRating) {
 };
 
 // Query data set for restaurants that match address query
-function getBizByAddress(address) {
+function getBizByAddress(address, hygieneRating) {
     let searchResults = [];
     let modAddress = address.replace(/^\s+|\s+$/g, '').toUpperCase();
     for (let region of allData) {
         for (let biz of region) {
             if (biz.hasOwnProperty("AddressLine1")) {
-                if (biz.AddressLine1.toUpperCase().includes(modAddress)) {
-                    searchResults.push(biz);
+                if (hygieneRating==="any") {
+                    if (biz.AddressLine1.toUpperCase().includes(modAddress)) {
+                        searchResults.push(biz);
+                    };
+                } else {
+                    if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.RatingValue===hygieneRating) {
+                        searchResults.push(biz);
+                    };
                 };
             };
             if (biz.hasOwnProperty("AddressLine2")) {
-                if (biz.AddressLine2.toUpperCase().includes(modAddress)) {
-                    searchResults.push(biz);
+                if (hygieneRating==="any") {
+                    if (biz.AddressLine2.toUpperCase().includes(modAddress)) {
+                        searchResults.push(biz);
+                    };
+                } else {
+                    if (biz.AddressLine2.toUpperCase().includes(modAddress) && biz.RatingValue===hygieneRating) {
+                        searchResults.push(biz);
+                    };
                 };
             };
         };
