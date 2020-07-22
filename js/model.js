@@ -156,6 +156,195 @@ function filterPostCode(postcode) {
     }); return postcodeFiltered;
 };
 
+function compoundSearch(name, address, postcode, hygieneRating) {
+    let searchResults = [];
+    let modName = name.replace(/^\s+|\s+$/g, '').toUpperCase();
+    let modAddress = address.replace(/^\s+|\s+$/g, '').toUpperCase();
+    let modPostCode = postcode.replace(/^\s+|\s+$/g, '').toUpperCase();
+    for (let region of allData) {
+        for (let biz of region) {
+            if (modName==="" && modAddress==="" && modPostCode==="") {
+                return alert("Please enter search criteria");
+            } else if (modName==="" && modAddress==="") {
+                if (biz.hasOwnProperty("PostCode")) {
+                    if (hygieneRating==="any") {
+                        if (biz.PostCode.toUpperCase().startsWith(modPostCode)) {
+                            searchResults.push(biz);
+                        };
+                    } else {
+                        if (biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRating) {
+                            searchResults.push(biz);
+                        };
+                    };
+                };
+            } else if (modName==="" && modPostCode==="") {
+                if (biz.hasOwnProperty("AddressLine1")) {
+                    if (hygieneRating==="any") {
+                        if (biz.AddressLine1.toUpperCase().includes(modAddress)) {
+                            searchResults.push(biz);
+                        };
+                    } else {
+                        if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.RatingValue===hygieneRating) {
+                            searchResults.push(biz);
+                        };
+                    };
+                };
+                if (biz.hasOwnProperty("AddressLine2")) {
+                    if (hygieneRating==="any") {
+                        if (biz.AddressLine2.toUpperCase().includes(modAddress)) {
+                            searchResults.push(biz);
+                        };
+                    } else {
+                        if (biz.AddressLine2.toUpperCase().includes(modAddress) && biz.RatingValue===hygieneRating) {
+                            searchResults.push(biz);
+                        };
+                    };
+                };
+                if (biz.hasOwnProperty("AddressLine3")) {
+                    if (hygieneRating==="any") {
+                        if (biz.AddressLine3.toUpperCase().includes(modAddress)) {
+                            searchResults.push(biz);
+                        };
+                    } else {
+                        if (biz.AddressLine3.toUpperCase().includes(modAddress) && biz.RatingValue===hygieneRating) {
+                            searchResults.push(biz);
+                        };
+                    };
+                };
+            } else if (modPostCode==="" && modAddress==="") {
+                if (biz.hasOwnProperty("BusinessName")) {
+                    if (hygieneRating==="any") {
+                        if (biz.BusinessName.toUpperCase().includes(modName)) {
+                            searchResults.push(biz);
+                        };
+                    } else {
+                        if (biz.BusinessName.toUpperCase().includes(modName) && biz.RatingValue===hygieneRating) {
+                            searchResults.push(biz);
+                        };
+                    };
+                };
+            } else if (modName==="") {
+                if (biz.hasOwnProperty("AddressLine1") && biz.hasOwnProperty("PostCode")) {
+                    if (hygieneRating==="any") {
+                        if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.PostCode.toUpperCase().startsWith(modPostCode)) {
+                            searchResults.push(biz);
+                        };
+                    } else {
+                        if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRating) {
+                            searchResults.push(biz);
+                        };
+                    };
+                };
+                if (biz.hasOwnProperty("AddressLine2") && biz.hasOwnProperty("PostCode")) {
+                    if (hygieneRating==="any") {
+                        if (biz.AddressLine2.toUpperCase().includes(modAddress) && biz.PostCode.toUpperCase().startsWith(modPostCode)) {
+                            searchResults.push(biz);
+                        };
+                    } else {
+                        if (biz.AddressLine2.toUpperCase().includes(modAddress) && biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRating) {
+                            searchResults.push(biz);
+                        };
+                    };
+                };
+                if (biz.hasOwnProperty("AddressLine3") && biz.hasOwnProperty("PostCode")) {
+                    if (hygieneRating==="any") {
+                        if (biz.AddressLine3.toUpperCase().includes(modAddress) && biz.PostCode.toUpperCase().startsWith(modPostCode)) {
+                            searchResults.push(biz);
+                        };
+                    } else {
+                        if (biz.AddressLine3.toUpperCase().includes(modAddress) && biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRating) {
+                            searchResults.push(biz);
+                        };
+                    };
+                };
+            } else if (modAddress==="") {
+                if (biz.hasOwnProperty("PostCode") && biz.hasOwnProperty("BusinessName")) {
+                    if (hygieneRating==="any") {
+                        if (biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.BusinessName.toUpperCase().includes(modName)) {
+                            searchResults.push(biz);
+                        };
+                    } else {
+                        if (biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.BusinessName.toUpperCase().includes(modName) && biz.RatingValue===hygieneRating) {
+                            searchResults.push(biz);
+                        };
+                    };
+                };
+            } else if (modPostCode==="") {
+                if (biz.hasOwnProperty("AddressLine1") && biz.hasOwnProperty("BusinessName")) {
+                    if (hygieneRating==="any") {
+                        if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName)) {
+                            searchResults.push(biz);
+                        };
+                    } else {
+                        if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.RatingValue===hygieneRating) {
+                            searchResults.push(biz);
+                        };
+                    };
+                };
+                if (biz.hasOwnProperty("AddressLine2") && biz.hasOwnProperty("BusinessName")) {
+                    if (hygieneRating==="any") {
+                        if (biz.AddressLine2.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName)) {
+                            searchResults.push(biz);
+                        };
+                    } else {
+                        if (biz.AddressLine2.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.RatingValue===hygieneRating) {
+                            searchResults.push(biz);
+                        };
+                    };
+                };
+                if (biz.hasOwnProperty("AddressLine3") && biz.hasOwnProperty("BusinessName")) {
+                    if (hygieneRating==="any") {
+                        if (biz.AddressLine3.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName)) {
+                            searchResults.push(biz);
+                        };
+                    } else {
+                        if (biz.AddressLine3.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.RatingValue===hygieneRating) {
+                            searchResults.push(biz);
+                        };
+                    };
+                };
+            } else if (modName!=="" && modAddress!=="" && modPostCode!=="") {
+                if (biz.hasOwnProperty("AddressLine1") && biz.hasOwnProperty("BusinessName") && biz.hasOwnProperty("PostCode")) {
+                    if (hygieneRating==="any") {
+                        if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.PostCode.toUpperCase().startsWith(modPostCode)) {
+                            searchResults.push(biz);
+                        };
+                    } else {
+                        if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRating) {
+                            searchResults.push(biz);
+                        };
+                    };
+                };
+                if (biz.hasOwnProperty("AddressLine2") && biz.hasOwnProperty("BusinessName") && biz.hasOwnProperty("PostCode")) {
+                    if (hygieneRating==="any") {
+                        if (biz.AddressLine2.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.PostCode.toUpperCase().startsWith(modPostCode)) {
+                            searchResults.push(biz);
+                        };
+                    } else {
+                        if (biz.AddressLine2.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRating) {
+                            searchResults.push(biz);
+                        };
+                    };
+                };
+                if (biz.hasOwnProperty("AddressLine3") && biz.hasOwnProperty("BusinessName") && biz.hasOwnProperty("PostCode")) {
+                    if (hygieneRating==="any") {
+                        if (biz.AddressLine3.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.PostCode.toUpperCase().startsWith(modPostCode)) {
+                            searchResults.push(biz);
+                        };
+                    } else {
+                        if (biz.AddressLine3.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRating) {
+                            searchResults.push(biz);
+                        };
+                    };
+                };
+            }; // check for any other permutations
+        };
+    } return searchResults;
+};
+
+
+
+
 // // CALL FUNCTIONS
 // Call "loadData" function with array of promises as parameter
 loadData([

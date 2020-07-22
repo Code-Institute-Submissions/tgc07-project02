@@ -10,23 +10,35 @@
 </head>
 <body>
     
-    <div>
-        <input type="text" name="search-box" id="search-box">
-        <select name="search-category" id="search-category">
+    <div class="toolbar-container">
+        <div class="toolbar">
+            <input type="text" name="search-business" id="search-business" placeholder="Name of establishment">
+        </div>
+        <div class="toolbar">
+            <input type="text" name="search-address" id="search-address" placeholder="Address">
+        </div>
+        <div class="toolbar">
+            <input type="text" name="search-postcode" id="search-postcode" placeholder="Postcode">
+        </div>
+        <!-- <select name="search-category" id="search-category">
             <option value="business-name">Business Name</option>
             <option value="address">Address</option>
             <option value="postcode">Postcode</option>
-        </select>
-        <select name="hygiene-rating-user-select" id="hygiene-rating-user-select">
-            <option value="any">Hygiene rating: Any</option>
-            <option value="5">Hygiene rating: 5</option>
-            <option value="4">Hygiene rating: 4</option>
-            <option value="3">Hygiene rating: 3</option>
-            <option value="2">Hygiene rating: 2</option>
-            <option value="1">Hygiene rating: 1</option>
-            <option value="0">Hygiene rating: 0</option>
-        </select>
-        <input type="submit" value="Search" id="search-btn">
+        </select> -->
+        <div class="toolbar">
+            <select name="hygiene-rating-user-select" id="hygiene-rating-user-select">
+                <option value="any">Hygiene rating</option>
+                <option value="5">5 - very good</option>
+                <option value="4">4 - good</option>
+                <option value="3">3 - generally satisfactory</option>
+                <option value="2">2 - some improvement is necessary</option>
+                <option value="1">1 - major improvement is necessary</option>
+                <option value="0">0 - urgent improvement is required</option>
+            </select>
+        </div>
+        <div class="toolbar">
+            <input type="submit" value="Search" id="search-btn">
+        </div>
     </div>
 
     <!-- Own JavaScript -->

@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.toolbar-container {
+    max-width: 25vw;
+    padding: 10px;
+    background-color: rgb(17, 48, 78);
+    color: snow;
+}
+
+.toolbar {
+    margin: 10px;
+    justify-content: space-around;
+}
+
+input, select, submit {
+    width: 260px;
+}
