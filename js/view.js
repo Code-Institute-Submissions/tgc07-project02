@@ -67,6 +67,7 @@ function addMarkersToMap(searchResultsArray) {
                 <li>Local authority email: ${authorityEmail}</li>
             </ul>
             `;
+            newContainer.addEventListener("click", () => {map.panTo(latlngArray)});
             parentElement.appendChild(newContainer);
         };
     };
