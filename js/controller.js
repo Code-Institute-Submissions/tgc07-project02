@@ -36,6 +36,7 @@ window.addEventListener("load", (event) => {
         addMarkersToMap(searchResults);
         // To display search results in right-hand panel
         document.querySelector("#map-container").className = "with-results";
+        document.querySelector(".search-results-container").style.display = "initial";
     });
 
     // Get latlng of user click; "poi" variable defined in model.js

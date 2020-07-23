@@ -52,7 +52,8 @@ p.popup-text {
 }
 
 .search-results-container {
-    z-index: -1;
+    z-index: 0;
+    display: none;
     position: absolute;
     overflow-y: scroll;
     height: 100vh;
