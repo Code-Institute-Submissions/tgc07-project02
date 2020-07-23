@@ -20,7 +20,20 @@ function addMarkersToMap(searchResultsArray) {
     for (let biz of searchResultsArray) {
         if (biz.Geocode!=="") {
             let latlngArray = [biz.Geocode.Latitude, biz.Geocode.Longitude];
-            L.marker(latlngArray).addTo(markerCluster);
+            let newMarker = L.marker(latlngArray);
+            newMarker.addTo(markerCluster);
+            let popupContent = `<p class="popup-text name">Name: ${biz.BusinessName}</p> `;
+            let popupAddress = "Address: ";
+            if (biz.hasOwnProperty("AddressLine1")) {popupAddress += biz.AddressLine1;};
+            if (biz.hasOwnProperty("AddressLine2")) {popupAddress += `, ${biz.AddressLine2}`;};
+            if (biz.hasOwnProperty("AddressLine3")) {popupAddress += `, ${biz.AddressLine3}`;};
+            if (biz.hasOwnProperty("AddressLine4")) {popupAddress += `, ${biz.AddressLine4}`;};
+            if (biz.hasOwnProperty("PostCode")) {popupAddress += `, ${biz.PostCode}`;};
+            popupContent += `<p class="popup-text address">${popupAddress}</p> `;
+            if (biz.hasOwnProperty("RatingValue")) {popupContent += `<p class="popup-text rating-value">Food hygiene rating: ${biz.RatingValue}</p> `;};
+            if (biz.hasOwnProperty("RatingDate")) {popupContent += `<p class="popup-text rating-date">Rating date (YYYY-MM-DD): ${biz.RatingDate}</p> `;};
+            if (biz.hasOwnProperty("LocalAuthorityEmailAddress")) {popupContent += `<p class="popup-text authority-email">Local authority email: ${biz.LocalAuthorityEmailAddress}</p> `;};
+            newMarker.bindPopup(popupContent);
         };
     };
     markerCluster.addTo(map);
