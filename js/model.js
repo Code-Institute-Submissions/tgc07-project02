@@ -37,6 +37,9 @@ const fhrs533 = fetch("data/fhrs533-westminster.json").then(response => response
 // Array to hold all Food Standards Agency data
 let allData = [];
 
+// Array to store latlng of where user clicks on map
+let poi = [];
+
 // // DEFINE FUNCTIONS
 // Get all JSON responses and stores in "allData" array
 function loadData(promiseArray) {

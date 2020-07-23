@@ -18,7 +18,7 @@ function getInputPostcode() {
 function getInputHygieneRating() {
     return document.querySelector("#select-hygiene-rating").value;
 };
-
+let markerCluster = L.markerClusterGroup();
 // Wait until window fully loaded, then enable user search
 window.addEventListener("load", (event) => {
     // console.log(event);
@@ -31,5 +31,21 @@ window.addEventListener("load", (event) => {
         let searchResults = [];
         searchResults = compoundSearch(bizName, address, postcode, hygieneRating);
         console.log(searchResults);
+
+        markerCluster.clearLayers();
+        for (let biz of searchResults) {
+            if (biz.Geocode!=="") {
+                let latlngArray = [biz.Geocode.Latitude, biz.Geocode.Longitude];
+                L.marker(latlngArray).addTo(markerCluster);
+            };
+        };
+        markerCluster.addTo(map);
     });
+
+    // Get latlng of user click; "poi" variable defined in model.js
+    map.addEventListener("click", event => {
+        poi.push(event.latlng.lat);
+        poi.push(event.latlng.lng);
+    });
+
 });
