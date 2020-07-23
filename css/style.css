@@ -54,10 +54,15 @@ p.popup-text {
 .search-results-container {
     z-index: -1;
     position: absolute;
+    overflow-y: scroll;
     height: 100vh;
     width: 30vw;
     top: 0;
     right: 0;
     background-color: #63726B;
     color: snow;
+}
+
+.search-result {
+    margin: 20px;
 }

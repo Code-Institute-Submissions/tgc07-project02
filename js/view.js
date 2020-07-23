@@ -17,6 +17,8 @@ new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 
 function addMarkersToMap(searchResultsArray) {
     markerCluster.clearLayers();
+    let parentElement = document.querySelector(".search-results-container");
+    parentElement.innerText = "";
     for (let biz of searchResultsArray) {
         if (biz.Geocode!=="") {
             // Info on each business
@@ -35,6 +37,7 @@ function addMarkersToMap(searchResultsArray) {
             if (biz.hasOwnProperty("RatingValue")) {ratingValue = biz.RatingValue;};
             if (biz.hasOwnProperty("RatingDate")) {RatingDate = biz.RatingDate;};
             if (biz.hasOwnProperty("LocalAuthorityEmailAddress")) {authorityEmail = biz.LocalAuthorityEmailAddress;};
+
             // Map markers
             let newMarker = L.marker(latlngArray);
             newMarker.addTo(markerCluster);
@@ -52,7 +55,11 @@ function addMarkersToMap(searchResultsArray) {
             newMarker.bindPopup(popupContent);
 
             // Search results details
-
+            let newContainer = document.createElement("div");
+            newContainer.id = biz.FHRSID;
+            newContainer.className = "search-result";
+            newContainer.innerHTML = biz.BusinessName;
+            parentElement.appendChild(newContainer);
         };
     };
     markerCluster.addTo(map);
