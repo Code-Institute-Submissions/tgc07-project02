@@ -28,11 +28,36 @@ body {
     border-radius: 4px;
 }
 
+#map-container {
+    height: 100vh;
+    width: 100vw;
+}
+
 #map {
     z-index: 0;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
+}
+
+#map-container {
+    width: 100vw;
+}
+
+#map-container.with-results {
+    width: 70vw;
 }
 
 p.popup-text {
     margin: 6px;
+}
+
+.search-results-container {
+    z-index: -1;
+    position: absolute;
+    height: 100vh;
+    width: 30vw;
+    top: 0;
+    right: 0;
+    background-color: #63726B;
+    color: snow;
 }
