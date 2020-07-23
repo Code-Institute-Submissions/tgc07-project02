@@ -30,8 +30,12 @@ window.addEventListener("load", () => {
         searchResults = compoundSearch(bizName, address, postcode, hygieneRating);
         console.log(searchResults);
 
-        // Defined in view.js
+        // Displays search results in panel and adds markers to map (defined in view.js)
         displaySearchResults(searchResults);
+
+        // Auto-fit search results markers to map
+        searchResults.length>0 ? map.fitBounds(markerCluster.getBounds()) : console.warn("No search results");
+        
         // To display search results in right-hand panel
         document.querySelector("#map-container").className = "with-results";
         document.querySelector(".search-results-container").style.display = "initial";
