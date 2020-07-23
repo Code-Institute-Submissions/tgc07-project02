@@ -45,7 +45,11 @@ function displaySearchResults(searchResultsArray) {
             if (biz.hasOwnProperty("AddressLine3")) {address += biz.AddressLine3 + ", ";};
             if (biz.hasOwnProperty("AddressLine4")) {address += biz.AddressLine4 + ", ";};
             if (biz.hasOwnProperty("PostCode")) {address += biz.PostCode;};
-            if (biz.hasOwnProperty("RatingValue")) {ratingValue = biz.RatingValue;};
+            if (biz.hasOwnProperty("RatingValue")) {
+                if (biz.RatingValue==="AwaitingInspection") {
+                    ratingValue = "Awaiting inspection";
+                } else {ratingValue = biz.RatingValue;};
+            };
             if (biz.hasOwnProperty("RatingDate")) {
                 if (typeof(biz.RatingDate)==="string") {
                     console.log(biz.FHRSID, true);
