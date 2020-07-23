@@ -12,9 +12,11 @@ body {
 }
 
 .toolbar-container {
+    z-index: 1;
     display: flex;
+    position: absolute;
     flex-direction: column;
-    max-width: 25vw;
+    width: 320px;
     padding: 10px;
     background-color: #63726B;
     color: snow;
@@ -22,6 +24,11 @@ body {
 
 .toolbar-container > * {
     margin: 10px;
-    padding: 0.6rem 1rem;
+    padding: 0.6rem;
     border-radius: 4px;
+}
+
+#map {
+    z-index: 0;
+    height: 100vh;
 }
