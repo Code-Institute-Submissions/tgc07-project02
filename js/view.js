@@ -42,13 +42,13 @@ function addMarkersToMap(searchResultsArray) {
             let newMarker = L.marker(latlngArray);
             newMarker.addTo(markerCluster);
             let popupContent = `<p class="popup-text name">Name: ${bizName}</p> `;
-            let popupAddress = "Address: " + address;
+            // let popupAddress = "Address: " + address;
             // if (biz.hasOwnProperty("AddressLine1")) {popupAddress += biz.AddressLine1;};
             // if (biz.hasOwnProperty("AddressLine2")) {popupAddress += `, ${biz.AddressLine2}`;};
             // if (biz.hasOwnProperty("AddressLine3")) {popupAddress += `, ${biz.AddressLine3}`;};
             // if (biz.hasOwnProperty("AddressLine4")) {popupAddress += `, ${biz.AddressLine4}`;};
             // if (biz.hasOwnProperty("PostCode")) {popupAddress += `, ${biz.PostCode}`;};
-            popupContent += `<p class="popup-text address">${popupAddress}</p> `;
+            popupContent += `<p class="popup-text address">Address: ${address}</p> `;
             if (biz.hasOwnProperty("RatingValue")) {popupContent += `<p class="popup-text rating-value">Food hygiene rating: ${ratingValue}</p> `;};
             if (biz.hasOwnProperty("RatingDate")) {popupContent += `<p class="popup-text rating-date">Rating date (YYYY-MM-DD): ${ratingDate}</p> `;};
             if (biz.hasOwnProperty("LocalAuthorityEmailAddress")) {popupContent += `<p class="popup-text authority-email">Local authority email: ${authorityEmail}</p> `;};
