@@ -40,6 +40,9 @@ let allData = [];
 // Array to store latlng of where user clicks on map
 let poi = [];
 
+// Marker cluster object
+let markerCluster = L.markerClusterGroup();
+
 // // DEFINE FUNCTIONS
 // Get all JSON responses and stores in "allData" array
 function loadData(promiseArray) {

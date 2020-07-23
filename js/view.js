@@ -14,3 +14,14 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 // Add zoom control at bottom left of map
 new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
+
+function addMarkersToMap(searchResultsArray) {
+    markerCluster.clearLayers();
+    for (let biz of searchResultsArray) {
+        if (biz.Geocode!=="") {
+            let latlngArray = [biz.Geocode.Latitude, biz.Geocode.Longitude];
+            L.marker(latlngArray).addTo(markerCluster);
+        };
+    };
+    markerCluster.addTo(map);
+};
