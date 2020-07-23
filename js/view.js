@@ -15,8 +15,19 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 // Add zoom control at bottom left of map
 new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 
+// Locate marker and open marker's popup
+function locateMarker(FHRSID){
+    for (let marker in markersArray) {
+        if (markersArray[marker].options.title == FHRSID){
+            markersArray[marker].openPopup();
+        };
+    };
+};
+
+// Display search results with markers and results panel
 function addMarkersToMap(searchResultsArray) {
     markerCluster.clearLayers();
+    markersArray = []; // Defined in model.js
     let parentElement = document.querySelector(".search-results-container");
     parentElement.innerText = "";
     for (let biz of searchResultsArray) {
@@ -39,7 +50,7 @@ function addMarkersToMap(searchResultsArray) {
             if (biz.hasOwnProperty("LocalAuthorityEmailAddress")) {authorityEmail = biz.LocalAuthorityEmailAddress;};
 
             // Map markers
-            let newMarker = L.marker(latlngArray);
+            let newMarker = L.marker(latlngArray, {title:`${biz.FHRSID}`});
             newMarker.addTo(markerCluster);
             let popupContent = `<p class="popup-text name">Name: ${bizName}</p> `;
             // let popupAddress = "Address: " + address;
@@ -53,6 +64,7 @@ function addMarkersToMap(searchResultsArray) {
             if (biz.hasOwnProperty("RatingDate")) {popupContent += `<p class="popup-text rating-date">Rating date (YYYY-MM-DD): ${ratingDate}</p> `;};
             if (biz.hasOwnProperty("LocalAuthorityEmailAddress")) {popupContent += `<p class="popup-text authority-email">Local authority email: ${authorityEmail}</p> `;};
             newMarker.bindPopup(popupContent);
+            markersArray.push(newMarker);
 
             // Search results details
             let newContainer = document.createElement("div");
@@ -67,7 +79,10 @@ function addMarkersToMap(searchResultsArray) {
                 <li>Local authority email: ${authorityEmail}</li>
             </ul>
             `;
-            newContainer.addEventListener("click", () => {map.panTo(latlngArray)});
+            newContainer.addEventListener("click", function() {
+                map.panTo(latlngArray);
+                locateMarker(this.id);
+            });
             parentElement.appendChild(newContainer);
         };
     };

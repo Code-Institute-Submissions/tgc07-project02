@@ -43,6 +43,9 @@ let poi = [];
 // Marker cluster object
 let markerCluster = L.markerClusterGroup();
 
+// Array to store all markers generated from search results
+let markersArray = [];
+
 // // DEFINE FUNCTIONS
 // Get all JSON responses and stores in "allData" array
 function loadData(promiseArray) {
