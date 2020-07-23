@@ -1,29 +1,22 @@
 // // DEFINE FUNCTIONS
-// Get search category
-function getSearchCategory() {
-    return document.querySelector("#search-category").value;
-};
-
-// Get user search input
-function getSearchInput() {
-    return document.querySelector("#search-box").value;
-};
-
-// Get selected hygiene rating
-function getHygieneRatingUserSelect() {
-    return document.querySelector("#select-hygiene-rating").value;
-};
-
-function getBusinessName() {
+// Get inputted business name
+function getInputBizName() {
     return document.querySelector("#search-business").value;
 };
 
-function getAddress() {
+// Get inputted address
+function getInputAddress() {
     return document.querySelector("#search-address").value;
 };
 
-function getPostcode() {
+// Get inputted postcode
+function getInputPostcode() {
     return document.querySelector("#search-postcode").value;
+};
+
+// Get selected hygiene rating
+function getInputHygieneRating() {
+    return document.querySelector("#select-hygiene-rating").value;
 };
 
 // Wait until window fully loaded, then enable user search
@@ -45,12 +38,12 @@ window.addEventListener("load", (event) => {
         //     searchResults = getBizByPostCode(searchInput, searchHygieneRating);
         //     console.log(searchResults);
         // };
-        let name = getBusinessName();
-        let address = getAddress();
-        let postcode = getPostcode();
-        let hygieneRating = getHygieneRatingUserSelect();
+        let bizName = getInputBizName();
+        let address = getInputAddress();
+        let postcode = getInputPostcode();
+        let hygieneRating = getInputHygieneRating();
         let searchResults = [];
-        searchResults = compoundSearch(name, address, postcode, hygieneRating);
+        searchResults = compoundSearch(bizName, address, postcode, hygieneRating);
         console.log(searchResults);
     });
 });

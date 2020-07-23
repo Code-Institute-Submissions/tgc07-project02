@@ -156,16 +156,19 @@ function filterPostCode(postcode) {
     }); return postcodeFiltered;
 };
 
-function compoundSearch(name, address, postcode, hygieneRating) {
+// Search by business name and/or address and/or postcode and/or hygiene rating
+function compoundSearch(bizName, address, postcode, hygieneRating) {
     let searchResults = [];
-    let modName = name.replace(/^\s+|\s+$/g, '').toUpperCase();
+    let modName = bizName.replace(/^\s+|\s+$/g, '').toUpperCase();
     let modAddress = address.replace(/^\s+|\s+$/g, '').toUpperCase();
     let modPostCode = postcode.replace(/^\s+|\s+$/g, '').toUpperCase();
     for (let region of allData) {
         for (let biz of region) {
             if (modName==="" && modAddress==="" && modPostCode==="") {
+                // If all search fields are empty
                 return alert("Please enter search criteria");
             } else if (modName==="" && modAddress==="") {
+                // If business name && address fields are empty
                 if (biz.hasOwnProperty("PostCode")) {
                     if (hygieneRating==="any") {
                         if (biz.PostCode.toUpperCase().startsWith(modPostCode)) {
@@ -178,6 +181,7 @@ function compoundSearch(name, address, postcode, hygieneRating) {
                     };
                 };
             } else if (modName==="" && modPostCode==="") {
+                // If business name && postcode fields are empty
                 if (biz.hasOwnProperty("AddressLine1")) {
                     if (hygieneRating==="any") {
                         if (biz.AddressLine1.toUpperCase().includes(modAddress)) {
@@ -212,6 +216,7 @@ function compoundSearch(name, address, postcode, hygieneRating) {
                     };
                 };
             } else if (modPostCode==="" && modAddress==="") {
+                // If postcode && address fields are empty
                 if (biz.hasOwnProperty("BusinessName")) {
                     if (hygieneRating==="any") {
                         if (biz.BusinessName.toUpperCase().includes(modName)) {
@@ -225,6 +230,7 @@ function compoundSearch(name, address, postcode, hygieneRating) {
                 };
             } else if (modName==="") {
                 if (biz.hasOwnProperty("AddressLine1") && biz.hasOwnProperty("PostCode")) {
+                    // If only business name field is empty
                     if (hygieneRating==="any") {
                         if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.PostCode.toUpperCase().startsWith(modPostCode)) {
                             searchResults.push(biz);
@@ -258,6 +264,7 @@ function compoundSearch(name, address, postcode, hygieneRating) {
                     };
                 };
             } else if (modAddress==="") {
+                // If only address field is empty
                 if (biz.hasOwnProperty("PostCode") && biz.hasOwnProperty("BusinessName")) {
                     if (hygieneRating==="any") {
                         if (biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.BusinessName.toUpperCase().includes(modName)) {
@@ -270,6 +277,7 @@ function compoundSearch(name, address, postcode, hygieneRating) {
                     };
                 };
             } else if (modPostCode==="") {
+                // If only postcode field is empty
                 if (biz.hasOwnProperty("AddressLine1") && biz.hasOwnProperty("BusinessName")) {
                     if (hygieneRating==="any") {
                         if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName)) {
@@ -304,6 +312,7 @@ function compoundSearch(name, address, postcode, hygieneRating) {
                     };
                 };
             } else if (modName!=="" && modAddress!=="" && modPostCode!=="") {
+                // If all search fields are used
                 if (biz.hasOwnProperty("AddressLine1") && biz.hasOwnProperty("BusinessName") && biz.hasOwnProperty("PostCode")) {
                     if (hygieneRating==="any") {
                         if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.PostCode.toUpperCase().startsWith(modPostCode)) {
