@@ -20,9 +20,7 @@ function getInputHygieneRating() {
 };
 
 // Wait until window fully loaded, then enable user search
-window.addEventListener("load", (event) => {
-    // console.log(event);
-    // console.log(this);
+window.addEventListener("load", () => {
     document.querySelector("#search-btn").addEventListener("click", () => {
         let bizName = getInputBizName();
         let address = getInputAddress();
@@ -33,7 +31,7 @@ window.addEventListener("load", (event) => {
         console.log(searchResults);
 
         // Defined in view.js
-        addMarkersToMap(searchResults);
+        displaySearchResults(searchResults);
         // To display search results in right-hand panel
         document.querySelector("#map-container").className = "with-results";
         document.querySelector(".search-results-container").style.display = "initial";
