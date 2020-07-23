@@ -35,7 +35,7 @@ function addMarkersToMap(searchResultsArray) {
             if (biz.hasOwnProperty("AddressLine4")) {address += biz.AddressLine4 + ", ";};
             if (biz.hasOwnProperty("PostCode")) {address += biz.PostCode;};
             if (biz.hasOwnProperty("RatingValue")) {ratingValue = biz.RatingValue;};
-            if (biz.hasOwnProperty("RatingDate")) {RatingDate = biz.RatingDate;};
+            if (biz.hasOwnProperty("RatingDate")) {ratingDate = biz.RatingDate;};
             if (biz.hasOwnProperty("LocalAuthorityEmailAddress")) {authorityEmail = biz.LocalAuthorityEmailAddress;};
 
             // Map markers
@@ -58,7 +58,15 @@ function addMarkersToMap(searchResultsArray) {
             let newContainer = document.createElement("div");
             newContainer.id = biz.FHRSID;
             newContainer.className = "search-result";
-            newContainer.innerHTML = biz.BusinessName;
+            newContainer.innerHTML = `
+            <h3>${bizName}</h3>
+            <ul>
+                <li>Address: ${address}</li>
+                <li>Food hygiene rating: ${ratingValue}</li>
+                <li>Rating date: ${ratingDate}</li>
+                <li>Local authority email: ${authorityEmail}</li>
+            </ul>
+            `;
             parentElement.appendChild(newContainer);
         };
     };

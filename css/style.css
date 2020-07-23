@@ -66,3 +66,8 @@ p.popup-text {
 .search-result {
     margin: 20px;
 }
+
+.search-result ul li {
+    list-style-type: none;
+}
+
