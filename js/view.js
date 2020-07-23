@@ -46,7 +46,12 @@ function displaySearchResults(searchResultsArray) {
             if (biz.hasOwnProperty("AddressLine4")) {address += biz.AddressLine4 + ", ";};
             if (biz.hasOwnProperty("PostCode")) {address += biz.PostCode;};
             if (biz.hasOwnProperty("RatingValue")) {ratingValue = biz.RatingValue;};
-            if (biz.hasOwnProperty("RatingDate")) {ratingDate = biz.RatingDate;};
+            if (biz.hasOwnProperty("RatingDate")) {
+                if (typeof(biz.RatingDate)==="string") {
+                    console.log(biz.FHRSID, true);
+                    ratingDate = biz.RatingDate;
+                } else {ratingDate = "N.A.";};
+            };
             if (biz.hasOwnProperty("LocalAuthorityEmailAddress")) {authorityEmail = biz.LocalAuthorityEmailAddress;};
 
             // Map markers
