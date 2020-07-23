@@ -11,7 +11,7 @@ function getSearchInput() {
 
 // Get selected hygiene rating
 function getHygieneRatingUserSelect() {
-    return document.querySelector("#hygiene-rating-user-select").value;
+    return document.querySelector("#select-hygiene-rating").value;
 };
 
 function getBusinessName() {

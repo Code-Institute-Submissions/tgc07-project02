@@ -10,36 +10,21 @@
 </head>
 <body>
     
-    <div class="toolbar-container">
-        <div class="toolbar">
-            <input type="text" name="search-business" id="search-business" placeholder="Name of establishment">
-        </div>
-        <div class="toolbar">
-            <input type="text" name="search-address" id="search-address" placeholder="Address">
-        </div>
-        <div class="toolbar">
-            <input type="text" name="search-postcode" id="search-postcode" placeholder="Postcode">
-        </div>
-        <!-- <select name="search-category" id="search-category">
-            <option value="business-name">Business Name</option>
-            <option value="address">Address</option>
-            <option value="postcode">Postcode</option>
-        </select> -->
-        <div class="toolbar">
-            <select name="hygiene-rating-user-select" id="hygiene-rating-user-select">
-                <option value="any">Hygiene rating</option>
-                <option value="5">5 - very good</option>
-                <option value="4">4 - good</option>
-                <option value="3">3 - generally satisfactory</option>
-                <option value="2">2 - some improvement is necessary</option>
-                <option value="1">1 - major improvement is necessary</option>
-                <option value="0">0 - urgent improvement is required</option>
-            </select>
-        </div>
-        <div class="toolbar">
-            <input type="submit" value="Search" id="search-btn">
-        </div>
-    </div>
+    <form action="#" class="toolbar-container">
+        <input type="text" name="search-business" id="search-business" placeholder="Name of establishment">
+        <input type="text" name="search-address" id="search-address" placeholder="Address">
+        <input type="text" name="search-postcode" id="search-postcode" placeholder="Postcode">
+        <select name="select-hygiene-rating" id="select-hygiene-rating">
+            <option value="any">Hygiene rating</option>
+            <option value="5">5 - very good</option>
+            <option value="4">4 - good</option>
+            <option value="3">3 - generally satisfactory</option>
+            <option value="2">2 - some improvement is necessary</option>
+            <option value="1">1 - major improvement is necessary</option>
+            <option value="0">0 - urgent improvement is required</option>
+        </select>
+        <button type="button" id="search-btn">Search</button>
+    </form>
 
     <!-- Own JavaScript -->
     <script src="js/model.js"></script>
