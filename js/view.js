@@ -9,7 +9,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw' //demo access token
+    accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw' //Demo access token
 }).addTo(map);
 
 // Add zoom control at bottom left of map
@@ -18,7 +18,7 @@ new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 // Locate marker and open marker's popup
 function locateMarker(FHRSID){
     for (let marker in markersArray) {
-        if (markersArray[marker].options.title == FHRSID){
+        if (markersArray[marker].options.alt == FHRSID){
             markersArray[marker].openPopup();
         };
     };
@@ -55,7 +55,7 @@ function displaySearchResults(searchResultsArray) {
             if (biz.hasOwnProperty("LocalAuthorityEmailAddress")) {authorityEmail = biz.LocalAuthorityEmailAddress;};
 
             // Map markers
-            let newMarker = L.marker(latlngArray, {title:`${biz.FHRSID}`}); // Create new map marker
+            let newMarker = L.marker(latlngArray, {alt:`${biz.FHRSID}`}); // Create new map marker
             searchResultsArray.length<=1000 ? newMarker.addTo(markerGroup) : newMarker.addTo(markerCluster); // If search results <= 1000 use featureGroup, else use cluster
             let popupContent = `<p class="popup-text name">Name: ${bizName}</p> `;
             popupContent += `<p class="popup-text address">Address: ${address}</p> `;
