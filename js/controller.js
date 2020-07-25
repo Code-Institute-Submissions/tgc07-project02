@@ -21,7 +21,8 @@ function getInputHygieneRating() {
 
 // Wait until window fully loaded, then enable user search
 window.addEventListener("load", () => {
-    document.querySelector("#search-btn").addEventListener("click", () => {
+    document.querySelector("#search-btn").addEventListener("click", (event) => {
+        event.preventDefault();
         let bizName = getInputBizName();
         let address = getInputAddress();
         let postcode = getInputPostcode();
