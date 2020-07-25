@@ -40,8 +40,9 @@ let allData = [];
 // Array to store latlng of where user clicks on map
 let poi = [];
 
-// Marker cluster object
-let markerCluster = L.markerClusterGroup();
+// Marker cluster and group objects
+let markerGroup = L.featureGroup(); // Used if search results <= 1000
+let markerCluster = L.markerClusterGroup(); // Used if search results > 1000
 
 // Array to store all markers generated from search results
 let markersArray = [];

@@ -26,8 +26,9 @@ function locateMarker(FHRSID){
 
 // Display search results with markers and results panel
 function displaySearchResults(searchResultsArray) {
-    markerCluster.clearLayers();
-    markersArray = []; // Defined in model.js
+    markerGroup.clearLayers(); // Clear featureGroup layers
+    markerCluster.clearLayers(); // Clear cluster layers
+    markersArray = []; // Clear markers array tracker of previous search results (variable defined in model.js)
     let parentElement = document.querySelector(".search-results-container");
     parentElement.innerText = "";
     for (let biz of searchResultsArray) {
@@ -54,15 +55,15 @@ function displaySearchResults(searchResultsArray) {
             if (biz.hasOwnProperty("LocalAuthorityEmailAddress")) {authorityEmail = biz.LocalAuthorityEmailAddress;};
 
             // Map markers
-            let newMarker = L.marker(latlngArray, {title:`${biz.FHRSID}`});
-            newMarker.addTo(markerCluster);
+            let newMarker = L.marker(latlngArray, {title:`${biz.FHRSID}`}); // Create new map marker
+            searchResultsArray.length<=1000 ? newMarker.addTo(markerGroup) : newMarker.addTo(markerCluster); // If search results <= 1000 use featureGroup, else use cluster
             let popupContent = `<p class="popup-text name">Name: ${bizName}</p> `;
             popupContent += `<p class="popup-text address">Address: ${address}</p> `;
             if (biz.hasOwnProperty("RatingValue")) {popupContent += `<p class="popup-text rating-value">Food hygiene rating: ${ratingValue}</p> `;};
             if (biz.hasOwnProperty("RatingDate")) {popupContent += `<p class="popup-text rating-date">Rating date (YYYY-MM-DD): ${ratingDate}</p> `;};
             if (biz.hasOwnProperty("LocalAuthorityEmailAddress")) {popupContent += `<p class="popup-text authority-email">Local authority email: ${authorityEmail}</p> `;};
             newMarker.bindPopup(popupContent);
-            markersArray.push(newMarker);
+            markersArray.push(newMarker); // Array to track markers
 
             // Search results details
             let newContainer = document.createElement("div");
@@ -84,5 +85,14 @@ function displaySearchResults(searchResultsArray) {
             parentElement.appendChild(newContainer);
         };
     };
-    markerCluster.addTo(map);
+    // Add marker layer to map and fit map to bounds of markers
+    if (searchResultsArray.length===0) {
+        console.warn("No search results");
+    } else if (searchResultsArray.length>0 && searchResultsArray.length<=1000) {
+        markerGroup.addTo(map);
+        map.fitBounds(markerGroup.getBounds());
+    } else if (searchResultsArray.length>1000) {
+        markerCluster.addTo(map);
+        map.fitBounds(markerCluster.getBounds());
+    };
 };
