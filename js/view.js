@@ -90,9 +90,9 @@ function displaySearchResults(searchResultsArray) {
         console.warn("No search results");
     } else if (searchResultsArray.length>0 && searchResultsArray.length<=1000) {
         markerGroup.addTo(map);
-        map.fitBounds(markerGroup.getBounds());
+        map.fitBounds(markerGroup.getBounds(), {maxZoom:16});
     } else if (searchResultsArray.length>1000) {
         markerCluster.addTo(map);
-        map.fitBounds(markerCluster.getBounds());
+        map.fitBounds(markerCluster.getBounds(), {maxZoom:16});
     };
 };
