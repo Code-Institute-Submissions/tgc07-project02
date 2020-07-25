@@ -55,7 +55,7 @@ function displaySearchResults(searchResultsArray) {
             if (biz.hasOwnProperty("LocalAuthorityEmailAddress")) {authorityEmail = biz.LocalAuthorityEmailAddress;};
 
             // Map markers
-            let newMarker = L.marker(latlngArray, {alt:`${biz.FHRSID}`}); // Create new map marker
+            let newMarker = L.marker(latlngArray, {title:`${biz.BusinessName}`, alt:`${biz.FHRSID}`}); // Create new map marker
             searchResultsArray.length<=1000 ? newMarker.addTo(markerGroup) : newMarker.addTo(markerCluster); // If search results <= 1000 use featureGroup, else use cluster
             let popupContent = `<p class="popup-text name">Name: ${bizName}</p> `;
             popupContent += `<p class="popup-text address">Address: ${address}</p> `;
