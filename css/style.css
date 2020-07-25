@@ -66,6 +66,7 @@ p.popup-text {
 
 .search-result {
     margin: 20px;
+    cursor: pointer;
 }
 
 .search-result ul li {
