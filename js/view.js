@@ -9,7 +9,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw' //Demo access token
+    accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw' // Demo access token
 }).addTo(map);
 
 // Add zoom control at bottom left of map
@@ -52,7 +52,7 @@ function displaySearchResults(searchResultsArray) {
             if (biz.hasOwnProperty("RatingDate")) {
                 typeof(biz.RatingDate)==="string" ? ratingDate = biz.RatingDate : ratingDate = "N.A.";
             };
-            if (biz.hasOwnProperty("LocalAuthorityEmailAddress")) {authorityEmail = biz.LocalAuthorityEmailAddress;};
+            if (biz.hasOwnProperty("LocalAuthorityEmailAddress")) {authorityEmail = `<a href="mailto:${biz.LocalAuthorityEmailAddress}">${biz.LocalAuthorityEmailAddress}</a>`;};
 
             // Map markers
             let newMarker = L.marker(latlngArray, {title:`${biz.BusinessName}`, alt:`${biz.FHRSID}`}); // Create new map marker
