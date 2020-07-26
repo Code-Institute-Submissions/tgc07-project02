@@ -34,7 +34,7 @@ const fhrsDataPromiseArray = [
     fetch("data/fhrs531-walthamforest.json").then(response => response.json()),
     fetch("data/fhrs532-wandsworth.json").then(response => response.json()),
     fetch("data/fhrs533-westminster.json").then(response => response.json()),
-    ];
+];
 
 // Array to hold all Food Standards Agency data
 let allData = [];
@@ -57,91 +57,6 @@ function loadData(promiseArray) {
             allData.push(i.FHRSEstablishment.EstablishmentCollection.EstablishmentDetail);
         };
     });
-};
-
-// Query data set for restaurants that match business name query
-function getBizByName(name, hygieneRating) {
-    let searchResults = [];
-    let modName = name.replace(/^\s+|\s+$/g, '').toUpperCase();
-    for (let region of allData) {
-        for (let biz of region) {
-            if (biz.hasOwnProperty("BusinessName")) {
-                if (hygieneRating==="any") {
-                    if (biz.BusinessName.toUpperCase().includes(modName)) {
-                        searchResults.push(biz);
-                    };
-                } else {
-                    if (biz.BusinessName.toUpperCase().includes(modName) && biz.RatingValue===hygieneRating) {
-                        searchResults.push(biz);
-                    };
-                };
-            };
-        };
-    }; return searchResults;
-};
-
-// Query data set for restaurants that match postcode query
-function getBizByPostCode(postcode, hygieneRating) {
-    let searchResults = [];
-    let modPostCode = postcode.replace(/^\s+|\s+$/g, '').toUpperCase();
-    for (let region of allData) {
-        for (let biz of region) {
-            if (biz.hasOwnProperty("PostCode")) {
-                if (hygieneRating==="any") {
-                    if (biz.PostCode.toUpperCase().startsWith(modPostCode)) {
-                        searchResults.push(biz);
-                    };
-                } else {
-                    if (biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRating) {
-                        searchResults.push(biz);
-                    };
-                };
-            };
-        };
-    }; return searchResults;
-};
-
-// Query data set for restaurants that match address query
-function getBizByAddress(address, hygieneRating) {
-    let searchResults = [];
-    let modAddress = address.replace(/^\s+|\s+$/g, '').toUpperCase();
-    for (let region of allData) {
-        for (let biz of region) {
-            if (biz.hasOwnProperty("AddressLine1")) {
-                if (hygieneRating==="any") {
-                    if (biz.AddressLine1.toUpperCase().includes(modAddress)) {
-                        searchResults.push(biz);
-                    };
-                } else {
-                    if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.RatingValue===hygieneRating) {
-                        searchResults.push(biz);
-                    };
-                };
-            };
-            if (biz.hasOwnProperty("AddressLine2")) {
-                if (hygieneRating==="any") {
-                    if (biz.AddressLine2.toUpperCase().includes(modAddress)) {
-                        searchResults.push(biz);
-                    };
-                } else {
-                    if (biz.AddressLine2.toUpperCase().includes(modAddress) && biz.RatingValue===hygieneRating) {
-                        searchResults.push(biz);
-                    };
-                };
-            };
-            if (biz.hasOwnProperty("AddressLine3")) {
-                if (hygieneRating==="any") {
-                    if (biz.AddressLine3.toUpperCase().includes(modAddress)) {
-                        searchResults.push(biz);
-                    };
-                } else {
-                    if (biz.AddressLine3.toUpperCase().includes(modAddress) && biz.RatingValue===hygieneRating) {
-                        searchResults.push(biz);
-                    };
-                };
-            };
-        };
-    }; return searchResults;
 };
 
 // Filter postcode
@@ -401,8 +316,6 @@ function compoundSearch(bizNameSearch, addressSearch, postcodeSearch, hygieneRat
             }; // check for any other permutations
         };
     };
-    // console.log({businessesResults, chartHygieneRatingsData, bizNameSearch, addressSearch, postcodeSearch, hygieneRatingSearch});
-    // return businessesResults;
     return {businessesResults, chartHygieneRatingsData, bizNameSearch, addressSearch, postcodeSearch, hygieneRatingSearch};
 };
 
