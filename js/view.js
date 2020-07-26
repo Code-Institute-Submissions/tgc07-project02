@@ -96,3 +96,41 @@ function displaySearchResults(searchResultsArray) {
         map.fitBounds(markerCluster.getBounds(), {maxZoom:16});
     };
 };
+
+function displayBarChart(data) {
+    let barChartContainer = document.querySelector("#chart-container-bar");
+    barChartContainer.innerText = "";
+    let newBarChartElement = document.createElement("canvas");
+    newBarChartElement.id = "chart-bar";
+    let barChartContext = newBarChartElement.getContext('2d');
+    let barChart = new Chart(barChartContext, {
+        type: 'bar',
+        data: {
+            labels: [0,1,2,3,4,5],
+            datasets: [{
+                label: 'Number of Businesses',
+                data: data,
+            }]
+        },
+    });
+    barChartContainer.appendChild(newBarChartElement);
+};
+
+function displayPieChart(data) {
+    let pieChartContainer = document.querySelector("#chart-container-pie");
+    pieChartContainer.innerText = "";
+    let newPieChartElement = document.createElement("canvas");
+    newPieChartElement.id = "chart-pie";
+    let pieChartContext = newPieChartElement.getContext('2d');
+    let pieChart = new Chart(pieChartContext, {
+        type: 'pie',
+        data: {
+            labels: [0,1,2,3,4,5],
+            datasets: [{
+                label: 'Number of Businesses',
+                data: data,
+            }]
+        },
+    });
+    pieChartContainer.appendChild(newPieChartElement);
+};

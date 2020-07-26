@@ -14,7 +14,7 @@ body {
 .toolbar-container {
     z-index: 1;
     display: flex;
-    position: absolute;
+    position: fixed;
     flex-direction: column;
     width: 320px;
     padding: 10px;
@@ -40,20 +40,27 @@ body {
 }
 
 #map-container.with-results {
-    width: 70vw;
+    width: 80vw;
 }
 
 p.popup-text {
     margin: 6px;
 }
 
+.charts-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 80vw;
+    max-height: 50vh;
+}
+
 .search-results-container {
     z-index: 0;
     display: none;
-    position: absolute;
+    position: fixed;
     overflow-y: scroll;
     height: 100vh;
-    width: 30vw;
+    width: 20vw;
     top: 0;
     right: 0;
     background-color: #63726B;
