@@ -28,7 +28,7 @@ window.addEventListener("load", () => {
         let postcode = getInputPostcode();
         let hygieneRating = getInputHygieneRating();
         let searchResults = [];
-        searchResults = compoundSearch(bizName, address, postcode, hygieneRating);
+        searchResults = compoundSearch(bizName, address, postcode, hygieneRating).businessesResults;
         console.log(searchResults);
 
         // Displays search results in panel and adds markers to map (defined in view.js)

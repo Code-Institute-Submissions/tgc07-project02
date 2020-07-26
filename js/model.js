@@ -169,11 +169,21 @@ function filterPostCode(postcode) {
 };
 
 // Search by business name and/or address and/or postcode and/or hygiene rating
-function compoundSearch(bizName, address, postcode, hygieneRating) {
-    let searchResults = [];
-    let modName = bizName.replace(/^\s+|\s+$/g, '').toUpperCase();
-    let modAddress = address.replace(/^\s+|\s+$/g, '').toUpperCase();
-    let modPostCode = postcode.replace(/^\s+|\s+$/g, '').toUpperCase();
+function compoundSearch(bizNameSearch, addressSearch, postcodeSearch, hygieneRatingSearch) {
+    let businessesResults = [];
+    let chartHygieneRatingsData = [0,0,0,0,0,0];
+    function tallyHygieneRatings(hygieneRatingActual) {
+        if (hygieneRatingActual==="0") {chartHygieneRatingsData[0]+=1}
+        else if (hygieneRatingActual==="1") {chartHygieneRatingsData[1]+=1}
+        else if (hygieneRatingActual==="2") {chartHygieneRatingsData[2]+=1}
+        else if (hygieneRatingActual==="3") {chartHygieneRatingsData[3]+=1}
+        else if (hygieneRatingActual==="4") {chartHygieneRatingsData[4]+=1}
+        else if (hygieneRatingActual==="5") {chartHygieneRatingsData[5]+=1};
+        // Ignores "Exempt" and "AwaitingInspection" results
+    };
+    let modName = bizNameSearch.replace(/^\s+|\s+$/g, '').toUpperCase();
+    let modAddress = addressSearch.replace(/^\s+|\s+$/g, '').toUpperCase();
+    let modPostCode = postcodeSearch.replace(/^\s+|\s+$/g, '').toUpperCase();
     for (let region of allData) {
         for (let biz of region) {
             if (modName==="" && modAddress==="" && modPostCode==="") {
@@ -182,185 +192,218 @@ function compoundSearch(bizName, address, postcode, hygieneRating) {
             } else if (modName==="" && modAddress==="") {
                 // If business name && address fields are empty
                 if (biz.hasOwnProperty("PostCode")) {
-                    if (hygieneRating==="any") {
+                    if (hygieneRatingSearch==="any") {
                         if (biz.PostCode.toUpperCase().startsWith(modPostCode)) {
-                            searchResults.push(biz);
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     } else {
-                        if (biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRating) {
-                            searchResults.push(biz);
+                        if (biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRatingSearch) {
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     };
                 };
             } else if (modName==="" && modPostCode==="") {
                 // If business name && postcode fields are empty
                 if (biz.hasOwnProperty("AddressLine1")) {
-                    if (hygieneRating==="any") {
+                    if (hygieneRatingSearch==="any") {
                         if (biz.AddressLine1.toUpperCase().includes(modAddress)) {
-                            searchResults.push(biz);
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     } else {
-                        if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.RatingValue===hygieneRating) {
-                            searchResults.push(biz);
+                        if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.RatingValue===hygieneRatingSearch) {
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     };
                 };
                 if (biz.hasOwnProperty("AddressLine2")) {
-                    if (hygieneRating==="any") {
+                    if (hygieneRatingSearch==="any") {
                         if (biz.AddressLine2.toUpperCase().includes(modAddress)) {
-                            searchResults.push(biz);
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     } else {
-                        if (biz.AddressLine2.toUpperCase().includes(modAddress) && biz.RatingValue===hygieneRating) {
-                            searchResults.push(biz);
+                        if (biz.AddressLine2.toUpperCase().includes(modAddress) && biz.RatingValue===hygieneRatingSearch) {
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     };
                 };
                 if (biz.hasOwnProperty("AddressLine3")) {
-                    if (hygieneRating==="any") {
+                    if (hygieneRatingSearch==="any") {
                         if (biz.AddressLine3.toUpperCase().includes(modAddress)) {
-                            searchResults.push(biz);
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     } else {
-                        if (biz.AddressLine3.toUpperCase().includes(modAddress) && biz.RatingValue===hygieneRating) {
-                            searchResults.push(biz);
+                        if (biz.AddressLine3.toUpperCase().includes(modAddress) && biz.RatingValue===hygieneRatingSearch) {
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     };
                 };
             } else if (modPostCode==="" && modAddress==="") {
                 // If postcode && address fields are empty
                 if (biz.hasOwnProperty("BusinessName")) {
-                    if (hygieneRating==="any") {
+                    if (hygieneRatingSearch==="any") {
                         if (biz.BusinessName.toUpperCase().includes(modName)) {
-                            searchResults.push(biz);
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     } else {
-                        if (biz.BusinessName.toUpperCase().includes(modName) && biz.RatingValue===hygieneRating) {
-                            searchResults.push(biz);
+                        if (biz.BusinessName.toUpperCase().includes(modName) && biz.RatingValue===hygieneRatingSearch) {
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     };
                 };
             } else if (modName==="") {
                 if (biz.hasOwnProperty("AddressLine1") && biz.hasOwnProperty("PostCode")) {
                     // If only business name field is empty
-                    if (hygieneRating==="any") {
+                    if (hygieneRatingSearch==="any") {
                         if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.PostCode.toUpperCase().startsWith(modPostCode)) {
-                            searchResults.push(biz);
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     } else {
-                        if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRating) {
-                            searchResults.push(biz);
+                        if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRatingSearch) {
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     };
                 };
                 if (biz.hasOwnProperty("AddressLine2") && biz.hasOwnProperty("PostCode")) {
-                    if (hygieneRating==="any") {
+                    if (hygieneRatingSearch==="any") {
                         if (biz.AddressLine2.toUpperCase().includes(modAddress) && biz.PostCode.toUpperCase().startsWith(modPostCode)) {
-                            searchResults.push(biz);
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     } else {
-                        if (biz.AddressLine2.toUpperCase().includes(modAddress) && biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRating) {
-                            searchResults.push(biz);
+                        if (biz.AddressLine2.toUpperCase().includes(modAddress) && biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRatingSearch) {
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     };
                 };
                 if (biz.hasOwnProperty("AddressLine3") && biz.hasOwnProperty("PostCode")) {
-                    if (hygieneRating==="any") {
+                    if (hygieneRatingSearch==="any") {
                         if (biz.AddressLine3.toUpperCase().includes(modAddress) && biz.PostCode.toUpperCase().startsWith(modPostCode)) {
-                            searchResults.push(biz);
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     } else {
-                        if (biz.AddressLine3.toUpperCase().includes(modAddress) && biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRating) {
-                            searchResults.push(biz);
+                        if (biz.AddressLine3.toUpperCase().includes(modAddress) && biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRatingSearch) {
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     };
                 };
             } else if (modAddress==="") {
                 // If only address field is empty
                 if (biz.hasOwnProperty("PostCode") && biz.hasOwnProperty("BusinessName")) {
-                    if (hygieneRating==="any") {
+                    if (hygieneRatingSearch==="any") {
                         if (biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.BusinessName.toUpperCase().includes(modName)) {
-                            searchResults.push(biz);
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     } else {
-                        if (biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.BusinessName.toUpperCase().includes(modName) && biz.RatingValue===hygieneRating) {
-                            searchResults.push(biz);
+                        if (biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.BusinessName.toUpperCase().includes(modName) && biz.RatingValue===hygieneRatingSearch) {
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     };
                 };
             } else if (modPostCode==="") {
                 // If only postcode field is empty
                 if (biz.hasOwnProperty("AddressLine1") && biz.hasOwnProperty("BusinessName")) {
-                    if (hygieneRating==="any") {
+                    if (hygieneRatingSearch==="any") {
                         if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName)) {
-                            searchResults.push(biz);
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     } else {
-                        if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.RatingValue===hygieneRating) {
-                            searchResults.push(biz);
+                        if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.RatingValue===hygieneRatingSearch) {
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     };
                 };
                 if (biz.hasOwnProperty("AddressLine2") && biz.hasOwnProperty("BusinessName")) {
-                    if (hygieneRating==="any") {
+                    if (hygieneRatingSearch==="any") {
                         if (biz.AddressLine2.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName)) {
-                            searchResults.push(biz);
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     } else {
-                        if (biz.AddressLine2.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.RatingValue===hygieneRating) {
-                            searchResults.push(biz);
+                        if (biz.AddressLine2.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.RatingValue===hygieneRatingSearch) {
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     };
                 };
                 if (biz.hasOwnProperty("AddressLine3") && biz.hasOwnProperty("BusinessName")) {
-                    if (hygieneRating==="any") {
+                    if (hygieneRatingSearch==="any") {
                         if (biz.AddressLine3.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName)) {
-                            searchResults.push(biz);
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     } else {
-                        if (biz.AddressLine3.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.RatingValue===hygieneRating) {
-                            searchResults.push(biz);
+                        if (biz.AddressLine3.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.RatingValue===hygieneRatingSearch) {
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     };
                 };
             } else if (modName!=="" && modAddress!=="" && modPostCode!=="") {
                 // If all search fields are used
                 if (biz.hasOwnProperty("AddressLine1") && biz.hasOwnProperty("BusinessName") && biz.hasOwnProperty("PostCode")) {
-                    if (hygieneRating==="any") {
+                    if (hygieneRatingSearch==="any") {
                         if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.PostCode.toUpperCase().startsWith(modPostCode)) {
-                            searchResults.push(biz);
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     } else {
-                        if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRating) {
-                            searchResults.push(biz);
+                        if (biz.AddressLine1.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRatingSearch) {
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     };
                 };
                 if (biz.hasOwnProperty("AddressLine2") && biz.hasOwnProperty("BusinessName") && biz.hasOwnProperty("PostCode")) {
-                    if (hygieneRating==="any") {
+                    if (hygieneRatingSearch==="any") {
                         if (biz.AddressLine2.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.PostCode.toUpperCase().startsWith(modPostCode)) {
-                            searchResults.push(biz);
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     } else {
-                        if (biz.AddressLine2.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRating) {
-                            searchResults.push(biz);
+                        if (biz.AddressLine2.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRatingSearch) {
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     };
                 };
                 if (biz.hasOwnProperty("AddressLine3") && biz.hasOwnProperty("BusinessName") && biz.hasOwnProperty("PostCode")) {
-                    if (hygieneRating==="any") {
+                    if (hygieneRatingSearch==="any") {
                         if (biz.AddressLine3.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.PostCode.toUpperCase().startsWith(modPostCode)) {
-                            searchResults.push(biz);
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     } else {
-                        if (biz.AddressLine3.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRating) {
-                            searchResults.push(biz);
+                        if (biz.AddressLine3.toUpperCase().includes(modAddress) && biz.BusinessName.toUpperCase().includes(modName) && biz.PostCode.toUpperCase().startsWith(modPostCode) && biz.RatingValue===hygieneRatingSearch) {
+                            businessesResults.push(biz);
+                            tallyHygieneRatings(biz.RatingValue);
                         };
                     };
                 };
             }; // check for any other permutations
         };
-    } return searchResults;
+    };
+    // console.log({businessesResults, chartHygieneRatingsData, bizNameSearch, addressSearch, postcodeSearch, hygieneRatingSearch});
+    // return businessesResults;
+    return {businessesResults, chartHygieneRatingsData, bizNameSearch, addressSearch, postcodeSearch, hygieneRatingSearch};
 };
 
 
