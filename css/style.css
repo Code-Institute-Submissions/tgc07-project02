@@ -11,6 +11,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+a {
+    color: snow;
+}
+
 #search-container {
     z-index: 1;
     display: flex;
@@ -18,7 +22,8 @@ body {
     flex-direction: column;
     width: 320px;
     padding: 10px;
-    background-color: #63726B;
+    /* background-color: #63726B; */
+    background: #444444;
     color: snow;
 }
 
@@ -64,12 +69,14 @@ p.popup-text {
     width: 20vw;
     top: 0;
     right: 0;
-    background-color: #63726B;
+    padding: 24px;
+    /* background-color: #63726B; */
+    background: #444444;
     color: snow;
 }
 
 .search-result {
-    margin: 20px;
+    margin-top: 32px;
     cursor: pointer;
 }
 
