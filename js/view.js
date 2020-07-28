@@ -29,7 +29,7 @@ function displaySearchResults(searchResultsArray) {
     markerGroup.clearLayers(); // Clear featureGroup layers
     markerCluster.clearLayers(); // Clear cluster layers
     markersArray = []; // Clear markers array tracker of previous search results (variable defined in model.js)
-    let parentElement = document.querySelector(".search-results-container");
+    let parentElement = document.querySelector("#search-results-container");
     parentElement.innerText = "";
     for (let biz of searchResultsArray) {
         if (biz.Geocode!=="") {

@@ -35,7 +35,7 @@ window.addEventListener("load", () => {
         
         // To display search results in right-hand panel
         document.querySelector("#map-container").className = "with-results";
-        document.querySelector(".search-results-container").style.display = "initial";
+        document.querySelector("#search-results-container").style.display = "initial";
 
         displayBarChart(searchResults.chartHygieneRatingsData);
         displayPieChart(searchResults.chartHygieneRatingsData);
