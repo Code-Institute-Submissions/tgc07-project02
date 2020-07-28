@@ -70,7 +70,8 @@ function displaySearchResults(searchResultsArray) {
             newContainer.id = biz.FHRSID;
             newContainer.className = "search-result";
             newContainer.innerHTML = `
-            <h3>${bizName}</h3>
+            <h2>${bizName}</h2>
+            <img src="img/${biz.RatingValue}.jpg" alt="FHRS">
             <ul>
                 <li>Address: ${address}</li>
                 <li>Food hygiene rating: ${ratingValue}</li>
