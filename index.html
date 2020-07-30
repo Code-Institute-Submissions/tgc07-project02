@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
@@ -14,38 +17,58 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="main-container">
+    <div id="page-container">
 
-        <!-- Search form -->
-        <form action="#" id="search-container">
-            <h1>London Food Hygiene Ratings Search</h1>
-            <input type="text" name="search-business" id="search-business" placeholder="Name of establishment">
-            <input type="text" name="search-address" id="search-address" placeholder="Address">
-            <input type="text" name="search-postcode" id="search-postcode" placeholder="Postcode">
-            <select name="select-hygiene-rating" id="select-hygiene-rating">
-                <option value="any">Hygiene rating</option>
-                <option value="5">5 - very good</option>
-                <option value="4">4 - good</option>
-                <option value="3">3 - generally satisfactory</option>
-                <option value="2">2 - some improvement is necessary</option>
-                <option value="1">1 - major improvement is necessary</option>
-                <option value="0">0 - urgent improvement is required</option>
-            </select>
-            <button type="submit" id="search-btn">Search</button>
-        </form>
+        <nav id="nav">
+            <h1 class="nav-title">London Food Hygiene Ratings</h1>
+            <a href="#" class="nav-text">
+                <div class="nav-icon"><i class="fa fa-search" aria-hidden="true"></i></div>
+                <span class="nav-label">Search</span>
+            </a>
+            <form action="#" id="search-container">
+                <input type="text" name="search-business" id="search-business" placeholder="Name of establishment">
+                <input type="text" name="search-address" id="search-address" placeholder="Address">
+                <input type="text" name="search-postcode" id="search-postcode" placeholder="Postcode">
+                <select name="select-hygiene-rating" id="select-hygiene-rating">
+                    <option value="any">Hygiene rating</option>
+                    <option value="5">5 - very good</option>
+                    <option value="4">4 - good</option>
+                    <option value="3">3 - generally satisfactory</option>
+                    <option value="2">2 - some improvement is necessary</option>
+                    <option value="1">1 - major improvement is necessary</option>
+                    <option value="0">0 - urgent improvement is required</option>
+                </select>
+                <button type="submit" id="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
+            <a href="#" class="nav-text">
+                <div class="nav-icon"><i class="fa fa-map-o" aria-hidden="true"></i></i></div>
+                <span class="nav-label">Map</span>
+            </a>
+            <a href="#" class="nav-text">
+                <div class="nav-icon"><i class="fa fa-bar-chart" aria-hidden="true"></i></div>
+                <span class="nav-label">Chart</span>
+            </a>
+            <a href="#" class="nav-text">
+                <div class="nav-icon"><i class="fa fa-info" aria-hidden="true"></i></div>
+                <span class="nav-label">Info</span>
+            </a>
+            <a href="#" class="nav-text">
+                <div class="nav-icon"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                <span class="nav-label">Minimise</span>
+            </a>
 
-        <!-- Map -->
-        <div id="map-container">
-            <div id="map"></div>
-        </div>
+        </nav>
 
-        <div id="charts-container">
-            <div id="chart-container-bar"></div>
-            <div id="chart-container-pie"></div>
-        </div>
+        <main id="main">
+            
 
-        <!-- Search results -->
-        <div id="search-results-container"></div>
+            <div id="search-results-container"></div>
+
+            <div id="map-container">
+                <div id="map"></div>
+            </div>
+            
+        </main>
 
     </div>
 
