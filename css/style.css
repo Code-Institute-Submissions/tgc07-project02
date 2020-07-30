@@ -39,7 +39,7 @@ html, body {
     text-decoration: none;
 }
 
-.nav-link:hover {
+.nav-text:hover {
     background: var(--colour-text-hover);
 }
 
@@ -77,8 +77,7 @@ html, body {
     flex-flow: wrap;
     align-items: center;
     justify-content: start;
-    /* min-height: 50px;
-    width: 100; */
+    max-width: 400px;
     padding: 10px;
 }
 
@@ -99,11 +98,18 @@ html, body {
 }
 
 #search-results-container {
+    display: none;
     overflow-y: auto;
+    flex-grow: 1;
+    flex-basis: 10vw;
     background: slategrey;
 }
 
+#map-container {
+    flex-grow: 3;
+}
+
 #map {
-    height: 80vh;
-    width: 80vh;
+    height: 100%;
+    width: 100%;
 }

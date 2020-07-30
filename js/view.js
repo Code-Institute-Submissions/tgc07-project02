@@ -31,6 +31,7 @@ function displaySearchResults(searchResultsArray) {
     markersArray = []; // Clear markers array tracker of previous search results (variable defined in model.js)
     let parentElement = document.querySelector("#search-results-container");
     parentElement.innerText = "";
+    parentElement.getElementsByClassName.display = "initial"
     newTitle = document.createElement("h1");
     newTitle.innerText = `${searchResultsArray.length.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} search results`;
     parentElement.appendChild(newTitle);
