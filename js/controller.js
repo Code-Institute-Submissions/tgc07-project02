@@ -41,6 +41,9 @@ window.addEventListener("load", () => {
         displayPieChart(searchResults.chartHygieneRatingsData);
     });
 
+    minimiseNavBar();
+    maximiseNavBar();
+
     // Get latlng of user click; "poi" variable defined in model.js
     map.addEventListener("click", event => {
         poi = [];

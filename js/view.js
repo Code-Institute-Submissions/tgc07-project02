@@ -31,7 +31,7 @@ function displaySearchResults(searchResultsArray) {
     markersArray = []; // Clear markers array tracker of previous search results (variable defined in model.js)
     let parentElement = document.querySelector("#search-results-container");
     parentElement.innerText = "";
-    parentElement.getElementsByClassName.display = "initial"
+    parentElement.getElementsByClassName.display = "initial";
     newTitle = document.createElement("h1");
     newTitle.innerText = `${searchResultsArray.length.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} search results`;
     parentElement.appendChild(newTitle);
@@ -121,21 +121,39 @@ function displayBarChart(data) {
     barChartContainer.appendChild(newBarChartElement);
 };
 
-function displayPieChart(data) {
-    let pieChartContainer = document.querySelector("#chart-container-pie");
-    pieChartContainer.innerText = "";
-    let newPieChartElement = document.createElement("canvas");
-    newPieChartElement.id = "chart-pie";
-    let pieChartContext = newPieChartElement.getContext('2d');
-    let pieChart = new Chart(pieChartContext, {
-        type: 'pie',
-        data: {
-            labels: [0,1,2,3,4,5],
-            datasets: [{
-                label: 'Number of Businesses',
-                data: data,
-            }]
-        },
+// function displayPieChart(data) {
+//     let pieChartContainer = document.querySelector("#chart-container-pie");
+//     pieChartContainer.innerText = "";
+//     let newPieChartElement = document.createElement("canvas");
+//     newPieChartElement.id = "chart-pie";
+//     let pieChartContext = newPieChartElement.getContext('2d');
+//     let pieChart = new Chart(pieChartContext, {
+//         type: 'pie',
+//         data: {
+//             labels: [0,1,2,3,4,5],
+//             datasets: [{
+//                 label: 'Number of Businesses',
+//                 data: data,
+//             }]
+//         },
+//     });
+//     pieChartContainer.appendChild(newPieChartElement);
+// };
+
+function minimiseNavBar() {
+    document.querySelector("#minimise-nav").addEventListener("click", () => {
+        document.querySelector("#nav").style.display = "none";
+        document.querySelector("#nav-minimised").style.display = "initial";
     });
-    pieChartContainer.appendChild(newPieChartElement);
+};
+
+function maximiseNavBar() {
+    document.querySelector("#maximise-nav").addEventListener("click", () => {
+        document.querySelector("#nav-minimised").style.display = "none";
+        document.querySelector("#nav").style.display = "initial";
+    });
+    document.querySelector("#search-icon").addEventListener("click", () => {
+        document.querySelector("#nav-minimised").style.display = "none";
+        document.querySelector("#nav").style.display = "initial";
+    });
 };

@@ -52,16 +52,27 @@ html, body {
     flex-shrink: 0;
 }
 
-.nav-minimised {
+/* .nav-minimised {
     width: var(--nav-icon-width);
 }
 
-.nav-minimised h1{
+.nav-minimised h1 {
     display: none;
 }
 
 .nav-minimised .nav-label {
     display: none;
+}
+
+.nav-minimised #search-container {
+    display: none;
+} */
+
+#nav-minimised {
+    display: none;
+    height: inherit;
+    background-color: var(--colour-text-background);
+    transition: width --var(--transition-duration);
 }
 
 #main {
@@ -101,7 +112,8 @@ html, body {
     display: none;
     overflow-y: auto;
     flex-grow: 1;
-    flex-basis: 10vw;
+    flex-basis: 10%;
+    max-width: 500px;
     background: slategrey;
 }
 
