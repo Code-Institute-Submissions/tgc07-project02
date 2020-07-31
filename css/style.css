@@ -1,6 +1,5 @@
 :root {
     --nav-icon-width: 50px;
-    --nav-border-width: 8px;
     --transition-duration: 0.2s;
     --colour-page-background: #cccccc;
     --colour-text-background: #444444;
@@ -101,7 +100,25 @@ html, body {
     /* flex-grow: 1;
     flex-basis: 0; */
     min-width: 300px;
+    padding: 1.5rem;
     background: var(--colour-green);
+    color: white;
+}
+
+.search-result:hover {
+    cursor: pointer;
+}
+
+.search-result ul {
+    padding: 0;
+}
+
+.search-result ul li {
+    list-style-type: none;
+}
+
+.search-result ul li a {
+    color: white;
 }
 
 #map-container {
