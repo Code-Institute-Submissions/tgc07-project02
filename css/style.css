@@ -119,6 +119,7 @@ select option {
 #search-btn:hover {
     background-color: var(--colour-green);
     color: white;
+    cursor: pointer;
 }
 
 #search-btn i {
@@ -150,7 +151,7 @@ select option {
 }
 
 .search-result {
-    padding: 0.2rem 1.5rem;
+    padding: 1rem 1.5rem;
 }
 
 .search-result:hover {
