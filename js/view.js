@@ -29,10 +29,11 @@ function displaySearchResults(searchResultsArray) {
     markerGroup.clearLayers(); // Clear featureGroup layers
     markerCluster.clearLayers(); // Clear cluster layers
     markersArray = []; // Clear markers array tracker of previous search results (variable defined in model.js)
+    document.querySelector("#main").style.gridTemplateColumns = "1fr 3fr"; // 2 columns to display search results and map side by side
     let parentElement = document.querySelector("#search-results-container");
     parentElement.innerText = "";
     parentElement.getElementsByClassName.display = "initial";
-    newTitle = document.createElement("h1");
+    newTitle = document.createElement("h2");
     newTitle.innerText = `${searchResultsArray.length.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} search results`;
     parentElement.appendChild(newTitle);
     for (let biz of searchResultsArray) {
@@ -74,7 +75,7 @@ function displaySearchResults(searchResultsArray) {
             newContainer.id = biz.FHRSID;
             newContainer.className = "search-result";
             newContainer.innerHTML = `
-            <h2>${bizName}</h2>
+            <h3>${bizName}</h3>
             <img src="img/${biz.RatingValue}.jpg" alt="FHRS">
             <ul>
                 <li>Address: ${address}</li>
@@ -140,20 +141,18 @@ function displayBarChart(data) {
 //     pieChartContainer.appendChild(newPieChartElement);
 // };
 
+
+// Web page layout functions
 function minimiseNavBar() {
-    document.querySelector("#minimise-nav").addEventListener("click", () => {
-        document.querySelector("#nav").style.display = "none";
-        document.querySelector("#nav-minimised").style.display = "initial";
-    });
+    document.querySelector("#nav").style.display = "none";
+    document.querySelector("#nav-minimised").style.display = "initial";
 };
 
 function maximiseNavBar() {
-    document.querySelector("#maximise-nav").addEventListener("click", () => {
-        document.querySelector("#nav-minimised").style.display = "none";
-        document.querySelector("#nav").style.display = "initial";
-    });
-    document.querySelector("#search-icon").addEventListener("click", () => {
-        document.querySelector("#nav-minimised").style.display = "none";
-        document.querySelector("#nav").style.display = "initial";
-    });
+    document.querySelector("#nav-minimised").style.display = "none";
+    document.querySelector("#nav").style.display = "initial";
+};
+
+function hideSearchResults () {
+    document.querySelector("#search-results-container").style.display = "none";
 };
