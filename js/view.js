@@ -12,9 +12,6 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw' // Demo access token
 }).addTo(map);
 
-// Add zoom control at bottom left of map
-new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
-
 // Locate marker and open marker's popup
 function locateMarker(FHRSID){
     for (let marker in markersArray) {
