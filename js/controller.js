@@ -44,6 +44,14 @@ window.addEventListener("load", () => {
     document.querySelector("#minimise-nav").addEventListener("click", minimiseNavBar);
     document.querySelector("#maximise-nav").addEventListener("click", maximiseNavBar);
     document.querySelector("#search-icon").addEventListener("click", maximiseNavBar);
+    document.querySelector("#map-icon-1").addEventListener("click", () => {
+        minimiseNavBar();
+        hideSearchResults();
+    });
+    document.querySelector("#map-icon-2").addEventListener("click", () => {
+        minimiseNavBar();
+        hideSearchResults();
+    });
 
     // Get latlng of user click; "poi" variable defined in model.js
     map.addEventListener("click", event => {

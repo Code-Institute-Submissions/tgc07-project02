@@ -155,4 +155,5 @@ function maximiseNavBar() {
 
 function hideSearchResults () {
     document.querySelector("#search-results-container").style.display = "none";
+    document.querySelector("#main").style.gridTemplateColumns = "1fr";
 };
