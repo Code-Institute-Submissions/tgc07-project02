@@ -26,10 +26,11 @@ function displaySearchResults(searchResultsArray) {
     markerGroup.clearLayers(); // Clear featureGroup layers
     markerCluster.clearLayers(); // Clear cluster layers
     markersArray = []; // Clear markers array tracker of previous search results (variable defined in model.js)
-    document.querySelector("#main").style.gridTemplateColumns = "1fr 3fr"; // 2 columns to display search results and map side by side
+    showSearchResults();
+    // document.querySelector("#main").style.gridTemplateColumns = "1fr 3fr"; // 2 columns to display search results and map side by side
     let parentElement = document.querySelector("#search-results-container");
     parentElement.innerText = "";
-    parentElement.getElementsByClassName.display = "initial";
+    // parentElement.getElementsByClassName.display = "initial";
     newTitle = document.createElement("h2");
     newTitle.innerText = searchResultsArray.length===1 ? "1 search result" : `${searchResultsArray.length.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} search results`;
     parentElement.appendChild(newTitle);
@@ -150,7 +151,12 @@ function maximiseNavBar() {
     document.querySelector("#nav").style.display = "initial";
 };
 
-function hideSearchResults () {
+function hideSearchResults() {
     document.querySelector("#search-results-container").style.display = "none";
     document.querySelector("#main").style.gridTemplateColumns = "1fr";
+};
+
+function showSearchResults() {
+    document.querySelector("#search-results-container").style.display = "initial";
+    document.querySelector("#main").style.gridTemplateColumns = "1fr 3fr";
 };

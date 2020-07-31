@@ -52,6 +52,24 @@ window.addEventListener("load", () => {
         minimiseNavBar();
         hideSearchResults();
     });
+    document.querySelector("#results-icon-1").addEventListener("click", () => {
+        showSearchResults();
+        let resultsContainer = document.querySelector("#search-results-container");
+        if (resultsContainer.innerText==="") {
+            newTitle = document.createElement("h2");
+            newTitle.innerText = "0 search results";
+            resultsContainer.appendChild(newTitle);
+        };
+    });
+    document.querySelector("#results-icon-2").addEventListener("click", () => {
+        showSearchResults();
+        let resultsContainer = document.querySelector("#search-results-container");
+        if (resultsContainer.innerText==="") {
+            newTitle = document.createElement("h2");
+            newTitle.innerText = "0 search results";
+            resultsContainer.appendChild(newTitle);
+        };
+    });
 
     // Get latlng of user click; "poi" variable defined in model.js
     map.addEventListener("click", event => {
