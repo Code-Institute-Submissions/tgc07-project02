@@ -1,6 +1,5 @@
 :root {
     --nav-icon-width: 50px;
-    --transition-duration: 0.2s;
     --colour-page-background: #cccccc;
     --colour-text-background: #444444;
     --colour-text-hover: #666666;
@@ -17,14 +16,13 @@ html, body {
     height: 100vh;
     display: flex;
     position: relative;
-    background: var(--colour-page-background);
+    background-color: var(--colour-page-background);
 }
 
 #nav {
     width: 320px;
     height: inherit;
     background-color: var(--colour-text-background);
-    transition: width --var(--transition-duration);
     flex-shrink: 0;
 }
 
@@ -41,7 +39,7 @@ html, body {
 }
 
 .nav-text:hover {
-    background: var(--colour-text-hover);
+    background-color: var(--colour-text-hover);
 }
 
 .nav-icon {
@@ -97,11 +95,9 @@ html, body {
 #search-results-container {
     display: none;
     overflow-y: auto;
-    /* flex-grow: 1;
-    flex-basis: 0; */
     min-width: 300px;
     padding: 1.5rem;
-    background: var(--colour-green);
+    background-color: var(--colour-green);
     color: white;
 }
 
@@ -109,21 +105,24 @@ html, body {
     cursor: pointer;
 }
 
+.search-result h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    padding: 0;
+}
+
 .search-result ul {
+    margin-top: 0;
     padding: 0;
 }
 
 .search-result ul li {
+    margin-top: 0.5rem;
     list-style-type: none;
 }
 
 .search-result ul li a {
     color: white;
-}
-
-#map-container {
-    /* flex-grow: 3; */
-    /* flex-basis: 0; */
 }
 
 #map {
