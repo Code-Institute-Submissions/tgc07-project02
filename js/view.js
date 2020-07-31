@@ -76,9 +76,8 @@ function displaySearchResults(searchResultsArray) {
             <h3>${bizName}</h3>
             <img src="img/${biz.RatingValue}.jpg" alt="FHRS">
             <ul>
-                <li>Address: ${address}</li>
-                <li>Food hygiene rating: ${ratingValue}</li>
                 <li>Rating date: ${ratingDate}</li>
+                <li>${address}</li>
                 <li>Local authority email: ${authorityEmail}</li>
             </ul>
             `;
