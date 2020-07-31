@@ -38,7 +38,7 @@ window.addEventListener("load", () => {
         document.querySelector("#search-results-container").style.display = "initial";
 
         displayBarChart(searchResults.chartHygieneRatingsData);
-        displayPieChart(searchResults.chartHygieneRatingsData);
+        // displayPieChart(searchResults.chartHygieneRatingsData);
     });
 
     document.querySelector("#minimise-nav").addEventListener("click", minimiseNavBar);

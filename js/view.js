@@ -104,7 +104,7 @@ function displaySearchResults(searchResultsArray) {
 };
 
 function displayBarChart(data) {
-    let barChartContainer = document.querySelector("#chart-container-bar");
+    let barChartContainer = document.querySelector("#chart-container");
     barChartContainer.innerText = "";
     let newBarChartElement = document.createElement("canvas");
     newBarChartElement.id = "chart-bar";

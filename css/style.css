@@ -16,6 +16,7 @@ html, body {
 #page-container {
     height: 100vh;
     display: flex;
+    position: relative;
     background: var(--colour-page-background);
 }
 
@@ -110,4 +111,12 @@ html, body {
 #map {
     height: 100%;
     width: 100%;
+}
+
+#chart-container {
+    position: absolute;
+    top: 0;
+    left: -90vw;
+    height: 80vh;
+    width: 80vw;
 }
