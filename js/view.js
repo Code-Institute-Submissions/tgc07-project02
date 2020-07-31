@@ -34,7 +34,7 @@ function displaySearchResults(searchResultsArray) {
     parentElement.innerText = "";
     parentElement.getElementsByClassName.display = "initial";
     newTitle = document.createElement("h2");
-    newTitle.innerText = `${searchResultsArray.length.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} search results`;
+    newTitle.innerText = searchResultsArray.length===1 ? "1 search result" : `${searchResultsArray.length.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} search results`;
     parentElement.appendChild(newTitle);
     for (let biz of searchResultsArray) {
         if (biz.Geocode!=="") {
