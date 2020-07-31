@@ -21,7 +21,7 @@ html, body {
 
 input {
     height: 24px;
-    width: 100%;
+    width: 264px;
     margin: 10px;
     padding: 0.5rem;
     border-radius: 4px;
@@ -29,7 +29,7 @@ input {
 
 select {
     height: 40px;
-    width: 100%;
+    width: 280px;
     margin: 10px;
     padding: 0 0.5rem;
     border-radius: 4px;
