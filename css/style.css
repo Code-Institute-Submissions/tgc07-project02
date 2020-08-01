@@ -13,6 +13,7 @@
     --colour-text-hover: #666666;
     --colour-green: #66755b;
     --colour-green-dark: #4a5840;
+    --colour-beige: #fdf8e4;
 }
 
 /* HTML tag common styling */
@@ -28,6 +29,11 @@ input {
     margin: 10px;
     padding: 0.5rem;
     border-radius: 4px;
+}
+
+input:focus {
+    background-color: var(--colour-beige);
+    outline: none;
 }
 
 select {
