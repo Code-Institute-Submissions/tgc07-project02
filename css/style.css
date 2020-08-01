@@ -205,6 +205,10 @@ select option {
     margin: 0.3rem 0 !important;
 }
 
+.leaflet-popup-content > p > a {
+    color: #333;
+}
+
 /* Chart */
 #chart-container {
     z-index: 0;
