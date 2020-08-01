@@ -75,10 +75,10 @@ function displaySearchResults(searchResultsArray) {
             newContainer.className = "search-result";
             newContainer.innerHTML = `
             <h3>${bizName}</h3>
+            <p>${address}</p>
             <img src="img/${biz.RatingValue}.jpg" alt="FHRS">
             <ul>
                 <li>Rating date: ${ratingDate}</li>
-                <li>${address}</li>
                 <li>Local authority email: ${authorityEmail}</li>
             </ul>
             `;

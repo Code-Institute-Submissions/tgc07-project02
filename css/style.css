@@ -174,6 +174,12 @@ select option {
     padding: 0;
 }
 
+.search-result p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0;
+}
+
 .search-result ul {
     margin-top: 0;
     padding: 0;
