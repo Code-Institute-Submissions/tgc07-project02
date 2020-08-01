@@ -60,10 +60,11 @@ function displaySearchResults(searchResultsArray) {
             // Map markers
             let newMarker = L.marker(latlngArray, {title:`${biz.BusinessName}`, alt:`${biz.FHRSID}`}); // Create new map marker
             searchResultsArray.length<=1000 ? newMarker.addTo(markerGroup) : newMarker.addTo(markerCluster); // If search results <= 1000 use featureGroup, else use cluster
-            let popupContent = `<p class="popup-text name">Name: ${bizName}</p> `;
-            popupContent += `<p class="popup-text address">Address: ${address}</p> `;
-            if (biz.hasOwnProperty("RatingValue")) {popupContent += `<p class="popup-text rating-value">Food hygiene rating: ${ratingValue}</p> `;};
-            if (biz.hasOwnProperty("RatingDate")) {popupContent += `<p class="popup-text rating-date">Rating date (YYYY-MM-DD): ${ratingDate}</p> `;};
+            let popupContent = `<h3 class="popup-text name">${bizName}</h3> `;
+            popupContent += `<p class="popup-text address">${address}</p> `;
+            // if (biz.hasOwnProperty("RatingValue")) {popupContent += `<p class="popup-text rating-value">Food hygiene rating: ${ratingValue}</p> `;};
+            if (biz.hasOwnProperty("RatingValue")) {popupContent += `<img src="img/${biz.RatingValue}.jpg" alt="FHRS"> `;};
+            if (biz.hasOwnProperty("RatingDate")) {popupContent += `<p class="popup-text rating-date">Rating date: ${ratingDate}</p> `;};
             if (biz.hasOwnProperty("LocalAuthorityEmailAddress")) {popupContent += `<p class="popup-text authority-email">Local authority email: ${authorityEmail}</p> `;};
             newMarker.bindPopup(popupContent);
             markersArray.push(newMarker); // Array to track markers

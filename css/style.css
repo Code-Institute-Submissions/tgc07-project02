@@ -195,6 +195,10 @@ select option {
     width: 100%;
 }
 
+.leaflet-popup-content > * {
+    margin: 0.3rem 0 !important;
+}
+
 /* Chart */
 #chart-container {
     z-index: 0;
