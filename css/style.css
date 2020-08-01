@@ -190,15 +190,20 @@ select option {
 
 /* Map to display markers relating to search results */
 #map {
+    z-index: 0;
     height: 100%;
     width: 100%;
 }
 
 /* Chart */
 #chart-container {
+    z-index: 0;
     position: absolute;
-    top: 0;
+    top: 50vh;
     left: -100vw;
-    height: 80vh;
-    width: 80vw;
+    /* margin-top: -50%;
+    margin-left: -50%; */
+    height: 50vh;
+    width: 50vw;
+    background-color: var(--colour-beige);
 }
