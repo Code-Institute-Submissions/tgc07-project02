@@ -114,9 +114,37 @@ function displayChart(chartData, chartType) {
             datasets: [{
                 label: 'Number of Businesses',
                 data: chartData,
-                backgroundColor: ["rgba(139,0,0,0.5)", "rgba(255,165,0,0.5", "rgba(255,255,51,0.5)", "rgba(75,0,130,0.3)", "rgba(16,50,79,0.5)", "rgba(10,64,58,0.5)"],
+                backgroundColor: ["rgba(139,0,0,0.5)", "rgba(255,165,0,0.5)", "rgba(255,255,51,0.5)", "rgba(75,0,130,0.3)", "rgba(16,50,79,0.5)", "rgba(10,64,58,0.5)"],
             }]
         },
+        // data: {
+        //     labels: [0,1,2,3,4,5],
+        //     datasets: [{
+        //         label: '0 - urgent improvement required',
+        //         backgroundColor: 'rgba(139,0,0,0.5)',
+        //         data: [chartData[0],0,0,0,0,0]
+        //     }, {
+        //         label: '1 - major improvement necessary',
+        //         backgroundColor: 'rgba(255,165,0,0.5)',
+        //         data: [0,chartData[1],0,0,0,0]
+        //     }, {
+        //         label: '2 - some improvement necessary',
+        //         backgroundColor: 'rgba(255,255,51,0.5)',
+        //         data: [0,0,chartData[2],0,0,0]
+        //     }, {
+        //         label: '3 - generally satisfactory',
+        //         backgroundColor: 'rgba(75,0,130,0.3)',
+        //         data: [0,0,0,chartData[3],0,0]
+        //     }, {
+        //         label: '4 - good',
+        //         backgroundColor: 'rgba(16,50,79,0.5)',
+        //         data: [0,0,0,0,chartData[4],0]
+        //     }, {
+        //         label: '5 - very good',
+        //         backgroundColor: 'rgba(10,64,58,0.5)',
+        //         data: [0,0,0,0,0,chartData[5]]
+        //     }]
+        // },
         options: {
             title: {
                 display: true,
