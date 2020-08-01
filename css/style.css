@@ -145,13 +145,14 @@ select option {
 }
 
 #search-results-container h2 {
-    margin-top: 1rem;
+    margin: 1rem 1.5rem;
+    /* margin-top: 1rem;
     margin-bottom: 0.5rem;
-    padding: 1rem 1.5rem 0 1.5rem;
+    padding: 1rem 1.5rem 0 1.5rem; */
 }
 
 .search-result {
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 1.5rem 1rem 1.5rem;
 }
 
 .search-result:hover {
