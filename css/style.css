@@ -76,6 +76,7 @@ select option {
 
 .nav-text:hover {
     background-color: var(--colour-text-hover);
+    scale: 1.02;
 }
 
 .nav-icon {
@@ -112,6 +113,7 @@ select option {
     background-color: var(--colour-green);
     color: white;
     cursor: pointer;
+    scale: 1.1;
 }
 
 #search-btn i {
@@ -148,6 +150,7 @@ select option {
 .search-result:hover {
     cursor: pointer;
     background-color: var(--colour-green-dark);
+    scale: 1.02;
 }
 
 .search-result h3 {
