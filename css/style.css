@@ -116,6 +116,14 @@ select option {
     scale: 1.1;
 }
 
+#search-btn:focus {
+    outline: none;
+}
+
+#search-btn:active {
+    background-color: var(--colour-green-dark);
+}
+
 #search-btn i {
     padding: 0.8rem;
 }
