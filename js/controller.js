@@ -1,3 +1,7 @@
+// // GLOBAL VARIABLES
+// Chart view state variable
+let chartDisplayed = false;
+
 // // DEFINE FUNCTIONS
 // Get inputted business name
 function getInputBizName() {
@@ -41,19 +45,22 @@ window.addEventListener("load", () => {
         // displayPieChart(searchResults.chartHygieneRatingsData);
     });
 
+    // Page layout controls
     document.querySelector("#minimise-nav").addEventListener("click", minimiseNavBar);
     document.querySelector("#maximise-nav").addEventListener("click", maximiseNavBar);
     document.querySelector("#search-icon").addEventListener("click", maximiseNavBar);
     document.querySelector("#map-icon-1").addEventListener("click", () => {
         minimiseNavBar();
         hideSearchResults();
+        hideChart();
     });
     document.querySelector("#map-icon-2").addEventListener("click", () => {
         minimiseNavBar();
         hideSearchResults();
+        hideChart();
     });
     document.querySelector("#results-icon-1").addEventListener("click", () => {
-        // showSearchResults();
+        hideChart();
         toggleSearchResults();
         let resultsContainer = document.querySelector("#search-results-container");
         if (resultsContainer.innerText==="") {
@@ -63,14 +70,20 @@ window.addEventListener("load", () => {
         };
     });
     document.querySelector("#results-icon-2").addEventListener("click", () => {
+        hideChart();
         toggleSearchResults();
-        // showSearchResults();
         let resultsContainer = document.querySelector("#search-results-container");
         if (resultsContainer.innerText==="") {
             newTitle = document.createElement("h2");
             newTitle.innerText = "0 search results";
             resultsContainer.appendChild(newTitle);
         };
+    });
+    document.querySelector("#chart-icon-1").addEventListener("click", () => {
+        chartDisplayed ? hideChart() : showChart();
+    });
+    document.querySelector("#chart-icon-2").addEventListener("click", () => {
+        chartDisplayed ? hideChart() : showChart();
     });
 
     // Get latlng of user click; "poi" variable defined in model.js

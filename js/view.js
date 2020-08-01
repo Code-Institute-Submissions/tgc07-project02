@@ -172,30 +172,36 @@ function toggleSearchResults() {
 };
 
 function showChart() {
-    let chartElement = document.querySelector("#chart-container");
-    chartElement.animate([
-        // keyframes
-        { transform: 'translateX(0vw) scaleY(5%)' },
-        { transform: 'translateX(150vw) scaleY(5%)' },
-        { transform: 'translateX(150vw) scaleY(100%)' }
-        ], { 
-        // timing options
-        duration: 1000,
-        fill: "forwards"
-    });
+    if (!chartDisplayed) {
+        chartDisplayed = true;
+        let chartElement = document.querySelector("#chart-container");
+        chartElement.animate([
+            // keyframes
+            { transform: 'translateX(0vw) scaleY(5%)' },
+            { transform: 'translateX(150vw) scaleY(5%)' },
+            { transform: 'translateX(150vw) scaleY(100%)' }
+            ], { 
+            // timing options
+            duration: 1000,
+            fill: "forwards"
+        });
+    };
 };
 
 function hideChart() {
-    let chartElement = document.querySelector("#chart-container");
-    chartElement.animate([
-        // keyframes
-        { transform: 'translateX(150vw) scaleY(100%)' },
-        { transform: 'translateX(150vw) scaleY(5%)' },
-        { transform: 'translateX(0vw) scaleY(5%)' },
-        { transform: 'translateX(0vw) scaleY(100%)' }
-        ], { 
-        // timing options
-        duration: 1000,
-        fill: "forwards"
-    });
+    if (chartDisplayed) {
+        chartDisplayed = false;
+        let chartElement = document.querySelector("#chart-container");
+        chartElement.animate([
+            // keyframes
+            { transform: 'translateX(150vw) scaleY(100%)' },
+            { transform: 'translateX(150vw) scaleY(5%)' },
+            { transform: 'translateX(0vw) scaleY(5%)' },
+            { transform: 'translateX(0vw) scaleY(100%)' }
+            ], { 
+            // timing options
+            duration: 1000,
+            fill: "forwards"
+        });
+    };
 };
