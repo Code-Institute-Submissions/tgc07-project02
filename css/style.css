@@ -1,9 +1,11 @@
+/* CSS reset */
 * {
     margin: 0;
     padding: 0;
     border: 0;
 }
 
+/* CSS variables */
 :root {
     --nav-icon-width: 50px;
     --colour-page-background: #cccccc;
@@ -13,6 +15,7 @@
     --colour-green-dark: #4a5840;
 }
 
+/* HTML tag common styling */
 html, body {
     height: 100%;
     margin: 0;
@@ -39,6 +42,7 @@ select option {
     padding: 0.5rem;
 }
 
+/* Entire page container */
 #page-container {
     height: 100vh;
     width: 100%;
@@ -47,11 +51,11 @@ select option {
     background-color: var(--colour-page-background);
 }
 
+/* Navbar docked to left-side */
 #nav {
     width: 320px;
     height: inherit;
     background-color: var(--colour-text-background);
-    flex-shrink: 0;
 }
 
 #nav a {
@@ -90,26 +94,14 @@ select option {
     transition: var(--transition-duration);
 }
 
+/* Search form within navbar */
 #search-container {
     display: flex;
     flex-flow: wrap;
     align-items: center;
     justify-content: start;
-    max-width: 400px;
     padding: 10px;
 }
-
-/* #search-container > * {
-    margin: 10px;
-}
-
-#search-container > input {
-    width: 84%;
-}
-
-#search-container > select {
-    height: 30px;
-} */
 
 #search-btn {
     margin: 10px;
@@ -126,6 +118,7 @@ select option {
     padding: 0.8rem;
 }
 
+/* Main section of page containing search results and map */
 #main {
     display: grid;
     grid-template-columns: 1fr;
@@ -135,20 +128,17 @@ select option {
     overflow-y: auto;
 }
 
+/* Search results listed within this container */
 #search-results-container {
     display: none;
     overflow-y: auto;
     min-width: 300px;
-    /* padding: 1.5rem; */
     background-color: var(--colour-green);
     color: white;
 }
 
 #search-results-container h2 {
     margin: 1rem 1.5rem;
-    /* margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    padding: 1rem 1.5rem 0 1.5rem; */
 }
 
 .search-result {
@@ -180,15 +170,17 @@ select option {
     color: white;
 }
 
+/* Map to display markers relating to search results */
 #map {
     height: 100%;
     width: 100%;
 }
 
+/* Chart */
 #chart-container {
     position: absolute;
     top: 0;
-    left: -90vw;
+    left: -100vw;
     height: 80vh;
     width: 80vw;
 }
