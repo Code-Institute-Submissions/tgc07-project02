@@ -101,6 +101,7 @@ function displaySearchResults(searchResultsArray) {
 };
 
 function displayBarChart(data) {
+    document.querySelector("#chart-container").style.backgroundColor = "white";
     let barChartContainer = document.querySelector("#chart-container");
     barChartContainer.innerText = "";
     let newBarChartElement = document.createElement("canvas");
@@ -113,30 +114,12 @@ function displayBarChart(data) {
             datasets: [{
                 label: 'Number of Businesses',
                 data: data,
+                backgroundColor: ["#C01A00", "#f3974d", "#efcb40", "#2880ca", "#19a494", "#66755b"],
             }]
-        },
+        }
     });
     barChartContainer.appendChild(newBarChartElement);
 };
-
-// function displayPieChart(data) {
-//     let pieChartContainer = document.querySelector("#chart-container-pie");
-//     pieChartContainer.innerText = "";
-//     let newPieChartElement = document.createElement("canvas");
-//     newPieChartElement.id = "chart-pie";
-//     let pieChartContext = newPieChartElement.getContext('2d');
-//     let pieChart = new Chart(pieChartContext, {
-//         type: 'pie',
-//         data: {
-//             labels: [0,1,2,3,4,5],
-//             datasets: [{
-//                 label: 'Number of Businesses',
-//                 data: data,
-//             }]
-//         },
-//     });
-//     pieChartContainer.appendChild(newPieChartElement);
-// };
 
 
 // Web page layout functions

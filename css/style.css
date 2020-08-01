@@ -203,7 +203,7 @@ select option {
     left: -100vw;
     margin-top: -15%;
     margin-left: -25%;
-    height: 50vh;
+    max-height: 50vh;
     width: 50vw;
     background-color: var(--colour-text-hover);
 }
