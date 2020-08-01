@@ -109,53 +109,63 @@ function displayChart(chartData, chartType) {
     let barChartContext = newBarChartElement.getContext('2d');
     let barChart = new Chart(barChartContext, {
         type: chartType,
-        data: {
-            labels: ['Hygiene Rating – 0','Hygiene Rating – 1','Hygiene Rating – 2','Hygiene Rating – 3','Hygiene Rating – 4','Hygiene Rating – 5'],
-            datasets: [{
-                label: 'Number of Businesses',
-                data: chartData,
-                backgroundColor: ["rgba(139,0,0,0.5)", "rgba(255,165,0,0.5)", "rgba(255,255,51,0.5)", "rgba(75,0,130,0.3)", "rgba(16,50,79,0.5)", "rgba(10,64,58,0.5)"],
-            }]
-        },
         // data: {
-        //     labels: [0,1,2,3,4,5],
+        //     labels: ['Hygiene Rating – 0','Hygiene Rating – 1','Hygiene Rating – 2','Hygiene Rating – 3','Hygiene Rating – 4','Hygiene Rating – 5'],
         //     datasets: [{
-        //         label: '0 - urgent improvement required',
-        //         backgroundColor: 'rgba(139,0,0,0.5)',
-        //         data: [chartData[0],0,0,0,0,0]
-        //     }, {
-        //         label: '1 - major improvement necessary',
-        //         backgroundColor: 'rgba(255,165,0,0.5)',
-        //         data: [0,chartData[1],0,0,0,0]
-        //     }, {
-        //         label: '2 - some improvement necessary',
-        //         backgroundColor: 'rgba(255,255,51,0.5)',
-        //         data: [0,0,chartData[2],0,0,0]
-        //     }, {
-        //         label: '3 - generally satisfactory',
-        //         backgroundColor: 'rgba(75,0,130,0.3)',
-        //         data: [0,0,0,chartData[3],0,0]
-        //     }, {
-        //         label: '4 - good',
-        //         backgroundColor: 'rgba(16,50,79,0.5)',
-        //         data: [0,0,0,0,chartData[4],0]
-        //     }, {
-        //         label: '5 - very good',
-        //         backgroundColor: 'rgba(10,64,58,0.5)',
-        //         data: [0,0,0,0,0,chartData[5]]
+        //         label: 'Number of Businesses',
+        //         data: chartData,
+        //         backgroundColor: ["rgba(139,0,0,0.5)", "rgba(255,165,0,0.5)", "rgba(255,255,51,0.5)", "rgba(75,0,130,0.3)", "rgba(16,50,79,0.5)", "rgba(10,64,58,0.5)"],
         //     }]
         // },
+        data: {
+            labels: [0,1,2,3,4,5],
+            datasets: [{
+                label: '0 - urgent improvement required',
+                backgroundColor: 'rgba(139,0,0,0.5)',
+                data: [chartData[0],0,0,0,0,0]
+            }, {
+                label: '1 - major improvement necessary',
+                backgroundColor: 'rgba(255,165,0,0.5)',
+                data: [0,chartData[1],0,0,0,0]
+            }, {
+                label: '2 - some improvement necessary',
+                backgroundColor: 'rgba(255,255,51,0.5)',
+                data: [0,0,chartData[2],0,0,0]
+            }, {
+                label: '3 - generally satisfactory',
+                backgroundColor: 'rgba(75,0,130,0.3)',
+                data: [0,0,0,chartData[3],0,0]
+            }, {
+                label: '4 - good',
+                backgroundColor: 'rgba(16,50,79,0.5)',
+                data: [0,0,0,0,chartData[4],0]
+            }, {
+                label: '5 - very good',
+                backgroundColor: 'rgba(10,64,58,0.5)',
+                data: [0,0,0,0,0,chartData[5]]
+            }]
+        },
         options: {
             title: {
                 display: true,
-                text: 'Number of Businesses in Each Food Hygiene Rating Category',
-                fontSize: 18
+                text: 'No. of Businesses with Hygiene Rating',
+                position: 'left',
+                fontSize: 14,
+                fontStyle: 'normal',
             },
             legend: {
-                position: 'left'
+                position: 'bottom'
             },
             layout: {
                 padding: 50
+            },
+            scales: {
+                xAxes: [{
+                    stacked: true
+                }],
+                yAxes: [{
+                    stacked: true
+                }]
             }
         }
     });
