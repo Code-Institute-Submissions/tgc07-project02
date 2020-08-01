@@ -175,9 +175,9 @@ function showChart() {
     let chartElement = document.querySelector("#chart-container");
     chartElement.animate([
         // keyframes
-        { transform: 'translateX(0vw) scaleY(5%)', marginTop: '-20%', marginLeft: '-30%' },
-        { transform: 'translateX(150vw) scaleY(5%)', marginTop: '-20%', marginLeft: '-30%' },
-        { transform: 'translateX(150vw) scaleY(100%)', marginTop: '-20%', marginLeft: '-30%' }
+        { transform: 'translateX(0vw) scaleY(5%)' },
+        { transform: 'translateX(150vw) scaleY(5%)' },
+        { transform: 'translateX(150vw) scaleY(100%)' }
         ], { 
         // timing options
         duration: 1000,
