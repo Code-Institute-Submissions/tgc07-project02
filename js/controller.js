@@ -41,8 +41,8 @@ window.addEventListener("load", () => {
         document.querySelector("#map-container").className = "with-results";
         document.querySelector("#search-results-container").style.display = "initial";
 
-        displayBarChart(searchResults.chartHygieneRatingsData);
-        // displayPieChart(searchResults.chartHygieneRatingsData);
+        displayChart(searchResults.chartHygieneRatingsData, 'bar');
+        // displayChart(searchResults.chartHygieneRatingsData, 'pie');
     });
 
     // Page layout controls
