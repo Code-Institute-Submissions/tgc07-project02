@@ -53,7 +53,8 @@ window.addEventListener("load", () => {
         hideSearchResults();
     });
     document.querySelector("#results-icon-1").addEventListener("click", () => {
-        showSearchResults();
+        // showSearchResults();
+        toggleSearchResults();
         let resultsContainer = document.querySelector("#search-results-container");
         if (resultsContainer.innerText==="") {
             newTitle = document.createElement("h2");
@@ -62,7 +63,8 @@ window.addEventListener("load", () => {
         };
     });
     document.querySelector("#results-icon-2").addEventListener("click", () => {
-        showSearchResults();
+        toggleSearchResults();
+        // showSearchResults();
         let resultsContainer = document.querySelector("#search-results-container");
         if (resultsContainer.innerText==="") {
             newTitle = document.createElement("h2");

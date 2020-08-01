@@ -159,3 +159,14 @@ function showSearchResults() {
     document.querySelector("#search-results-container").style.display = "initial";
     document.querySelector("#main").style.gridTemplateColumns = "1fr 3fr";
 };
+
+function toggleSearchResults() {
+    let resultsContainer = document.querySelector("#search-results-container");
+    if (resultsContainer.style.display === "none") {
+        resultsContainer.style.display = "initial";
+        document.querySelector("#main").style.gridTemplateColumns = "1fr 3fr";
+    } else if (resultsContainer.style.display === "initial") {
+        resultsContainer.style.display = "none";
+        document.querySelector("#main").style.gridTemplateColumns = "1fr";
+    };
+};
