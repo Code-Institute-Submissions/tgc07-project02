@@ -159,6 +159,7 @@ select option {
 
 .search-result {
     padding: 0.5rem 1.5rem 1rem 1.5rem;
+    border-bottom: 1px solid var(--colour-green-dark);
 }
 
 .search-result:hover {
