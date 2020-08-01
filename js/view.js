@@ -114,7 +114,7 @@ function displayBarChart(data) {
             datasets: [{
                 label: 'Number of Businesses',
                 data: data,
-                backgroundColor: ["#C01A00", "#f3974d", "#efcb40", "#2880ca", "#19a494", "#66755b"],
+                backgroundColor: ["rgba(139,0,0,0.5)", "rgba(255,165,0,0.5", "rgba(255,255,51,0.5)", "rgba(75,0,130,0.3)", "rgba(16,50,79,0.5)", "rgba(10,64,58,0.5)"],
             }]
         }
     });
