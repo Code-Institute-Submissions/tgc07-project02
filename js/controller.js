@@ -49,14 +49,12 @@ window.addEventListener("load", () => {
             let searchResults = compoundSearch(bizName, address, postcode, hygieneRating);
             console.log(searchResults);
 
-            // Displays search results in panel and adds markers to map (defined in view.js)
+            // Display search results in results panel and add markers to map (defined in view.js)
             displaySearchResults(searchResults.businessesResults);
-            
-            // To display search results in right-hand panel
-            document.querySelector("#map-container").className = "with-results";
             document.querySelector("#search-results-container").style.display = "initial";
 
-            displayChart(searchResults.chartHygieneRatingsData, 'bar');
+            // Create chart and display off-screen
+            window.matchMedia('(max-width: 960px)').matches ? displayChart(searchResults.chartHygieneRatingsData, 'horizontalBar') : displayChart(searchResults.chartHygieneRatingsData, 'bar');
         };
     });
 
