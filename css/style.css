@@ -290,6 +290,12 @@ select option {
         font-size: 0.9rem;
         margin: 0.4rem 0;
     }
+    .leaflet-popup-content {
+        margin: 0.5rem 0.8rem;
+    }
+    .leaflet-popup-content > * {
+        margin: 0.1rem 0 !important;
+    }
     #chart-container {
         margin-top: -50%;
         margin-left: -35%;
