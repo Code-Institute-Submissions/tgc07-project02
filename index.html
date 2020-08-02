@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,23 +10,22 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
 
     <!-- Own CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <div id="page-container">
 
-        <!-- Navbar and search -->
+        <!-- Maximised navbar and search -->
         <nav id="nav">
             <h1 class="nav-title">London Food Hygiene Ratings</h1>
-            <!-- <a href="#" class="nav-text">
-                <div class="nav-icon"><i class="fa fa-search" aria-hidden="true"></i></div>
-                <span class="nav-label">Search</span>
-            </a> -->
             <form action="#" id="search-container">
                 <div>
                     <input type="text" name="search-business" id="search-business" placeholder="Name of establishment">
@@ -73,6 +73,7 @@
             </a>
         </nav>
 
+        <!-- Minimised navbar -->
         <nav id="nav-minimised">
             <a href="#" class="nav-text" id="search-icon">
                 <div class="nav-icon"><i class="fa fa-search" aria-hidden="true"></i></div>
@@ -94,8 +95,8 @@
             </a>
         </nav>
 
+        <!-- Main section for search results and map -->
         <main id="main">
-            
             <!-- Search results -->
             <div id="search-results-container">
                 <h2>0 search results</h2>
@@ -105,9 +106,9 @@
             <div id="map-container">
                 <div id="map"></div>
             </div>
-            
         </main>
 
+        <!-- Chart -->
         <div id="chart-container">
             <div id="chart-no-data-title">
                 <div>
@@ -120,15 +121,18 @@
     </div>
 
     <!-- Leaflet JavaScript -->
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js"></script>
 
     <!-- Chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    
+
     <!-- Own JavaScript order: model.js, view.js, controller.js-->
     <script src="js/model.js"></script>
     <script src="js/view.js"></script>
     <script src="js/controller.js"></script>
 </body>
+
 </html>
