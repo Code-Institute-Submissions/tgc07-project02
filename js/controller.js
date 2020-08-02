@@ -85,6 +85,7 @@ window.addEventListener("load", () => {
     document.querySelector("#chart-icon-2").addEventListener("click", () => {
         chartDisplayed ? hideChart() : showChart();
     });
+    document.querySelector("#close-chart").addEventListener("click", hideChart);
 
     // Get latlng of user click; "poi" variable defined in model.js
     map.addEventListener("click", event => {
