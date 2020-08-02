@@ -30,6 +30,7 @@ loadData(fhrsDataPromiseArray);
 window.addEventListener("load", () => {
     document.querySelector("#search-btn").addEventListener("click", (event) => {
         event.preventDefault();
+        if (window.matchMedia('(max-width: 640px)').matches) minimiseNavBar();
         let bizName = getInputBizName();
         let address = getInputAddress();
         let postcode = getInputPostcode();

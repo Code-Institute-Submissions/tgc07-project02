@@ -266,3 +266,14 @@ select option {
         grid-template-rows: 100vh;
     }
 }
+
+/* Screen sizes 640px and smaller */
+@media (max-width: 640px) {
+    #main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 100vh;
+    }
+    #results-icon-1, #map-icon-1, #chart-icon-1, #info-icon-1 {
+        display: none;
+    }
+}
