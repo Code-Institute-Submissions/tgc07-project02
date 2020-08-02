@@ -34,18 +34,21 @@ window.addEventListener("load", () => {
         let address = getInputAddress();
         let postcode = getInputPostcode();
         let hygieneRating = getInputHygieneRating();
-        let searchResults = compoundSearch(bizName, address, postcode, hygieneRating);
-        console.log(searchResults);
+        if (bizName==="" && address==="" && postcode==="") {
+            alert("Please enter search criteria");
+        } else {
+            let searchResults = compoundSearch(bizName, address, postcode, hygieneRating);
+            console.log(searchResults);
 
-        // Displays search results in panel and adds markers to map (defined in view.js)
-        displaySearchResults(searchResults.businessesResults);
-        
-        // To display search results in right-hand panel
-        document.querySelector("#map-container").className = "with-results";
-        document.querySelector("#search-results-container").style.display = "initial";
+            // Displays search results in panel and adds markers to map (defined in view.js)
+            displaySearchResults(searchResults.businessesResults);
+            
+            // To display search results in right-hand panel
+            document.querySelector("#map-container").className = "with-results";
+            document.querySelector("#search-results-container").style.display = "initial";
 
-        displayChart(searchResults.chartHygieneRatingsData, 'bar');
-        // displayChart(searchResults.chartHygieneRatingsData, 'pie');
+            displayChart(searchResults.chartHygieneRatingsData, 'bar');
+        };
     });
 
     // Page layout controls
