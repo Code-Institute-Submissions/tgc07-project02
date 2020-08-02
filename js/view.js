@@ -124,6 +124,15 @@ function displayChart(chartData, chartType) {
     document.querySelector("#chart-container").style.backgroundColor = "white";
     let chartContainer = document.querySelector("#chart-container");
     chartContainer.innerText = "";
+    chartContainer.innerHTML = `
+    <div id="chart-title">
+        <div>
+            <h4>Number of Businesses per Food Hygiene Rating</h4>
+        </div>
+        <div id="close-chart"><i class="fa fa-window-close" aria-hidden="true"></i></div>
+    </div>
+    `;
+    document.querySelector("#close-chart").addEventListener("click", hideChart);
 
     // Initialise variables for new chart data
     let newChartElement = document.createElement("canvas");
@@ -132,7 +141,9 @@ function displayChart(chartData, chartType) {
 
     // New chart using data from search results
     let chart = new Chart(chartContext, {
+        // Use 'bar' or 'horizontalBar' for chart type argument
         type: chartType,
+        // Chart data
         data: {
             labels: ['FHR-0','FHR-1','FHR-2','FHR-3','FHR-4','FHR-5'],
             datasets: [{
@@ -161,6 +172,7 @@ function displayChart(chartData, chartType) {
                 data: [0,0,0,0,0,chartData[5]]
             }]
         },
+        // Chart customisation options
         options: {
             title: {
                 display: true,

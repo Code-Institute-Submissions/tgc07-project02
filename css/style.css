@@ -212,7 +212,6 @@ select option {
 }
 
 .leaflet-popup-content > p > a {
-    /* color: #333; */
     color: white;
 }
 
@@ -224,7 +223,6 @@ select option {
     left: -100vw;
     margin-top: -15%;
     margin-left: -25%;
-    /* max-height: 50vh; */
     width: 50vw;
     background-color: var(--colour-text-hover);
 }
@@ -239,6 +237,22 @@ select option {
 
 #chart-no-data-title > * {
     color: white;
+}
+
+#chart-title {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px 30px 30%;
+}
+
+#chart-title > * {
+    color: #555555;
+}
+
+#close-chart {
+    font-size: 1.5rem;
 }
 
 #close-chart:hover {
