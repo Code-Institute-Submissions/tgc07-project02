@@ -29,12 +29,20 @@ loadData(fhrsDataPromiseArray);
 // Wait until window fully loaded, then enable user search
 window.addEventListener("load", () => {
     document.querySelector("#search-btn").addEventListener("click", (event) => {
+        
+        // Prevent default submit behaviour
         event.preventDefault();
+        
+        // Screen sizes 640px and smaller, then auto-minimise navbar when search button clicked
         if (window.matchMedia('(max-width: 640px)').matches) minimiseNavBar();
+        
+        // Retrieve user input info
         let bizName = getInputBizName();
         let address = getInputAddress();
         let postcode = getInputPostcode();
         let hygieneRating = getInputHygieneRating();
+
+        // If input fields are not empty, then perform search
         if (bizName==="" && address==="" && postcode==="") {
             alert("Please enter search criteria");
         } else {
