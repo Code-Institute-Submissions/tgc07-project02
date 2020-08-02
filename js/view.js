@@ -123,7 +123,7 @@ function displayChart(chartData, chartType) {
     // Reset chart container
     document.querySelector("#chart-container").style.backgroundColor = "white";
     let chartContainer = document.querySelector("#chart-container");
-    chartContainer.innerText = "";
+    // chartContainer.innerText = "";
     chartContainer.innerHTML = `
     <div id="chart-title">
         <div>
