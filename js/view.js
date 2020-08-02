@@ -119,37 +119,37 @@ function displayChart(chartData, chartType) {
         //     }]
         // },
         data: {
-            labels: [0,1,2,3,4,5],
+            labels: ['FHR-0','FHR-1','FHR-2','FHR-3','FHR-4','FHR-5'],
             datasets: [{
-                label: '0 - urgent improvement required',
-                backgroundColor: 'rgba(139,0,0,0.5)',
+                label: 'Urgent improvement required',
+                backgroundColor: 'rgba(140,0,0,0.5)',
                 data: [chartData[0],0,0,0,0,0]
             }, {
-                label: '1 - major improvement necessary',
+                label: 'Major improvement necessary',
                 backgroundColor: 'rgba(255,165,0,0.5)',
                 data: [0,chartData[1],0,0,0,0]
             }, {
-                label: '2 - some improvement necessary',
-                backgroundColor: 'rgba(255,255,51,0.5)',
+                label: 'Some improvement necessary',
+                backgroundColor: 'rgba(255,255,50,0.5)',
                 data: [0,0,chartData[2],0,0,0]
             }, {
-                label: '3 - generally satisfactory',
-                backgroundColor: 'rgba(75,0,130,0.3)',
+                label: 'Generally satisfactory',
+                backgroundColor: 'rgba(50,0,100,0.4)',
                 data: [0,0,0,chartData[3],0,0]
             }, {
-                label: '4 - good',
+                label: 'Good',
                 backgroundColor: 'rgba(16,50,79,0.5)',
                 data: [0,0,0,0,chartData[4],0]
             }, {
-                label: '5 - very good',
-                backgroundColor: 'rgba(10,64,58,0.5)',
+                label: 'Very good',
+                backgroundColor: 'rgba(0,100,0,0.5)',
                 data: [0,0,0,0,0,chartData[5]]
             }]
         },
         options: {
             title: {
                 display: true,
-                text: 'No. of Businesses with Hygiene Rating',
+                text: 'No. of Businesses',
                 position: 'left',
                 fontSize: 14,
                 fontStyle: 'normal',
