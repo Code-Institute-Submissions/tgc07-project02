@@ -23,57 +23,65 @@ function locateMarker(FHRSID){
 
 // Display search results with markers and results panel
 function displaySearchResults(searchResultsArray) {
+    // Reset map
     markerGroup.clearLayers(); // Clear featureGroup layers
     markerCluster.clearLayers(); // Clear cluster layers
     markersArray = []; // Clear markers array tracker of previous search results (variable defined in model.js)
-    showSearchResults();
-    // document.querySelector("#main").style.gridTemplateColumns = "1fr 3fr"; // 2 columns to display search results and map side by side
-    let parentElement = document.querySelector("#search-results-container");
-    parentElement.innerText = "";
-    // parentElement.getElementsByClassName.display = "initial";
+    
+    // Reset search results info list
+    showSearchResults(); // Display search results container in main section
+    let resultsContainerElement = document.querySelector("#search-results-container");
+    resultsContainerElement.innerText = "";
     newTitle = document.createElement("h2");
     newTitle.innerText = searchResultsArray.length===1 ? "1 search result" : `${searchResultsArray.length.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} search results`;
-    parentElement.appendChild(newTitle);
+    resultsContainerElement.appendChild(newTitle);
+
+    // Loop once over searchResultsArray to get info for results panel and map markers
     for (let biz of searchResultsArray) {
         if (biz.Geocode!=="") {
-            // Info on each business
+            // Initialise variables
             let latlngArray = [biz.Geocode.Latitude, biz.Geocode.Longitude];
             let bizName = "";
             let address = "";
             let ratingValue = "";
             let ratingDate = "";
             let authorityEmail = "";
-            if (biz.hasOwnProperty("BusinessName")) {bizName = biz.BusinessName;};
-            if (biz.hasOwnProperty("AddressLine1")) {address += biz.AddressLine1 + ", ";};
-            if (biz.hasOwnProperty("AddressLine2")) {address += biz.AddressLine2 + ", ";};
-            if (biz.hasOwnProperty("AddressLine3")) {address += biz.AddressLine3 + ", ";};
-            if (biz.hasOwnProperty("AddressLine4")) {address += biz.AddressLine4 + ", ";};
-            if (biz.hasOwnProperty("PostCode")) {address += biz.PostCode;};
+
+            // Check property exists, then get business info
+            if (biz.hasOwnProperty("BusinessName")) bizName = biz.BusinessName;
+            if (biz.hasOwnProperty("AddressLine1")) address += biz.AddressLine1 + ", ";
+            if (biz.hasOwnProperty("AddressLine2")) address += biz.AddressLine2 + ", ";
+            if (biz.hasOwnProperty("AddressLine3")) address += biz.AddressLine3 + ", ";
+            if (biz.hasOwnProperty("AddressLine4")) address += biz.AddressLine4 + ", ";
+            if (biz.hasOwnProperty("PostCode")) address += biz.PostCode;
             if (biz.hasOwnProperty("RatingValue")) {
                 biz.RatingValue==="AwaitingInspection" ? ratingValue = "Awaiting inspection" : ratingValue = biz.RatingValue;
             };
             if (biz.hasOwnProperty("RatingDate")) {
                 typeof(biz.RatingDate)==="string" ? ratingDate = biz.RatingDate : ratingDate = "N.A.";
             };
-            if (biz.hasOwnProperty("LocalAuthorityEmailAddress")) {authorityEmail = `<a href="mailto:${biz.LocalAuthorityEmailAddress}">${biz.LocalAuthorityEmailAddress}</a>`;};
+            if (biz.hasOwnProperty("LocalAuthorityEmailAddress")) authorityEmail = `<a href="mailto:${biz.LocalAuthorityEmailAddress}">${biz.LocalAuthorityEmailAddress}</a>`;
 
             // Map markers
             let newMarker = L.marker(latlngArray, {title:`${biz.BusinessName}`, alt:`${biz.FHRSID}`}); // Create new map marker
             searchResultsArray.length<=1000 ? newMarker.addTo(markerGroup) : newMarker.addTo(markerCluster); // If search results <= 1000 use featureGroup, else use cluster
+            
+            // Map marker popups
             let popupContent = `<h3 class="popup-text name">${bizName}</h3> `;
             popupContent += `<p class="popup-text address">${address}</p> `;
-            // if (biz.hasOwnProperty("RatingValue")) {popupContent += `<p class="popup-text rating-value">Food hygiene rating: ${ratingValue}</p> `;};
-            if (biz.hasOwnProperty("RatingValue")) {popupContent += `<img src="img/${biz.RatingValue}.jpg" alt="FHRS"> `;};
-            if (biz.hasOwnProperty("RatingDate")) {popupContent += `<p class="popup-text rating-date">Rating date: ${ratingDate}</p> `;};
-            if (biz.hasOwnProperty("LocalAuthorityEmailAddress")) {popupContent += `<p class="popup-text authority-email">Local authority email: ${authorityEmail}</p> `;};
+            if (biz.hasOwnProperty("RatingValue")) popupContent += `<img src="img/${biz.RatingValue}.jpg" alt="FHRS"> `;
+            if (biz.hasOwnProperty("RatingDate")) popupContent += `<p class="popup-text rating-date">Rating date: ${ratingDate}</p> `;
+            if (biz.hasOwnProperty("LocalAuthorityEmailAddress")) popupContent += `<p class="popup-text authority-email">Local authority email: ${authorityEmail}</p> `;
             newMarker.bindPopup(popupContent);
-            markersArray.push(newMarker); // Array to track markers
+
+            // Array to track markers
+            markersArray.push(newMarker);
 
             // Search results details
-            let newContainer = document.createElement("div");
-            newContainer.id = biz.FHRSID;
-            newContainer.className = "search-result";
-            newContainer.innerHTML = `
+            let newResult = document.createElement("div");
+            newResult.id = biz.FHRSID;
+            newResult.className = "search-result";
+            newResult.innerHTML = `
             <h3>${bizName}</h3>
             <p>${address}</p>
             <img src="img/${biz.RatingValue}.jpg" alt="FHRS">
@@ -82,13 +90,15 @@ function displaySearchResults(searchResultsArray) {
                 <li>Local authority email: ${authorityEmail}</li>
             </ul>
             `;
-            newContainer.addEventListener("click", function() {
+            newResult.addEventListener("click", function() {
                 map.panTo(latlngArray);
                 locateMarker(this.id);
             });
-            parentElement.appendChild(newContainer);
+            // Add search result to results container
+            resultsContainerElement.appendChild(newResult);
         };
     };
+
     // Add marker layer to map and fit map to bounds of markers
     if (searchResultsArray.length===0) {
         console.warn("No search results");
@@ -101,23 +111,21 @@ function displaySearchResults(searchResultsArray) {
     };
 };
 
+// Chart
 function displayChart(chartData, chartType) {
+    // Reset chart container
     document.querySelector("#chart-container").style.backgroundColor = "white";
     let chartContainer = document.querySelector("#chart-container");
     chartContainer.innerText = "";
+
+    // Initialise variables for new chart data
     let newChartElement = document.createElement("canvas");
     newChartElement.id = "chart";
     let chartContext = newChartElement.getContext('2d');
+
+    // New chart using data from search results
     let chart = new Chart(chartContext, {
         type: chartType,
-        // data: {
-        //     labels: ['Hygiene Rating – 0','Hygiene Rating – 1','Hygiene Rating – 2','Hygiene Rating – 3','Hygiene Rating – 4','Hygiene Rating – 5'],
-        //     datasets: [{
-        //         label: 'Number of Businesses',
-        //         data: chartData,
-        //         backgroundColor: ["rgba(139,0,0,0.5)", "rgba(255,165,0,0.5)", "rgba(255,255,51,0.5)", "rgba(75,0,130,0.3)", "rgba(16,50,79,0.5)", "rgba(10,64,58,0.5)"],
-        //     }]
-        // },
         data: {
             labels: ['FHR-0','FHR-1','FHR-2','FHR-3','FHR-4','FHR-5'],
             datasets: [{
@@ -170,9 +178,9 @@ function displayChart(chartData, chartType) {
             }
         }
     });
+    // Add to chart container
     chartContainer.appendChild(newChartElement);
 };
-
 
 // Web page layout functions
 function minimiseNavBar() {
