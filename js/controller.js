@@ -23,6 +23,9 @@ function getInputHygieneRating() {
     return document.querySelector("#select-hygiene-rating").value;
 };
 
+// Call "loadData" function with array of promises as parameter
+loadData(fhrsDataPromiseArray);
+
 // Wait until window fully loaded, then enable user search
 window.addEventListener("load", () => {
     document.querySelector("#search-btn").addEventListener("click", (event) => {
@@ -88,9 +91,9 @@ window.addEventListener("load", () => {
     document.querySelector("#close-chart").addEventListener("click", hideChart);
 
     // Get latlng of user click; "poi" variable defined in model.js
-    map.addEventListener("click", event => {
-        poi = [];
-        poi.push(event.latlng.lat);
-        poi.push(event.latlng.lng);
-    });
+    // map.addEventListener("click", event => {
+    //     poi = [];
+    //     poi.push(event.latlng.lat);
+    //     poi.push(event.latlng.lng);
+    // });
 });

@@ -42,13 +42,6 @@ let allData = [];
 // Array to store latlng of where user clicks on map
 let poi = [];
 
-// Marker cluster and group objects
-let markerGroup = L.featureGroup(); // Used if search results <= 1000
-let markerCluster = L.markerClusterGroup(); // Used if search results > 1000
-
-// Array to store all markers generated from search results
-let markersArray = [];
-
 // // DEFINE FUNCTIONS
 // Get all JSON responses and stores in "allData" array
 function loadData(promiseArray) {
@@ -318,10 +311,3 @@ function compoundSearch(bizNameSearch, addressSearch, postcodeSearch, hygieneRat
     };
     return {businessesResults, chartHygieneRatingsData, bizNameSearch, addressSearch, postcodeSearch, hygieneRatingSearch};
 };
-
-
-
-
-// // CALL FUNCTIONS
-// Call "loadData" function with array of promises as parameter
-loadData(fhrsDataPromiseArray);

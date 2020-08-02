@@ -2,6 +2,13 @@
 let startPoint = [51.5, -0.1];
 let map = L.map('map').setView(startPoint, 12);
 
+// Marker cluster and group objects
+let markerGroup = L.featureGroup(); // Used if search results <= 1000
+let markerCluster = L.markerClusterGroup(); // Used if search results > 1000
+
+// Array to store all markers generated from search results
+let markersArray = [];
+
 // Setup tile layers andd add to map
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -26,7 +33,7 @@ function displaySearchResults(searchResultsArray) {
     // Reset map
     markerGroup.clearLayers(); // Clear featureGroup layers
     markerCluster.clearLayers(); // Clear cluster layers
-    markersArray = []; // Clear markers array tracker of previous search results (variable defined in model.js)
+    markersArray = []; // Clear markers array tracker of previous search results
     
     // Reset search results info list
     showSearchResults(); // Display search results container in main section
