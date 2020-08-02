@@ -258,3 +258,11 @@ select option {
 #close-chart:hover {
     cursor: pointer;
 }
+
+/* Screen sizes 960px and smaller */
+@media (max-width: 960px) {
+    #main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 100vh;
+    }
+}

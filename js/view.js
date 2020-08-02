@@ -214,22 +214,30 @@ function maximiseNavBar() {
 
 function hideSearchResults() {
     document.querySelector("#search-results-container").style.display = "none";
-    document.querySelector("#main").style.gridTemplateColumns = "1fr";
+    // document.querySelector("#main").style.gridTemplateColumns = "1fr";
+    // If screen <= 960px then main section grid-template-rows 100vh, else main section grid-template-columns 1fr
+    window.matchMedia('(max-width: 960px)').matches ? document.querySelector("#main").style.gridTemplateRows = "100vh" : document.querySelector("#main").style.gridTemplateColumns = "1fr";
 };
 
 function showSearchResults() {
     document.querySelector("#search-results-container").style.display = "initial";
-    document.querySelector("#main").style.gridTemplateColumns = "1fr 3fr";
+    // document.querySelector("#main").style.gridTemplateColumns = "1fr 3fr";
+    // If screen <= 960px then main section grid-template-rows 50vh, else main section grid-template-columns 1fr 3fr
+    window.matchMedia('(max-width: 960px)').matches ? document.querySelector("#main").style.gridTemplateRows = "50vh" : document.querySelector("#main").style.gridTemplateColumns = "1fr 3fr";
 };
 
 function toggleSearchResults() {
     let resultsContainer = document.querySelector("#search-results-container");
     if (resultsContainer.style.display === "none") {
         resultsContainer.style.display = "initial";
-        document.querySelector("#main").style.gridTemplateColumns = "1fr 3fr";
+        // document.querySelector("#main").style.gridTemplateColumns = "1fr 3fr";
+        // If screen <= 960px then main section grid-template-rows 50vh, else main section grid-template-columns 1fr 3fr
+        window.matchMedia('(max-width: 960px)').matches ? document.querySelector("#main").style.gridTemplateRows = "50vh" : document.querySelector("#main").style.gridTemplateColumns = "1fr 3fr";
     } else if (resultsContainer.style.display === "initial") {
         resultsContainer.style.display = "none";
-        document.querySelector("#main").style.gridTemplateColumns = "1fr";
+        // document.querySelector("#main").style.gridTemplateColumns = "1fr";
+        // If screen <= 960px then main section grid-template-rows 100vh, else main section grid-template-columns 1fr
+        window.matchMedia('(max-width: 960px)').matches ? document.querySelector("#main").style.gridTemplateRows = "100vh" : document.querySelector("#main").style.gridTemplateColumns = "1fr";
     };
 };
 
