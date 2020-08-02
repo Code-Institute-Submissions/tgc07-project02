@@ -103,12 +103,12 @@ function displaySearchResults(searchResultsArray) {
 
 function displayChart(chartData, chartType) {
     document.querySelector("#chart-container").style.backgroundColor = "white";
-    let barChartContainer = document.querySelector("#chart-container");
-    barChartContainer.innerText = "";
-    let newBarChartElement = document.createElement("canvas");
-    newBarChartElement.id = "chart-bar";
-    let barChartContext = newBarChartElement.getContext('2d');
-    let barChart = new Chart(barChartContext, {
+    let chartContainer = document.querySelector("#chart-container");
+    chartContainer.innerText = "";
+    let newChartElement = document.createElement("canvas");
+    newChartElement.id = "chart";
+    let chartContext = newChartElement.getContext('2d');
+    let chart = new Chart(chartContext, {
         type: chartType,
         // data: {
         //     labels: ['Hygiene Rating – 0','Hygiene Rating – 1','Hygiene Rating – 2','Hygiene Rating – 3','Hygiene Rating – 4','Hygiene Rating – 5'],
@@ -170,7 +170,7 @@ function displayChart(chartData, chartType) {
             }
         }
     });
-    barChartContainer.appendChild(newBarChartElement);
+    chartContainer.appendChild(newChartElement);
 };
 
 
