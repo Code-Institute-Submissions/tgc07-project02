@@ -276,4 +276,18 @@ select option {
     #results-icon-1, #map-icon-1, #chart-icon-1, #info-icon-1 {
         display: none;
     }
+    #search-results-container h2 {
+        margin: 1rem 0.8rem 0.2rem 0.8rem;
+    }
+    .search-result {
+        padding: 0.2rem 0.5rem 1rem 0.8rem;
+        /* border-bottom: 1px solid var(--colour-green-dark); */
+    }
+    .search-result h3, .search-result p, .search-result ul, .search-result ul li, .search-result ul li a {
+        font-size: 0.9rem;
+        margin: 0.4rem 0;
+    }
+    /* .search-result ul li a {
+        color: white;
+    } */
 }
