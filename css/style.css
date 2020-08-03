@@ -259,6 +259,7 @@ select option {
     cursor: pointer;
 }
 
+/* Additional info section */
 #info-container {
     z-index: 1;
     position: absolute;
