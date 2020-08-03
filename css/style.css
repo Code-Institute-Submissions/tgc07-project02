@@ -315,7 +315,7 @@ select option {
     }
     .search-result h3, .search-result p, .search-result ul, .search-result ul li, .search-result ul li a {
         font-size: 0.9rem;
-        margin: 0.4rem 0;
+        margin: 0.2rem 0;
     }
     .leaflet-popup-content {
         margin: 0.5rem 0.8rem;
