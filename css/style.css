@@ -220,9 +220,9 @@ select option {
     z-index: 0;
     position: absolute;
     top: 50vh;
-    left: -100vw;
-    margin-top: -15%;
-    margin-left: -25%;
+    left: -50%;
+    margin-top: -20%;
+    margin-left: 0;
     width: 50vw;
     background-color: var(--colour-text-hover);
 }
@@ -261,12 +261,12 @@ select option {
 
 /* Additional info section */
 #info-container {
-    z-index: 1;
+    z-index: 0;
     position: absolute;
-    top: 20vh;
-    left: -100vw;
-    margin-top: 0;
-    margin-left: -25%;
+    top: 50vh;
+    left: -60%;
+    margin-top: -20%;
+    margin-left: 0;
     width: 50vw;
     height: 60vh;
     padding: 2rem;

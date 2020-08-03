@@ -251,9 +251,9 @@ function showChart() {
         let chartElement = document.querySelector("#chart-container");
         chartElement.animate([
             // keyframes
-            { transform: 'translateX(0vw) scaleY(5%)' },
-            { transform: 'translateX(150vw) scaleY(5%)' },
-            { transform: 'translateX(150vw) scaleY(100%)' }
+            { transform: 'translateX(0) scaleY(5%)' },
+            { transform: 'translateX(150%) scaleY(5%)' },
+            { transform: 'translateX(150%) scaleY(100%)' }
             ], { 
             // timing options
             duration: 1000,
@@ -268,10 +268,10 @@ function hideChart() {
         let chartElement = document.querySelector("#chart-container");
         chartElement.animate([
             // keyframes
-            { transform: 'translateX(150vw) scaleY(100%)' },
-            { transform: 'translateX(150vw) scaleY(5%)' },
-            { transform: 'translateX(0vw) scaleY(5%)' },
-            { transform: 'translateX(0vw) scaleY(100%)' }
+            { transform: 'translateX(150%) scaleY(100%)' },
+            { transform: 'translateX(150%) scaleY(5%)' },
+            { transform: 'translateX(0) scaleY(5%)' },
+            { transform: 'translateX(0) scaleY(100%)' }
             ], { 
             // timing options
             duration: 1000,
@@ -286,9 +286,9 @@ function showInfoContainer() {
         let infoElement = document.querySelector("#info-container");
         infoElement.animate([
             // keyframes
-            { transform: 'translateX(0vw) scaleY(5%)' },
-            { transform: 'translateX(150vw) scaleY(5%)' },
-            { transform: 'translateX(150vw) scaleY(100%)' }
+            { transform: 'translateX(0) scaleY(5%)' },
+            { transform: 'translateX(150%) scaleY(5%)' },
+            { transform: 'translateX(150%) scaleY(100%)' }
             ], { 
             // timing options
             duration: 1000,
@@ -303,10 +303,10 @@ function hideInfoContainer() {
         let infoElement = document.querySelector("#info-container");
         infoElement.animate([
             // keyframes
-            { transform: 'translateX(150vw) scaleY(100%)' },
-            { transform: 'translateX(150vw) scaleY(5%)' },
-            { transform: 'translateX(0vw) scaleY(5%)' },
-            { transform: 'translateX(0vw) scaleY(100%)' }
+            { transform: 'translateX(150%) scaleY(100%)' },
+            { transform: 'translateX(150%) scaleY(5%)' },
+            { transform: 'translateX(0) scaleY(5%)' },
+            { transform: 'translateX(0) scaleY(100%)' }
             ], { 
             // timing options
             duration: 1000,
