@@ -263,7 +263,7 @@ select option {
 #info-container {
     z-index: 0;
     position: absolute;
-    top: 50vh;
+    top: 40vh;
     left: -60%;
     margin-top: -20%;
     margin-left: 0;
