@@ -1,3 +1,7 @@
+// Chart view state variable
+let chartDisplayed = false;
+let infoDisplayed = false;
+
 // Map starting coordinates and base setup
 let startPoint = [51.5, -0.1];
 let map = L.map('map').setView(startPoint, 12);
@@ -266,6 +270,41 @@ function hideChart() {
             // keyframes
             { transform: 'translateX(150vw) scaleY(100%)' },
             { transform: 'translateX(150vw) scaleY(5%)' },
+            { transform: 'translateX(0vw) scaleY(5%)' },
+            { transform: 'translateX(0vw) scaleY(100%)' }
+            ], { 
+            // timing options
+            duration: 1000,
+            fill: "forwards"
+        });
+    };
+};
+
+function showInfoContainer() {
+    if (!infoDisplayed) {
+        infoDisplayed = true;
+        let infoElement = document.querySelector("#info-container");
+        infoElement.animate([
+            // keyframes
+            { transform: 'translateX(0vw) scaleY(5%)' },
+            { transform: 'translateX(-100vw) scaleY(5%)' },
+            { transform: 'translateX(-100vw) scaleY(100%)' }
+            ], { 
+            // timing options
+            duration: 1000,
+            fill: "forwards"
+        });
+    };
+};
+
+function hideInfoContainer() {
+    if (infoDisplayed) {
+        infoDisplayed = false;
+        let infoElement = document.querySelector("#info-container");
+        infoElement.animate([
+            // keyframes
+            { transform: 'translateX(-100vw) scaleY(100%)' },
+            { transform: 'translateX(-100vw) scaleY(5%)' },
             { transform: 'translateX(0vw) scaleY(5%)' },
             { transform: 'translateX(0vw) scaleY(100%)' }
             ], { 

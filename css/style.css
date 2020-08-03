@@ -259,6 +259,23 @@ select option {
     cursor: pointer;
 }
 
+#info-container {
+    z-index: 1;
+    position: absolute;
+    top: 50vh;
+    left: 150vw;
+    margin-top: -15%;
+    margin-left: -25%;
+    width: 50vw;
+    height: 60vh;
+    padding: 2rem;
+    background-color: var(--colour-text-hover);
+}
+
+#info-container > * {
+    color: white;
+}
+
 /* Screen sizes 960px and smaller */
 @media (max-width: 960px) {
     #main {

@@ -1,7 +1,3 @@
-// // GLOBAL VARIABLES
-// Chart view state variable
-let chartDisplayed = false;
-
 // // DEFINE FUNCTIONS
 // Get inputted business name
 function getInputBizName() {
@@ -93,9 +89,11 @@ window.addEventListener("load", () => {
         };
     });
     document.querySelector("#chart-icon-1").addEventListener("click", () => {
+        // chartDisplayed state variable declared in view.js
         chartDisplayed ? hideChart() : showChart();
     });
     document.querySelector("#chart-icon-2").addEventListener("click", () => {
+        // chartDisplayed state variable declared in view.js
         chartDisplayed ? hideChart() : showChart();
     });
     document.querySelector("#close-chart").addEventListener("click", hideChart);
