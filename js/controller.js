@@ -97,6 +97,14 @@ window.addEventListener("load", () => {
         chartDisplayed ? hideChart() : showChart();
     });
     document.querySelector("#close-chart").addEventListener("click", hideChart);
+    document.querySelector("#info-icon-1").addEventListener("click", () => {
+        // infoDisplayed state variable declared in view.js
+        infoDisplayed ? hideInfoContainer() : showInfoContainer();
+    });
+    document.querySelector("#info-icon-2").addEventListener("click", () => {
+        // infoDisplayed state variable declared in view.js
+        infoDisplayed ? hideInfoContainer() : showInfoContainer();
+    });
 
     // Get latlng of user click; "poi" variable defined in model.js
     // map.addEventListener("click", event => {
