@@ -287,8 +287,8 @@ function showInfoContainer() {
         infoElement.animate([
             // keyframes
             { transform: 'translateX(0vw) scaleY(5%)' },
-            { transform: 'translateX(-100vw) scaleY(5%)' },
-            { transform: 'translateX(-100vw) scaleY(100%)' }
+            { transform: 'translateX(150vw) scaleY(5%)' },
+            { transform: 'translateX(150vw) scaleY(100%)' }
             ], { 
             // timing options
             duration: 1000,
@@ -303,8 +303,8 @@ function hideInfoContainer() {
         let infoElement = document.querySelector("#info-container");
         infoElement.animate([
             // keyframes
-            { transform: 'translateX(-100vw) scaleY(100%)' },
-            { transform: 'translateX(-100vw) scaleY(5%)' },
+            { transform: 'translateX(150vw) scaleY(100%)' },
+            { transform: 'translateX(150vw) scaleY(5%)' },
             { transform: 'translateX(0vw) scaleY(5%)' },
             { transform: 'translateX(0vw) scaleY(100%)' }
             ], { 
