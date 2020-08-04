@@ -384,4 +384,7 @@ select option {
     .info-inner-container {
         padding: 3rem 2rem;
     }
+    .info-inner-container > * {
+        text-align: initial;
+    }
 }
