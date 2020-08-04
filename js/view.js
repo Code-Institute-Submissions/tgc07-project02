@@ -285,7 +285,8 @@ function hideChart() {
 
 function showInfoContainer() {
     if (!infoDisplayed) {
-        document.querySelector("#info-container").className = "info-displayed";
+        document.querySelector("#main").style.display = "none";
+        document.querySelector("#info-container").style.display = "initial";
         infoDisplayed = true;
         // let infoElement = document.querySelector("#info-container");
         // infoElement.animate([
@@ -303,7 +304,8 @@ function showInfoContainer() {
 
 function hideInfoContainer() {
     if (infoDisplayed) {
-        document.querySelector("#info-container").className = "";
+        document.querySelector("#info-container").style.display = "none";
+        document.querySelector("#main").style.display = "grid";
         infoDisplayed = false;
         // let infoElement = document.querySelector("#info-container");
         // infoElement.animate([
