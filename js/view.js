@@ -234,12 +234,10 @@ function toggleSearchResults() {
     let resultsContainer = document.querySelector("#search-results-container");
     if (resultsContainer.style.display === "none") {
         resultsContainer.style.display = "initial";
-        // document.querySelector("#main").style.gridTemplateColumns = "1fr 3fr";
         // If screen <= 960px then main section grid-template-rows 50vh, else main section grid-template-columns 1fr 3fr
         window.matchMedia('(max-width: 960px)').matches ? document.querySelector("#main").style.gridTemplateRows = "50vh" : document.querySelector("#main").style.gridTemplateColumns = "1fr 3fr";
     } else if (resultsContainer.style.display === "initial") {
         resultsContainer.style.display = "none";
-        // document.querySelector("#main").style.gridTemplateColumns = "1fr";
         // If screen <= 960px then main section grid-template-rows 100vh, else main section grid-template-columns 1fr
         window.matchMedia('(max-width: 960px)').matches ? document.querySelector("#main").style.gridTemplateRows = "100vh" : document.querySelector("#main").style.gridTemplateColumns = "1fr";
     };
@@ -249,17 +247,6 @@ function showChart() {
     if (!chartDisplayed) {
         document.querySelector("#chart-container").className = "chart-displayed";
         chartDisplayed = true;
-        // let chartElement = document.querySelector("#chart-container");
-        // chartElement.animate([
-        //     // keyframes
-        //     { transform: 'translateX(0) scaleY(5%)' },
-        //     { transform: 'translateX(150%) scaleY(5%)' },
-        //     { transform: 'translateX(150%) scaleY(100%)' }
-        //     ], { 
-        //     // timing options
-        //     duration: 1000,
-        //     fill: "forwards"
-        // });
     };
 };
 
@@ -268,18 +255,6 @@ function hideChart() {
         // document.querySelector("#chart-container").className = "chart-hidden";
         document.querySelector("#chart-container").className = "";
         chartDisplayed = false;
-        // let chartElement = document.querySelector("#chart-container");
-        // chartElement.animate([
-        //     // keyframes
-        //     { transform: 'translateX(150%) scaleY(100%)' },
-        //     { transform: 'translateX(150%) scaleY(5%)' },
-        //     { transform: 'translateX(0) scaleY(5%)' },
-        //     { transform: 'translateX(0) scaleY(100%)' }
-        //     ], { 
-        //     // timing options
-        //     duration: 1000,
-        //     fill: "forwards"
-        // });
     };
 };
 
@@ -288,17 +263,6 @@ function showInfoContainer() {
         document.querySelector("#main").style.display = "none";
         document.querySelector("#info-container").style.display = "initial";
         infoDisplayed = true;
-        // let infoElement = document.querySelector("#info-container");
-        // infoElement.animate([
-        //     // keyframes
-        //     { transform: 'translateX(0) scaleY(5%)' },
-        //     { transform: 'translateX(150%) scaleY(5%)' },
-        //     { transform: 'translateX(150%) scaleY(100%)' }
-        //     ], { 
-        //     // timing options
-        //     duration: 1000,
-        //     fill: "forwards"
-        // });
     };
 };
 
@@ -307,17 +271,5 @@ function hideInfoContainer() {
         document.querySelector("#info-container").style.display = "none";
         document.querySelector("#main").style.display = "grid";
         infoDisplayed = false;
-        // let infoElement = document.querySelector("#info-container");
-        // infoElement.animate([
-        //     // keyframes
-        //     { transform: 'translateX(150%) scaleY(100%)' },
-        //     { transform: 'translateX(150%) scaleY(5%)' },
-        //     { transform: 'translateX(0) scaleY(5%)' },
-        //     { transform: 'translateX(0) scaleY(100%)' }
-        //     ], { 
-        //     // timing options
-        //     duration: 1000,
-        //     fill: "forwards"
-        // });
     };
 };
