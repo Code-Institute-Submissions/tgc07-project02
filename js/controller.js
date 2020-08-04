@@ -51,7 +51,7 @@ window.addEventListener("load", () => {
             hideInfoContainer();
 
             // Create chart and display off-screen
-            window.matchMedia('(max-width: 960px)').matches ? displayChart(searchResults.chartHygieneRatingsData, 'horizontalBar') : displayChart(searchResults.chartHygieneRatingsData, 'bar');
+            window.matchMedia('(max-width: 1280px)').matches ? displayChart(searchResults.chartHygieneRatingsData, 'horizontalBar') : displayChart(searchResults.chartHygieneRatingsData, 'bar');
         };
     });
 

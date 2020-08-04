@@ -319,6 +319,16 @@ select option {
     margin-left: 1rem;
 }
 
+/* Screen sizes 1280px and smaller */
+@media (max-width: 1280px) {
+    .info-background {
+        padding: 0;
+    }
+    .info-inner-container {
+        padding: 3rem 5rem;
+    }
+}
+
 /* Screen sizes 960px and smaller */
 @media (max-width: 960px) {
     #main {
