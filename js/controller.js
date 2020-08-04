@@ -105,6 +105,7 @@ window.addEventListener("load", () => {
         // infoDisplayed state variable declared in view.js
         infoDisplayed ? hideInfoContainer() : showInfoContainer();
     });
+    document.querySelector("#close-info").addEventListener("click", hideInfoContainer);
 
     // Get latlng of user click; "poi" variable defined in model.js
     // map.addEventListener("click", event => {
