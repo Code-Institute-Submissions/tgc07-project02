@@ -43,7 +43,6 @@ window.addEventListener("load", () => {
             alert("Please enter search criteria");
         } else {
             let searchResults = compoundSearch(bizName, address, postcode, hygieneRating);
-            console.log(searchResults);
 
             // Display search results in results panel and add markers to map (defined in view.js)
             displaySearchResults(searchResults.businessesResults);
