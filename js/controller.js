@@ -48,6 +48,7 @@ window.addEventListener("load", () => {
             // Display search results in results panel and add markers to map (defined in view.js)
             displaySearchResults(searchResults.businessesResults);
             document.querySelector("#search-results-container").style.display = "initial";
+            hideInfoContainer();
 
             // Create chart and display off-screen
             window.matchMedia('(max-width: 960px)').matches ? displayChart(searchResults.chartHygieneRatingsData, 'horizontalBar') : displayChart(searchResults.chartHygieneRatingsData, 'bar');
@@ -111,11 +112,13 @@ window.addEventListener("load", () => {
     document.querySelector("#info-icon-1").addEventListener("click", () => {
         // infoDisplayed state variable declared in view.js
         // infoDisplayed ? hideInfoContainer() : showInfoContainer();
+        hideChart();
         showInfoContainer();
     });
     document.querySelector("#info-icon-2").addEventListener("click", () => {
         // infoDisplayed state variable declared in view.js
         // infoDisplayed ? hideInfoContainer() : showInfoContainer();
+        hideChart();
         showInfoContainer();
     });
     document.querySelector("#close-info").addEventListener("click", hideInfoContainer);
