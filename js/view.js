@@ -247,36 +247,39 @@ function toggleSearchResults() {
 
 function showChart() {
     if (!chartDisplayed) {
+        document.querySelector("#chart-container").className = "chart-displayed";
         chartDisplayed = true;
-        let chartElement = document.querySelector("#chart-container");
-        chartElement.animate([
-            // keyframes
-            { transform: 'translateX(0) scaleY(5%)' },
-            { transform: 'translateX(150%) scaleY(5%)' },
-            { transform: 'translateX(150%) scaleY(100%)' }
-            ], { 
-            // timing options
-            duration: 1000,
-            fill: "forwards"
-        });
+        // let chartElement = document.querySelector("#chart-container");
+        // chartElement.animate([
+        //     // keyframes
+        //     { transform: 'translateX(0) scaleY(5%)' },
+        //     { transform: 'translateX(150%) scaleY(5%)' },
+        //     { transform: 'translateX(150%) scaleY(100%)' }
+        //     ], { 
+        //     // timing options
+        //     duration: 1000,
+        //     fill: "forwards"
+        // });
     };
 };
 
 function hideChart() {
     if (chartDisplayed) {
+        // document.querySelector("#chart-container").className = "chart-hidden";
+        document.querySelector("#chart-container").className = "";
         chartDisplayed = false;
-        let chartElement = document.querySelector("#chart-container");
-        chartElement.animate([
-            // keyframes
-            { transform: 'translateX(150%) scaleY(100%)' },
-            { transform: 'translateX(150%) scaleY(5%)' },
-            { transform: 'translateX(0) scaleY(5%)' },
-            { transform: 'translateX(0) scaleY(100%)' }
-            ], { 
-            // timing options
-            duration: 1000,
-            fill: "forwards"
-        });
+        // let chartElement = document.querySelector("#chart-container");
+        // chartElement.animate([
+        //     // keyframes
+        //     { transform: 'translateX(150%) scaleY(100%)' },
+        //     { transform: 'translateX(150%) scaleY(5%)' },
+        //     { transform: 'translateX(0) scaleY(5%)' },
+        //     { transform: 'translateX(0) scaleY(100%)' }
+        //     ], { 
+        //     // timing options
+        //     duration: 1000,
+        //     fill: "forwards"
+        // });
     };
 };
 

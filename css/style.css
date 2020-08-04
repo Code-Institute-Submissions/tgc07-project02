@@ -219,10 +219,10 @@ select option {
 #chart-container {
     z-index: 0;
     position: absolute;
-    top: 50vh;
+    top: 40vh;
     left: -50%;
-    margin-top: -20%;
-    margin-left: 0;
+    margin-top: -10%;
+    /* margin-left: -50%; */
     width: 50vw;
     background-color: var(--colour-text-hover);
 }
@@ -259,6 +259,26 @@ select option {
     cursor: pointer;
 }
 
+.chart-displayed {
+    animation: display-chart 1s linear forwards;
+}
+
+@keyframes display-chart {
+    0% {transform: translateX(0) scaleY(0.05);}
+    50% {transform: translateX(150%) scaleY(0.05);}
+    100% {transform: translateX(150%) scaleY(1);}
+}
+/* 
+.chart-hidden {
+    animation: hide-chart 1s linear forwards;
+}
+
+@keyframes hide-chart {
+    0% {transform: translateX(150%) scaleY(1);}
+    50% {transform: translateX(150%) scaleY(0.05);}
+    100% {transform: translateX(0) scaleY(0.05);}
+} */
+
 /* Additional info section */
 #info-container {
     z-index: 0;
@@ -284,8 +304,8 @@ select option {
         grid-template-rows: 100vh;
     }
     #chart-container {
-        margin-top: -50%;
-        margin-left: -35%;
+        margin-top: -10%;
+        margin-left: -55%;
         width: 80vw;
     }
     #chart-title {
