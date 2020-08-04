@@ -312,7 +312,7 @@ select option {
 }
 
 .info-inner-container {
-    max-height: 84vh;
+    max-height: 80vh;
     padding: 3rem 5rem;
     overflow-y: auto;
     background-color: white;
@@ -359,6 +359,9 @@ select option {
     #chart-title {
         padding: 20px 20px 0 10%;
     }
+    .info-background {
+        padding: 0;
+    }    
 }
 
 /* Screen sizes 640px and smaller */
