@@ -52,42 +52,18 @@ function loadData(promiseArray) {
     });
 };
 
-// Filter postcode
-// function filterPostCode(postcode) {
-//     let postcodeFiltered = [];
-//     let modPostCode = postcode.replace(/^\s+|\s+$/g, '').toUpperCase();
-//     let url = `https://api.getthedata.com/postcode/${modPostCode}`;
-//     fetch(url).then(response => response.json()).then(jsonData => {
-//         if (jsonData.status==="match") {
-//             console.log(jsonData.data)
-//             if (jsonData.data.hasOwnProperty("postcode")) {
-//                 postcodeFiltered.push(jsonData.data.postcode);
-//                 let latitude = parseFloat(jsonData.data.latitude);
-//                 let longitude = parseFloat(jsonData.data.longitude);
-//                 postcodeFiltered.push([latitude,longitude]);
-//             } else if (jsonData.data.hasOwnProperty("postcode_sector")) {
-//                 postcodeFiltered.push(jsonData.data.postcode_sector);
-//             } else if (jsonData.data.hasOwnProperty("postcode_district")) {
-//                 postcodeFiltered.push(jsonData.data.postcode_district);
-//             } else if (jsonData.data.hasOwnProperty("postcode_area")) {
-//                 postcodeFiltered.push(jsonData.data.postcode_area);
-//             };
-//         };
-//     }); return postcodeFiltered;
-// };
-
 // Search by business name and/or address and/or postcode and/or hygiene rating
 function compoundSearch(bizNameSearch, addressSearch, postcodeSearch, hygieneRatingSearch) {
     let businessesResults = [];
     let chartHygieneRatingsData = [0,0,0,0,0,0];
     function tallyHygieneRatings(hygieneRatingActual) {
+        // Ignore "Exempt" and "AwaitingInspection" results
         if (hygieneRatingActual==="0") {chartHygieneRatingsData[0]+=1}
         else if (hygieneRatingActual==="1") {chartHygieneRatingsData[1]+=1}
         else if (hygieneRatingActual==="2") {chartHygieneRatingsData[2]+=1}
         else if (hygieneRatingActual==="3") {chartHygieneRatingsData[3]+=1}
         else if (hygieneRatingActual==="4") {chartHygieneRatingsData[4]+=1}
         else if (hygieneRatingActual==="5") {chartHygieneRatingsData[5]+=1};
-        // Ignores "Exempt" and "AwaitingInspection" results
     };
     let modName = bizNameSearch.replace(/^\s+|\s+$/g, '').toUpperCase();
     let modAddress = addressSearch.replace(/^\s+|\s+$/g, '').toUpperCase();
@@ -306,7 +282,7 @@ function compoundSearch(bizNameSearch, addressSearch, postcodeSearch, hygieneRat
                         };
                     };
                 };
-            }; // check for any other permutations
+            };
         };
     };
     return {businessesResults, chartHygieneRatingsData, bizNameSearch, addressSearch, postcodeSearch, hygieneRatingSearch};

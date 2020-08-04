@@ -107,10 +107,4 @@ window.addEventListener("load", () => {
     });
     document.querySelector("#close-info").addEventListener("click", hideInfoContainer);
 
-    // Get latlng of user click; "poi" variable defined in model.js
-    // map.addEventListener("click", event => {
-    //     poi = [];
-    //     poi.push(event.latlng.lat);
-    //     poi.push(event.latlng.lng);
-    // });
 });
