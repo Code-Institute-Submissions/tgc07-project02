@@ -285,35 +285,37 @@ function hideChart() {
 
 function showInfoContainer() {
     if (!infoDisplayed) {
+        document.querySelector("#info-container").className = "info-displayed";
         infoDisplayed = true;
-        let infoElement = document.querySelector("#info-container");
-        infoElement.animate([
-            // keyframes
-            { transform: 'translateX(0) scaleY(5%)' },
-            { transform: 'translateX(150%) scaleY(5%)' },
-            { transform: 'translateX(150%) scaleY(100%)' }
-            ], { 
-            // timing options
-            duration: 1000,
-            fill: "forwards"
-        });
+        // let infoElement = document.querySelector("#info-container");
+        // infoElement.animate([
+        //     // keyframes
+        //     { transform: 'translateX(0) scaleY(5%)' },
+        //     { transform: 'translateX(150%) scaleY(5%)' },
+        //     { transform: 'translateX(150%) scaleY(100%)' }
+        //     ], { 
+        //     // timing options
+        //     duration: 1000,
+        //     fill: "forwards"
+        // });
     };
 };
 
 function hideInfoContainer() {
     if (infoDisplayed) {
+        document.querySelector("#info-container").className = "";
         infoDisplayed = false;
-        let infoElement = document.querySelector("#info-container");
-        infoElement.animate([
-            // keyframes
-            { transform: 'translateX(150%) scaleY(100%)' },
-            { transform: 'translateX(150%) scaleY(5%)' },
-            { transform: 'translateX(0) scaleY(5%)' },
-            { transform: 'translateX(0) scaleY(100%)' }
-            ], { 
-            // timing options
-            duration: 1000,
-            fill: "forwards"
-        });
+        // let infoElement = document.querySelector("#info-container");
+        // infoElement.animate([
+        //     // keyframes
+        //     { transform: 'translateX(150%) scaleY(100%)' },
+        //     { transform: 'translateX(150%) scaleY(5%)' },
+        //     { transform: 'translateX(0) scaleY(5%)' },
+        //     { transform: 'translateX(0) scaleY(100%)' }
+        //     ], { 
+        //     // timing options
+        //     duration: 1000,
+        //     fill: "forwards"
+        // });
     };
 };

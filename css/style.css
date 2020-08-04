@@ -283,14 +283,35 @@ select option {
 #info-container {
     z-index: 0;
     position: absolute;
-    top: 40vh;
-    left: -60%;
-    margin-top: -20%;
-    margin-left: 0;
-    width: 50vw;
-    height: 60vh;
-    padding: 2rem;
-    background-color: var(--colour-text-hover);
+    top: 0;
+    left: -100%;
+    width: 90vw;
+    height: 85vh;
+    padding: 50px;
+}
+
+.info-displayed {
+    animation: display-info 1s linear forwards;
+}
+
+@keyframes display-info {
+    0% {transform: translateX(0) scaleY(0.05);}
+    50% {transform: translateX(105%) scaleY(0.05);}
+    100% {transform: translateX(105%) scaleY(1);}
+}
+
+.info-inner-container {
+    width: 100%;
+    height: 100%;
+    background-color: var(--colour-green);
+}
+
+#close-info {
+    font-size: 1.5rem;
+}
+
+#close-info:hover {
+    cursor: pointer;
 }
 
 #info-container > * {
