@@ -273,7 +273,7 @@ select option {
     max-height: 100%;
     width: 100%;
     padding: 0;
-    background-color: var(--colour-page-background);
+    background-color: var(--colour-green);
     display: none;
 }
 
@@ -281,7 +281,7 @@ select option {
     font-size: 1.5rem;
     text-align: end;
     padding: 1rem 20px;
-    background-color: var(--colour-green-dark);
+    background-color: var(--colour-green);
     color: white;
 }
 
