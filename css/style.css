@@ -346,8 +346,8 @@ select option {
     grid-template-columns: auto 50px;
 } */
 
-/* Screen sizes 960px and smaller */
-@media (max-width: 960px) {
+/* Screen sizes 1024px and smaller */
+@media (max-width: 1024px) {
     #main {
         grid-template-columns: 1fr;
         grid-template-rows: 100vh;
