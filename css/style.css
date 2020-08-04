@@ -313,13 +313,14 @@ select option {
 
 .info-inner-container {
     max-height: 80vh;
-    padding: 3rem 5rem;
+    padding: 3rem 12rem;
     overflow-y: auto;
     background-color: white;
 }
 
 .info-inner-container > * {
     margin-bottom: 1.5rem;
+    text-align: justify;
 }
 
 .info-inner-container h2, .info-inner-container h3 {
@@ -327,7 +328,7 @@ select option {
 }
 
 .info-inner-container li {
-    margin-left: 2rem;
+    margin-left: 1rem;
 }
 
 /* .info-displayed {
@@ -361,7 +362,10 @@ select option {
     }
     .info-background {
         padding: 0;
-    }    
+    }
+    .info-inner-container {
+        padding: 3rem 4rem;
+    }
 }
 
 /* Screen sizes 640px and smaller */
@@ -393,5 +397,8 @@ select option {
     }
     .leaflet-popup-content > * {
         margin: 0.1rem 0 !important;
+    }
+    .info-inner-container {
+        padding: 3rem 2rem;
     }
 }
