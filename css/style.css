@@ -247,7 +247,7 @@ select option {
 }
 
 #chart-title > * {
-    color: #555555;
+    color: var(--colour-green-dark);
 }
 
 #close-chart {
