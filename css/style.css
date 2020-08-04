@@ -328,6 +328,11 @@ select option {
 }
 
 .info-inner-container li {
+    margin-left: 2rem;
+}
+
+.hygiene-ratings li {
+    list-style-type: none;
     margin-left: 1rem;
 }
 
