@@ -303,11 +303,22 @@ select option {
 .info-inner-container {
     width: 100%;
     height: 100%;
+    padding: 2rem;
     background-color: var(--colour-green);
+}
+
+.info-inner-container li {
+    margin-left: 2rem;
+}
+
+.info-header {
+    display: grid;
+    grid-template-columns: auto 50px;
 }
 
 #close-info {
     font-size: 1.5rem;
+    text-align: end;
 }
 
 #close-info:hover {
