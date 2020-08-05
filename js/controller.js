@@ -22,6 +22,20 @@ function getInputHygieneRating() {
 // Call "loadData" function with array of promises as parameter
 loadData(fhrsDataPromiseArray);
 
+// Submit button disabled by default in index.html, then enable here if search fields are not empty
+let businessInputElement = document.querySelector("#search-business");
+let addressInputElement = document.querySelector("#search-address");
+let postcodeInputElement = document.querySelector("#search-postcode");
+businessInputElement.addEventListener("input", function () {
+    this.value!=="" ? document.querySelector("#search-btn").disabled = false : document.querySelector("#search-btn").disabled = true;
+});
+addressInputElement.addEventListener("input", function () {
+    this.value!=="" ? document.querySelector("#search-btn").disabled = false : document.querySelector("#search-btn").disabled = true;
+});
+postcodeInputElement.addEventListener("input", function () {
+    this.value!=="" ? document.querySelector("#search-btn").disabled = false : document.querySelector("#search-btn").disabled = true;
+});
+
 // Wait until window fully loaded, then enable user search
 window.addEventListener("load", () => {
     document.querySelector("#search-btn").addEventListener("click", (event) => {
