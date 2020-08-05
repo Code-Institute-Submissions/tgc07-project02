@@ -53,3 +53,11 @@ The chosen colour scheme uses green colours inspired by nature in order to compl
 - Search for businesses by postcode based on user's current geolocation.
 - Comparison feature between data from 2 separate search results.
 
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
+- [Leafet](https://leafletjs.com/)
+- [Font Awesome v4.7.0](https://fontawesome.com/v4.7.0/)
+- [Chart.js](https://www.chartjs.org/)
+
