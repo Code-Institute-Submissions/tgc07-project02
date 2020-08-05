@@ -57,7 +57,37 @@ The chosen colour scheme uses green colours inspired by nature in order to compl
 - HTML
 - CSS
 - JavaScript
-- [Leafet](https://leafletjs.com/)
 - [Font Awesome v4.7.0](https://fontawesome.com/v4.7.0/)
+- [Leafet](https://leafletjs.com/)
 - [Chart.js](https://www.chartjs.org/)
 
+## Testing
+
+All testing was done manually. The following tests were performed:
+
+TESTING TABLE TO BE INSERTED
+
+## Deployment
+
+A live demo of this project can be viewed [here](https://andrewsui.github.io/tgc07-project02/index.html) which has been hosted using GitHub Pages.
+All the source code for this project is available [here](https://github.com/andrewsui/tgc07-project02) on GitHub.
+
+Code for the project was deployed in the following manner:
+- Individual files were added to the next commit staging area by executing the `git add [filename]` command in a command-line interface.
+- All changes in the working directory were added to the next commit (stage) by executing the `git add .` command in a command-line interface.
+- Staged content was committed as new commit snapshot by executing the `git commit -m “[message]"` command in a command-line interface.
+- Local branch commits were pushed to the remote repository master branch by executing the `git push -u origin master` command in a command-line interface.
+- Subsequent local branch commits were pushed to the remote repository master branch by executing the `git push` command in a command-line interface.
+- The website was published on GitHub Pages by navigating to the "Settings" of the project's repository and selecting the master branch as the source in the GitHub Pages sub-section.
+
+## Credits
+
+### Content and Media
+- Business and food hygiene rating info was downloaded from the [Food Standards Agency's website](https://ratings.food.gov.uk/open-data/en-GB).
+- Favicon was created using [Favicon.io](https://favicon.io/).
+- Interactive map uses [Leafet](https://leafletjs.com/).
+- Chart was created using [Chart.js](https://www.chartjs.org/).
+- [Font Awesome v4.7.0](https://fontawesome.com/v4.7.0/) was used for this project's icons.
+
+### Acknowledgements
+- This project's navbar was contructed using [this video by dcode](https://www.youtube.com/watch?v=LxEb9G7ELOQ).
