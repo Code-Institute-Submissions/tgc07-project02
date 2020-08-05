@@ -36,4 +36,20 @@ Wireframes created during the design process can be found [here](report/wirefram
 ### Surface
 The chosen colour scheme uses green colours inspired by nature in order to complement the colours used in the map provided by [Leaflet](https://leafletjs.com/) and [OpenStreetMap](https://www.openstreetmap.org/). Dark grey colour was used for the navbar to provide a professional look to the website.
 
+## Features
+
+### Current Features
+- Reponsive web design catering to small, medium and large screen sizes (note that both CSS and JavaScript are used to control the responsiveness, therefore a page refresh is required if switching from one screen size to another).
+- Single page application that does not need the web page to be refreshed when the user moves from section to section.
+- Search by business name, address, postcode and/or hygiene rating.
+- Search button is disabled if all search fields are empty.
+- Hovering over navbar links and individual search results changes background colour and scale, giving positive feedback to the user as a result of their actions.
+- Total number of search results is displayed for each search.
+- Interactive map displaying markers for each search result.
+- Clicking a search result pans to the respective marker on the map and opens the marker's popup content.
+- Bar chart showing the number of businesses in each food hygiene rating category for the user's specified search criteria.
+
+### Features Left to Implement
+- Search for businesses by postcode based on user's current geolocation.
+- Comparison feature between data from 2 separate search results.
 
