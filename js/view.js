@@ -31,6 +31,15 @@ function locateMarker(FHRSID){
     };
 };
 
+// Format date from YYYY-MM-DD to DD/MM/YYYY (https://stackoverflow.com/questions/2086744/javascript-function-to-convert-date-yyyy-mm-dd-to-dd-mm-yy)
+function formatDate (input) {
+    let datePart = input.match(/\d+/g),
+    year = datePart[0],
+    month = datePart[1],
+    day = datePart[2];
+    return day+'/'+month+'/'+year;
+};
+
 // Display search results with markers and results panel
 function displaySearchResults(searchResultsArray) {
     // Reset map
@@ -68,7 +77,7 @@ function displaySearchResults(searchResultsArray) {
                 biz.RatingValue==="AwaitingInspection" ? ratingValue = "Awaiting inspection" : ratingValue = biz.RatingValue;
             };
             if (biz.hasOwnProperty("RatingDate")) {
-                typeof(biz.RatingDate)==="string" ? ratingDate = biz.RatingDate : ratingDate = "N.A.";
+                typeof(biz.RatingDate)==="string" ? ratingDate = formatDate(biz.RatingDate) : ratingDate = "N.A.";
             };
             if (biz.hasOwnProperty("LocalAuthorityEmailAddress")) authorityEmail = `<a href="mailto:${biz.LocalAuthorityEmailAddress}">${biz.LocalAuthorityEmailAddress}</a>`;
 
