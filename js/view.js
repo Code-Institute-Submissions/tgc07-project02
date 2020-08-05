@@ -52,6 +52,7 @@ function displaySearchResults(searchResultsArray) {
     let resultsContainerElement = document.querySelector("#search-results-container");
     resultsContainerElement.innerText = "";
     newTitle = document.createElement("h2");
+    // If only 1 search result then singular "result" or thousands separator format if necessary (https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript)
     newTitle.innerText = searchResultsArray.length===1 ? "1 search result" : `${searchResultsArray.length.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} search results`;
     resultsContainerElement.appendChild(newTitle);
 

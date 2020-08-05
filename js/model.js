@@ -65,6 +65,7 @@ function compoundSearch(bizNameSearch, addressSearch, postcodeSearch, hygieneRat
         else if (hygieneRatingActual==="4") {chartHygieneRatingsData[4]+=1}
         else if (hygieneRatingActual==="5") {chartHygieneRatingsData[5]+=1};
     };
+    // Remove leading and trailing spaces from a string (https://www.w3resource.com/javascript-exercises/javascript-string-exercise-23.php)
     let modName = bizNameSearch.replace(/^\s+|\s+$/g, '').toUpperCase();
     let modAddress = addressSearch.replace(/^\s+|\s+$/g, '').toUpperCase();
     let modPostCode = postcodeSearch.replace(/^\s+|\s+$/g, '').toUpperCase();
