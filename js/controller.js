@@ -19,6 +19,7 @@ function getInputHygieneRating() {
     return document.querySelector("#select-hygiene-rating").value;
 };
 
+// // MAIN
 // Call "loadData" function with array of promises as parameter
 loadData(fhrsDataPromiseArray);
 
