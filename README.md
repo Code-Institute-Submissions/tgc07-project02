@@ -107,7 +107,7 @@ All testing was done manually. The following tests were performed:
 | 22 | Click "Chart" icon on minimised navbar | Displays chart if not already displayed | As expected |
 | 23 | Click "Info" icon on minimised navbar | Closes search results and map, then displays site-info section | As expected |
 | 24 | Click hamburger icon on minimsed navbar | Maximises navbar | As expected |
-| 25 | View website on desktop PC using Chrome and FireFox | Main section should be split into 2 columns for search results and map with height 100vh | As expected |
+| 25 | View website on desktop PC using Chrome and FireFox | Main section should be split into 2 columns for search results and map spanning full window height | As expected |
 | 26 | View website on iPad using Safari | Main section should be 1 column split into 2 rows for search results and map | As expected |
 | 27 | View website on Samsung Note 8 using Chrome and FireFox with maximised navbar | Should see search form and "minimise" icon, but all other icons hidden | As expected |
 | 28 | View website on Samsung Note 8 using Chrome and FireFox, then perform search | Navbar auto-minimises when search button submitted. Main section should be 1 column split into 2 rows for search results and map. | As expected |
