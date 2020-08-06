@@ -79,9 +79,15 @@ All testing was done manually. The following tests were performed:
 |  8 | Search by address and postcode | Return results that match address and postcode, but any establishment name and any hygiene rating | As expected |
 |  9 | Search by establishment name and address and postcode | Return results that match establishment name and address and postcode, but any hygiene rating | As expected |
 | 10 | Search by specific hygiene rating and search input fields are not empty | Return results that match hygiene rating | As expected |
-| 11 | Click individual search result | Pan to respective map marker and marker popup content is opened | Popup opens correctly. Pan to marker works most of the time, but occasionally pans with the marker slightly offscreen. Unable to identify the trigger for this error and might be due to leaflet zoom rounding. |
-|  |  |  |  |
-|  |  |  |  |
+| 11 | Click individual search result | Pan to respective map marker and marker popup content is opened | Popup opens correctly. Pan to marker works most of the time, but occasionally pans with the marker slightly offscreen. Unable to identify the cause of this error and might be due to leaflet zoom rounding. |
+| 12 | Click "Results" icon on navbar | Displays search results panel if not already displayed | As expected |
+| 13 | Click "Map" icon on navbar | Maximises map and minimises everything else | As expected |
+| 14 | Click "Chart" icon on navbar | Displays chart if not already displayed | As expected |
+| 15 | Click "X" in top right corner of chart  | Closes chart | As expected |
+| 16 | Click "Info" icon on navbar | Closes search results and map, then displays site-info section | As expected |
+| 17 | Click "X" in top right corner of site-info section | Closes site-info section and returns to previous map and search results view | As expected |
+| 18 | Click "Minimise" icon on navbar | Minimises navbar with only icons for navigation | As expected |
+| 19 | Click magnifying glass icon on minimised navbar | Maximises navbar | As expected |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
