@@ -120,9 +120,7 @@ function displaySearchResults(searchResultsArray) {
     };
 
     // Add marker layer to map and fit map to bounds of markers
-    if (searchResultsArray.length===0) {
-        console.warn("No search results");
-    } else if (searchResultsArray.length>0 && searchResultsArray.length<=1000) {
+    if (searchResultsArray.length>0 && searchResultsArray.length<=1000) {
         markerGroup.addTo(map);
         map.fitBounds(markerGroup.getBounds(), {maxZoom:16});
     } else if (searchResultsArray.length>1000) {
