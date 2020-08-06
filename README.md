@@ -19,7 +19,7 @@ This project was built for JavaScript, HTML and CSS educational purposes only an
 Food Standards Agency would want to:
 - provide a public service that enables users to easily obtain food hygiene data of businesses and thereby empowering the public to make informed decisions about the food that they buy.
 - present meaningful information about restaurants and other eateries in an elegant and professional manner.
-- make the relevant local authority contact information pertaining to each business easily to find, as the information on businesses is held on behalf of the local authorities.
+- make the relevant local authority's contact information easy to find, as the information on businesses is held on behalf of the local authorities.
 
 ![Desktop results](report/screenshots/02-desktop-results.png "Desktop results")
 ![iPad results](report/screenshots/05-ipad-results.jpg "iPad results")
