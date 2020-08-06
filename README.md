@@ -11,10 +11,19 @@ This project was built for JavaScript, HTML and CSS educational purposes only an
 ## UX
 
 ### Strategy - User Stories
+
+![Desktop start page](report/screenshots/01-desktop-start.png "Desktop start page")
+![iPad start page](report/screenshots/04-ipad-start.jpg "iPad start page")
+![Mobile start page](report/screenshots/07-mobile-start.png "Mobile start page")
+
 Food Standards Agency would want to:
 - provide a public service that enables users to easily obtain food hygiene data of businesses and thereby empowering the public to make informed decisions about the food that they buy.
 - present meaningful information about restaurants and other eateries in an elegant and professional manner.
 - make the relevant local authority contact information pertaining to each business easily to find, as the information on businesses is held on behalf of the local authorities.
+
+![Desktop results](report/screenshots/02-desktop-results.png "Desktop results")
+![iPad results](report/screenshots/05-ipad-results.jpg "iPad results")
+![Mobile results](report/screenshots/08-mobile-results.png "Mobile results")
 
 Members of the general public would want to:
 - easily obtain food hygiene data of businesses and thereby enabling them to make informed decisions about the food that they buy.
@@ -22,6 +31,10 @@ Members of the general public would want to:
 - easily locate the business with the help of a map.
 - find the relevant local authority contact information in the event of any enquiries or complaints.
 - understand the number of businesses in each food hygiene rating category for the user's specified search criteria.
+
+![Desktop chart](report/screenshots/03-desktop-chart.png "Desktop chart")
+![iPad chart](report/screenshots/06-ipad-chart.jpg "iPad chart")
+![Mobile map](report/screenshots/09-mobile-map.png "Mobile map")
 
 ### Scope
 Content requirements: Text, images, map, information on each business, food hygiene ratings, relevant local authorities.
@@ -31,7 +44,7 @@ Functional specification: Interactive map, graphical chart.
 The website will be presented as a single page application with a navbar that enables the user to switch between different views. Split screen design-pattern will mainly be used.
 
 ### Skeleton
-Wireframes created during the design process can be found [here](report/wireframes.pdf).
+Wireframes created during the design process can be found [here](report/wireframes/wireframes.pdf).
 
 ### Surface
 The chosen colour scheme uses green colours inspired by nature in order to complement the colours used in the map provided by [Leaflet](https://leafletjs.com/) and [OpenStreetMap](https://www.openstreetmap.org/). Dark grey colour was used for the navbar to provide a professional look to the website.
