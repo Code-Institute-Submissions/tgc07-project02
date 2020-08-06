@@ -1,6 +1,6 @@
 # London Food Hygiene Ratings
 
-## Interactive Front End Development with Javascript
+## Interactive Frontend Development Milestone Project
 A live demo of this project can be viewed [here](https://andrewsui.github.io/tgc07-project02/index.html).
 
 This project is a single page application designed as a mock-up of what the UK Food Standards Agency's Food Hygiene Rating Scheme search feature could potentially look like. The data set used in this project has been limited to just London data in order to prevent the data folder size from getting too large.
@@ -43,6 +43,8 @@ The chosen colour scheme uses green colours inspired by nature in order to compl
 - Reponsive web design catering to small, medium and large screen sizes.
 - Single page application that does not need the web page to be refreshed when the user moves from section to section.
 - Search button is disabled if all search fields are empty.
+- If search fields are not empty, search button can be submitted by pressing the Enter key.
+- Search button does not reload the page when submitted.
 - Hovering over navbar links and individual search results changes background colour and scale, giving positive feedback to the user as a result of their actions.
 - Total number of search results is displayed for each search.
 - Interactive map displaying markers for each search result.
