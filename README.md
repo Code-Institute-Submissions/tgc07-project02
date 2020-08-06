@@ -98,8 +98,9 @@ All testing was done manually. The following tests were performed:
 | 27 | View website on Samsung Note 8 using Chrome and FireFox with maximised navbar | Should see search form and "minimise" icon, but all other icons hidden | As expected |
 | 28 | View website on Samsung Note 8 using Chrome and FireFox, then perform search | Navbar auto-minimises when search button submitted. Main section should be 1 column split into 2 rows for search results and map. | As expected |
 | 29 | View website on Samsung Note 8 using Chrome and FireFox, then view search results or site-info | "Chart" icon should be hidden | As expected |
-| 30 | Use W3C Markup Validation Service to check HTML | Document checking completed. No errors or warnings to show. | Document checking completed. No errors or warnings to show. |
-| 31 | Use W3C CSS Validation Service to check CSS | Document checking completed. No errors or warnings to show. | 1 error due to Leaflet CSS (https://unpkg.com/leaflet@1.6.0/dist/leaflet.css) Property `behavior` doesn't exist : `url(#default#VML)` |
+| 30 | Use [W3C Markup Validation Service](https://validator.w3.org/) to check HTML code | Document checking completed. No errors or warnings to show. | As expected |
+| 31 | Use [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) to check CSS code | Document checking completed. No errors or warnings to show. | 1 error due to Leaflet CSS (https://unpkg.com/leaflet@1.6.0/dist/leaflet.css) Property `behavior` doesn't exist : `url(#default#VML)` |
+| 32 | Use [Esprima JavaScript Syntax Validator](https://esprima.org/demo/validate.html) to check JavaScript code | Code is syntactically valid | Code is syntactically valid |
 
 ## Deployment
 
