@@ -79,6 +79,18 @@ window.addEventListener("load", () => {
         hideInfoContainer();
     });
     
+    document.querySelector("#results-icon-1").addEventListener("click", () => {
+        hideChart();
+        hideInfoContainer();
+        showSearchResults();
+    });
+    
+    document.querySelector("#results-icon-2").addEventListener("click", () => {
+        hideChart();
+        hideInfoContainer();
+        showSearchResults();
+    });
+    
     document.querySelector("#map-icon-1").addEventListener("click", () => {
         minimiseNavBar();
         hideSearchResults();
@@ -91,18 +103,6 @@ window.addEventListener("load", () => {
         hideSearchResults();
         hideChart();
         hideInfoContainer();
-    });
-    
-    document.querySelector("#results-icon-1").addEventListener("click", () => {
-        hideChart();
-        hideInfoContainer();
-        showSearchResults();
-    });
-    
-    document.querySelector("#results-icon-2").addEventListener("click", () => {
-        hideChart();
-        hideInfoContainer();
-        showSearchResults();
     });
     
     document.querySelector("#chart-icon-1").addEventListener("click", showChart);
