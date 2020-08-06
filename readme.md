@@ -54,7 +54,7 @@ The chosen colour scheme uses green colours inspired by nature in order to compl
 
 ### Current Features
 - Search London Food Hygiene Rating Scheme data with ability to query by business name, address, postcode and/or hygiene rating.
-- Reponsive web design catering to small, medium and large screen sizes.
+- Reponsive web design catering to small, medium, large and extra large screen sizes.
 - Single page application that does not need the web page to be refreshed when the user moves from section to section.
 - Search button is disabled if all search fields are empty.
 - If search fields are not empty, search button can be submitted by pressing the Enter key.
