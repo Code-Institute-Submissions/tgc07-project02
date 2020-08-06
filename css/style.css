@@ -319,6 +319,12 @@ select option {
     margin-left: 2rem;
 }
 
+.info-inner-container a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--colour-green-dark);
+}
+
 .hygiene-ratings li {
     list-style-type: none;
     margin-left: 1rem;

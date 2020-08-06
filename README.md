@@ -6,7 +6,7 @@ A live demo of this project can be viewed [here](https://andrewsui.github.io/tgc
 This project is a single page application designed as a mock-up of what the UK Food Standards Agency's Food Hygiene Rating Scheme search feature could potentially look like. The data set used in this project has been limited to just London data in order to prevent the data folder size from getting too large.
 
 ### Disclaimer
-Data used in this project pertaining to businesses and food hygiene ratings was downloaded from the UK [Food Standards Agency website](https://ratings.food.gov.uk/open-data/en-GB) on 21 July 2020 and has not been updated since this date. Any actual searches for London or UK Food Hygiene Rating Scheme data should be conducted via the Food Standards Agency's [search feature](https://ratings.food.gov.uk/).
+This project was built for JavaScript, HTML and CSS educational purposes only and was not intended to be a geniune resource for actual Food Hygiene Rating Scheme information. Data used in this project pertaining to businesses and food hygiene ratings was downloaded from the UK [Food Standards Agency website](https://ratings.food.gov.uk/open-data/en-GB) on 21 July 2020 and has not been updated since this date. Any actual searches for London or UK Food Hygiene Rating Scheme data should be conducted via the Food Standards Agency's [search feature](https://ratings.food.gov.uk/). No legal responsibility is accepted for any errors, omissions or misleading statements.
 
 ## UX
 
