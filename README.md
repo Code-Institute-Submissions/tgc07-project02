@@ -67,19 +67,19 @@ The chosen colour scheme uses green colours inspired by nature in order to compl
 
 All testing was done manually. The following tests were performed:
 
-| # | Event | Expected Outcome | Actual Outcome |
-|---|-------|------------------|----------------|
-| 1 | Click search button when all search input fields are empty | Search button disabled | As expected |
-| 2 | Input text into search fields | Search button enabled | As expected |
-| 3 | Search by establishment name | Return results that match establishment name, but any address, any postcode and any hygiene rating | As expected |
-| 4 | Search by address | Return results that match address, but any establishment name, any postcode and any hygiene rating | As expected |
-| 5 | Search by postcode | Return results that match postcode, but any establishment name, any address and any hygiene rating | As expected |
-| 6 | Search by establishment name and address | Return results that match establishment name and address, but any postcode and any hygiene rating | As expected |
-| 7 | Search by establishment name and postcode | Return results that match establishment name and postcode, but any address and any hygiene rating | As expected |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+|  # | Event | Expected Outcome | Actual Outcome |
+|----|-------|------------------|----------------|
+|  1 | Click search button when all search input fields are empty | Search button disabled | As expected |
+|  2 | Input text into search fields | Search button enabled | As expected |
+|  3 | Search by establishment name | Return results that match establishment name, but any address, any postcode and any hygiene rating | As expected |
+|  4 | Search by address | Return results that match address, but any establishment name, any postcode and any hygiene rating | As expected |
+|  5 | Search by postcode | Return results that match postcode, but any establishment name, any address and any hygiene rating | As expected |
+|  6 | Search by establishment name and address | Return results that match establishment name and address, but any postcode and any hygiene rating | As expected |
+|  7 | Search by establishment name and postcode | Return results that match establishment name and postcode, but any address and any hygiene rating | As expected |
+|  8 | Search by address and postcode | Return results that match address and postcode, but any establishment name and any hygiene rating | As expected |
+|  9 | Search by establishment name and address and postcode | Return results that match establishment name and address and postcode, but any hygiene rating | As expected |
+| 10 | Search by specific hygiene rating and search input fields are not empty | Return results that match hygiene rating | As expected |
+| 11 | Click individual search result | Pan to respective map marker and marker popup content is opened | Popup opens correctly. Pan to marker works most of the time, but occasionally pans with the marker slightly offscreen. Unable to identify the trigger for this error and might be due to leaflet zoom rounding. |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
