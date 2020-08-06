@@ -5,18 +5,6 @@
     border: 0;
 }
 
-/* CSS variables */
-:root {
-    --nav-icon-width: 50px;
-    --colour-page-background: #cccccc;
-    --colour-text-background: #444444;
-    --colour-text-hover: #666666;
-    --colour-green: #6a7a5f;
-    --colour-green-dark: #4a5840;
-    --colour-beige: #fdf8e4;
-    --colour-brown: #8c7a5f;
-}
-
 /* HTML tag common styling */
 html, body {
     height: 100%;
@@ -33,7 +21,7 @@ input {
 }
 
 input:focus {
-    background-color: var(--colour-beige);
+    background-color: #fdf8e4;
     outline: none;
 }
 
@@ -55,14 +43,14 @@ select option {
     width: 100%;
     display: flex;
     position: relative;
-    background-color: var(--colour-page-background);
+    background-color: #cccccc;
 }
 
 /* Navbar docked to left-side */
 #nav {
     width: 320px;
     height: inherit;
-    background-color: var(--colour-text-background);
+    background-color: #444444;
 }
 
 #nav a {
@@ -82,13 +70,13 @@ select option {
 }
 
 .nav-text:hover {
-    background-color: var(--colour-text-hover);
+    background-color: #666666;
     scale: 1.02;
 }
 
 .nav-icon {
-    width: var(--nav-icon-width);
-    height: var(--nav-icon-width);
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,8 +86,7 @@ select option {
 #nav-minimised {
     display: none;
     height: inherit;
-    background-color: var(--colour-text-background);
-    transition: var(--transition-duration);
+    background-color: #444444;
 }
 
 /* Search form within navbar */
@@ -117,7 +104,7 @@ select option {
 }
 
 #search-btn:hover {
-    background-color: var(--colour-green);
+    background-color: #6a7a5f;
     color: white;
     cursor: pointer;
     scale: 1.1;
@@ -128,7 +115,7 @@ select option {
 }
 
 #search-btn:active {
-    background-color: var(--colour-green-dark);
+    background-color: #4a5840;
 }
 
 #search-btn i {
@@ -150,7 +137,7 @@ select option {
     display: none;
     overflow-y: auto;
     min-width: 300px;
-    background-color: var(--colour-green);
+    background-color: #6a7a5f;
     color: white;
 }
 
@@ -160,12 +147,12 @@ select option {
 
 .search-result {
     padding: 0.5rem 1.5rem 1rem 1.5rem;
-    border-top: 1px solid var(--colour-green-dark);
+    border-top: 1px solid #4a5840;
 }
 
 .search-result:hover {
     cursor: pointer;
-    background-color: var(--colour-green-dark);
+    background-color: #4a5840;
     scale: 1.02;
 }
 
@@ -208,7 +195,7 @@ select option {
 }
 
 .leaflet-popup-content-wrapper {
-    background-color: var(--colour-green);
+    background-color: #6a7a5f;
 }
 
 .leaflet-popup-content > * {
@@ -228,7 +215,7 @@ select option {
     left: -50%;
     margin-top: -10%;
     width: 50vw;
-    background-color: var(--colour-text-hover);
+    background-color: #666666;
 }
 
 #chart-no-data-title {
@@ -252,7 +239,7 @@ select option {
 }
 
 #chart-title > * {
-    color: var(--colour-green-dark);
+    color: #4a5840;
 }
 
 #close-chart {
@@ -278,7 +265,7 @@ select option {
     max-height: 100%;
     width: 100%;
     padding: 0;
-    background-color: var(--colour-green);
+    background-color: #6a7a5f;
     display: none;
 }
 
@@ -286,7 +273,7 @@ select option {
     font-size: 1.5rem;
     text-align: end;
     padding: 1rem 20px;
-    background-color: var(--colour-green);
+    background-color: #6a7a5f;
     color: white;
 }
 
@@ -296,7 +283,7 @@ select option {
 
 .info-background {
     padding: 0 8rem;
-    background-color: var(--colour-page-background);
+    background-color: #cccccc;
 }
 
 .info-inner-container {
@@ -312,7 +299,7 @@ select option {
 }
 
 .info-inner-container h2, .info-inner-container h3 {
-    color: var(--colour-green-dark);
+    color: #4a5840;
 }
 
 .info-inner-container li {
@@ -322,7 +309,7 @@ select option {
 .info-inner-container a {
     text-decoration: none;
     font-weight: bold;
-    color: var(--colour-green-dark);
+    color: #4a5840;
 }
 
 .hygiene-ratings li {
