@@ -26,7 +26,7 @@ Food Standards Agency would want to:
 ![Mobile results](report/screenshots/08-mobile-results.png "Mobile results")
 
 Members of the general public would want to:
-- easily obtain food hygiene data of businesses and thereby enabling them to make informed decisions about the food that they buy.
+- easily obtain food hygiene data of businesses, enabling them to make informed decisions about the food that they buy.
 - search by business name, address, postcode and/or hygiene rating.
 - easily locate the business with the help of a map.
 - find the relevant local authority contact information in the event of any enquiries or complaints.
@@ -38,10 +38,11 @@ Members of the general public would want to:
 
 ### Scope
 Content requirements: Text, images, map, information on each business, food hygiene ratings, relevant local authorities.
+
 Functional specification: Interactive map, graphical chart.
 
 ### Structure
-The website will be presented as a single page application with a navbar that enables the user to switch between different views. Split screen design-pattern will mainly be used.
+The website will be presented as a single page application with a navbar that enables the user to switch between different views. A split screen design-pattern will mainly be used.
 
 ### Skeleton
 Wireframes created during the design process can be found [here](report/wireframes/wireframes.pdf).
