@@ -87,7 +87,16 @@ All testing was done manually. The following tests were performed:
 | 16 | Click "Info" icon on navbar | Closes search results and map, then displays site-info section | As expected |
 | 17 | Click "X" in top right corner of site-info section | Closes site-info section and returns to previous map and search results view | As expected |
 | 18 | Click "Minimise" icon on navbar | Minimises navbar with only icons for navigation | As expected |
-| 19 | Click magnifying glass icon on minimised navbar | Maximises navbar | As expected |
+| 19 | Click magnifying glass icon on minimised navbar | Maximises navbar, closes site-info section if open | As expected |
+| 20 | Click "Results" icon on minimised navbar | Displays search results panel if not already displayed | As expected |
+| 21 | Click "Map" icon on minimised navbar | Maximises map and minimises everything else | As expected |
+| 22 | Click "Chart" icon on minimised navbar | Displays chart if not already displayed | As expected |
+| 23 | Click "Info" icon on minimised navbar | Closes search results and map, then displays site-info section | As expected |
+| 24 | Click hamburger icon on minimsed navbar | Maximises navbar | As expected |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
