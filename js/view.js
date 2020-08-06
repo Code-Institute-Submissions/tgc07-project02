@@ -104,7 +104,7 @@ function displaySearchResults(searchResultsArray) {
             newResult.innerHTML = `
             <h3>${bizName}</h3>
             <p>${address}</p>
-            <img src="img/${biz.RatingValue}.jpg" alt="FHRS">
+            <img src="img/${biz.RatingValue.toLowerCase()}.jpg" alt="FHRS">
             <ul>
                 <li>Rating date: ${ratingDate}</li>
                 <li>Local authority email: ${authorityEmail}</li>
