@@ -83,11 +83,13 @@ Code for the project was deployed in the following manner:
 ## Credits
 
 ### Content and Media
-- Business and food hygiene rating info was downloaded from the [Food Standards Agency's website](https://ratings.food.gov.uk/open-data/en-GB).
+- Food Hygiene Rating Scheme data was obtained from the [Food Standards Agency website](https://ratings.food.gov.uk/open-data/en-GB).
+- Food Hygiene Rating related images were downloaded from [here](https://ratings.food.gov.uk/open-data-resources/images/images.zip).
+- Information pertaining to the Food Hygiene Rating Scheme was copied from [here](https://www.food.gov.uk/safety-hygiene/food-hygiene-rating-scheme).
 - Favicon was created using [Favicon.io](https://favicon.io/).
-- Interactive map uses [Leafet](https://leafletjs.com/).
+- Interactive map uses a combination of [Leafet](https://leafletjs.com/), [OpenStreetMap](https://www.openstreetmap.org/) and [Mapbox](https://www.mapbox.com/).
 - Chart was created using [Chart.js](https://www.chartjs.org/).
 - [Font Awesome v4.7.0](https://fontawesome.com/v4.7.0/) was used for this project's icons.
 
 ### Acknowledgements
-- This project's navbar was contructed using [this video by dcode](https://www.youtube.com/watch?v=LxEb9G7ELOQ).
+- The navbar was contructed using ideas and code from [this YouTube video by dcode](https://www.youtube.com/watch?v=LxEb9G7ELOQ).
