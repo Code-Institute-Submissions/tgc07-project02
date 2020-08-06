@@ -68,6 +68,7 @@ The chosen colour scheme uses green colours inspired by nature in order to compl
 ### Features Left to Implement
 - Search for businesses by postcode based on user's current geolocation.
 - Comparison feature between data from 2 separate search results.
+- Loading icon to display whilst fetching JSON data would be useful for users with extremely slow internet connections.
 - Food Hygiene Rating Scheme data should be stored in a database instead of static JSON files.
 
 ## Technologies Used
